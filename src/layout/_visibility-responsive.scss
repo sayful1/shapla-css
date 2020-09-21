@@ -1,0 +1,14 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+@include responsiveContent('visible') {
+  visibility: visible !important;
+}
+
+@include responsiveContent('invisible') {
+  visibility: hidden !important;
+}
+
+@include responsiveContent('hidden') {
+  display: none !important;
+}

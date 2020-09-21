@@ -1,0 +1,21 @@
+//== Grid Columns Gap
+$column-gap: 1.5rem !default;
+
+//== Grid breakpoints
+$screen-md: 768px !default;
+$screen-sm: ($screen-md - 1px) !default;
+$screen-lg: 1024px !default;
+$screen-xl: 1280px !default;
+$screen-xxl: 1400px !default;
+$screen-xxl-enabled: false !default;
+
+//== Grid containers
+$container-md: 720px !default;
+$container-lg: 960px !default;
+$container-xl: 1140px !default;
+$container-xxl: 1320px !default;
+
+//== Shadow
+$shadow-key-umbra-opacity: 0.2 !default;
+$shadow-key-penumbra-opacity: 0.14 !default;
+$shadow-ambient-shadow-opacity: 0.12 !default;

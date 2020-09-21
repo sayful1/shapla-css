@@ -1,0 +1,11 @@
+@import "variables";
+
+@each $index, $size in $sizes {
+  .space-y-#{$index} > * + * {
+    margin-top: $size;
+  }
+
+  .space-x-#{$index} > * + * {
+    margin-left: $size;
+  }
+}

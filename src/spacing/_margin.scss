@@ -1,0 +1,51 @@
+@import "variables";
+
+@each $index, $size in $sizes {
+  .m-#{$index} {
+    margin: $size;
+  }
+  .mx-#{$index} {
+    margin-left: $size;
+    margin-right: $size;
+  }
+  .my-#{$index} {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+  .mt-#{$index} {
+    margin-top: $size;
+  }
+  .mr-#{$index} {
+    margin-right: $size;
+  }
+  .mb-#{$index} {
+    margin-bottom: $size;
+  }
+  .ml-#{$index} {
+    margin-left: $size;
+  }
+
+  .-m-#{$index} {
+    margin: -$size;
+  }
+  .-mx-#{$index} {
+    margin-left: -$size;
+    margin-right: -$size;
+  }
+  .-my-#{$index} {
+    margin-top: -$size;
+    margin-bottom: -$size;
+  }
+  .-mt-#{$index} {
+    margin-top: -$size;
+  }
+  .-mr-#{$index} {
+    margin-right: -$size;
+  }
+  .-mb-#{$index} {
+    margin-bottom: -$size;
+  }
+  .-ml-#{$index} {
+    margin-left: -$size;
+  }
+}

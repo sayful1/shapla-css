@@ -1,0 +1,13 @@
+@import "../utilities/mixins";
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+@include responsiveContent('flex') {
+  display: flex;
+}

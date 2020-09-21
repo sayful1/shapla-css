@@ -1,0 +1,28 @@
+@import "variables";
+@import "../utilities/mixins";
+
+@each $index, $size in $sizes {
+  @include responsiveContent('m-#{$index}') {
+    margin: $size;
+  }
+  @include responsiveContent('mx-#{$index}') {
+    margin-left: $size;
+    margin-right: $size;
+  }
+  @include responsiveContent('my-#{$index}') {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+  @include responsiveContent('mt-#{$index}') {
+    margin-top: $size;
+  }
+  @include responsiveContent('mr-#{$index}') {
+    margin-right: $size;
+  }
+  @include responsiveContent('mb-#{$index}') {
+    margin-bottom: $size;
+  }
+  @include responsiveContent('ml-#{$index}') {
+    margin-left: $size;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../utilities/mixins";
+
+@for $index from 1 through 12 {
+  .w-#{$index}\/12 {
+    width: percentage($index / 12);
+  }
+
+  @each $breakpoint in (sm, md, lg, xl, xxl) {
+    @include media($breakpoint) {
+      .#{$breakpoint}\:w-#{$index}\/12 {
+        width: percentage($index / 12);
+      }
+    }
+  }
+}

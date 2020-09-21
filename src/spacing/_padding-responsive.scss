@@ -1,0 +1,28 @@
+@import "variables";
+@import "../utilities/mixins";
+
+@each $index, $size in $sizes {
+  @include responsiveContent('p-#{$index}') {
+    padding: $size;
+  }
+  @include responsiveContent('px-#{$index}') {
+    padding-left: $size;
+    padding-right: $size;
+  }
+  @include responsiveContent('py-#{$index}') {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+  @include responsiveContent('pt-#{$index}') {
+    padding-top: $size;
+  }
+  @include responsiveContent('pr-#{$index}') {
+    padding-right: $size;
+  }
+  @include responsiveContent('pb-#{$index}') {
+    padding-bottom: $size;
+  }
+  @include responsiveContent('pl-#{$index}') {
+    padding-left: $size;
+  }
+}

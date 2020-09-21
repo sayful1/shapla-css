@@ -1,0 +1,63 @@
+@import "functions";
+
+$color--white: #ffffff !default;
+$color--black: #000000 !default;
+
+$color--primary: #00d1b2 !default;
+$color--on-primary: findColorInvert($color--primary) !default;
+$color--primary-variant: darken($color--primary, 5) !default;
+$color--primary-alpha: rgba($color--primary, .25) !default;
+
+$color--secondary: #9c27b0 !default;
+$color--on-secondary: findColorInvert($color--secondary) !default;
+$color--secondary-variant: darken($color--secondary, 5) !default;
+$color--secondary-alpha: rgba($color--secondary, .25) !default;
+
+$color--success: #48c774 !default;
+$color--on-success: findColorInvert($color--success) !default;
+$color--success-alpha: rgba($color--success, .25) !default;
+
+$color--error: #f14668 !default;
+$color--on-error: findColorInvert($color--error) !default;
+$color--error-alpha: rgba($color--error, .25) !default;
+
+$color--surface: $color--white !default;
+$color--on-surface: findColorInvert($color--surface) !default;
+
+$color--background: $color--white !default;
+
+$color--text-primary: rgba($color--black, .87) !default;
+$color--text-secondary: rgba($color--black, .54) !default;
+$color--text-hint: rgba($color--black, .38) !default;
+$color--text-disabled: rgba($color--black, .38) !default;
+$color--text-icon: rgba($color--black, .38) !default;
+
+// Reassign color to change with CSS variable
+$primary: var(--shapla-primary, unquote("rgba(#{red($color--primary)}, #{green($color--primary)}, #{blue($color--primary)}, var(--shapla-primary-alpha,1))")) !default;
+$on-primary: var(--shapla-on-primary, $color--on-primary) !default;
+$primary-variant: var(--shapla-primary-variant, $color--primary-variant) !default;
+$primary-alpha: var(--shapla-primary-alpha, $color--primary-alpha) !default;
+
+$secondary: var(--shapla-secondary, $color--secondary) !default;
+$secondary-variant: var(--shapla-secondary-variant, $color--secondary-variant) !default;
+$on-secondary: var(--shapla-on-secondary, $color--on-secondary) !default;
+$secondary-alpha: var(--shapla-secondary-alpha, $color--secondary-alpha) !default;
+
+$success: var(--shapla-success, $color--success) !default;
+$on-success: var(--shapla-on-success, $color--on-success) !default;
+$success-alpha: var(--shapla-success-alpha, $color--success-alpha) !default;
+
+$error: var(--shapla-error, $color--error) !default;
+$on-error: var(--shapla-on-error, $color--on-error) !default;
+$error-alpha: var(--shapla-error-alpha, $color--error-alpha) !default;
+
+$surface: var(--shapla-surface, $color--surface) !default;
+$on-surface: var(--shapla-on-surface, $color--on-surface) !default;
+
+$background: var(--shapla-background, $color--background) !default;
+
+$text-primary: var(--shapla-text-primary, $color--text-primary) !default;
+$text-secondary: var(--shapla-text-secondary, $color--text-secondary) !default;
+$text-hint: var(--shapla-text-hint, $color--text-hint) !default;
+$text-disabled: var(--shapla-text-disabled, $color--text-disabled) !default;
+$text-icon: var(--shapla-text-icon, $color--text-icon) !default;

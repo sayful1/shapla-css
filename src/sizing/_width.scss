@@ -1,0 +1,19 @@
+$dimensions: (16, 24, 32, 48, 64, 96, 128) !default;
+
+@each $dimensions in $dimensions {
+  .w-#{$dimensions} {
+    width: #{$dimensions}px;
+  }
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}

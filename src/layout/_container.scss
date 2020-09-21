@@ -1,0 +1,27 @@
+@import "../utilities/mixins";
+
+.container {
+  flex-grow: 1;
+  width: 100%;
+
+  @include media(tablet) {
+    max-width: $container-md;
+  }
+
+  @include media(desktop) {
+    max-width: $container-lg;
+  }
+
+  @include media(wide) {
+    max-width: $container-xl;
+  }
+
+  @include media(fullhd) {
+    max-width: $container-xxl;
+  }
+
+  &.mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
