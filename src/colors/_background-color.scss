@@ -1,0 +1,41 @@
+@import "../utilities/colors";
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-current {
+  background-color: currentColor;
+}
+
+.bg-white {
+  background-color: $color--white;
+}
+
+.bg-black {
+  background-color: $color--black
+}
+
+.bg-light {
+  background-color: #f5f5f5
+}
+
+.bg-dark {
+  background-color: #363636
+}
+
+.bg-primary {
+  background-color: $primary
+}
+
+.bg-secondary {
+  background-color: $secondary
+}
+
+.bg-success {
+  background-color: $success
+}
+
+.bg-error {
+  background-color: $error
+}

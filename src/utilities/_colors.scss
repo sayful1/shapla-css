@@ -33,7 +33,7 @@ $color--text-disabled: rgba($color--black, .38) !default;
 $color--text-icon: rgba($color--black, .38) !default;
 
 // Reassign color to change with CSS variable
-$primary: var(--shapla-primary, unquote("rgba(#{red($color--primary)}, #{green($color--primary)}, #{blue($color--primary)}, var(--shapla-primary-alpha,1))")) !default;
+$primary: var(--shapla-primary, $color--primary) !default;
 $on-primary: var(--shapla-on-primary, $color--on-primary) !default;
 $primary-variant: var(--shapla-primary-variant, $color--primary-variant) !default;
 $primary-alpha: var(--shapla-primary-alpha, $color--primary-alpha) !default;
