@@ -1,0 +1,23 @@
+.shapla-image-container {
+  display: block;
+  position: relative;
+
+  &.is-fullwidth {
+    width: 100%;
+  }
+
+  &.is-rounded > * {
+    border-radius: 290486px;
+  }
+
+  > * {
+    display: block;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
