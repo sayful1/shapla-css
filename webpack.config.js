@@ -15,6 +15,7 @@ let entryPoints = {
   flexbox: "./src/flexbox.scss",
   grid: "./src/grid.scss",
   sizing: "./src/sizing/_all.scss",
+  typography: "./src/typography/_all.scss",
   spacing: [
     "./src/spacing/_margin.scss",
     "./src/spacing/_padding.scss",
@@ -125,15 +126,6 @@ module.exports = (env, argv) => {
         new TerserPlugin(),
         new OptimizeCSSAssetsPlugin()
       ],
-      splitChunks: {
-        cacheGroups: {
-          commonVendors: {
-            test: /[\\/]node_modules[\\/](vue|vuex|vue-router|axios)[\\/]/,
-            name: 'common-vendors',
-            chunks: 'all',
-          }
-        }
-      }
     },
     resolve: {
       alias: {
@@ -142,8 +134,7 @@ module.exports = (env, argv) => {
       },
       modules: [
         path.resolve('./node_modules'),
-        path.resolve(path.join(__dirname, 'assets/src/')),
-        path.resolve(path.join(__dirname, 'assets/src/shapla')),
+        path.resolve('./src'),
       ],
       extensions: ['*', '.js', '.vue', '.json']
     },
