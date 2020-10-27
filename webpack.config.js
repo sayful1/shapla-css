@@ -69,10 +69,12 @@ module.exports = (env, argv) => {
               loader: "postcss-loader",
               options: {
                 sourceMap: isDev,
-                plugins: () => [
-                  autoprefixer(),
-                  combineMediaQuery()
-                ],
+                postcssOptions: {
+                  plugins: [
+                    autoprefixer(),
+                    combineMediaQuery()
+                  ],
+                },
               },
             },
             {
@@ -128,15 +130,11 @@ module.exports = (env, argv) => {
       ],
     },
     resolve: {
-      alias: {
-        'vue$': 'vue/dist/vue.esm.js',
-        '@': path.resolve('./assets/src/'),
-      },
       modules: [
         path.resolve('./node_modules'),
         path.resolve('./src'),
       ],
-      extensions: ['*', '.js', '.vue', '.json']
+      extensions: ['*', '.js', '.json']
     },
     "plugins": plugins
   }
