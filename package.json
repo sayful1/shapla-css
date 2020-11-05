@@ -1,13 +1,16 @@
 {
-  "name": "shapla-utility-css",
+  "name": "shapla-css",
   "description": "Apply helper classes to almost any element, in order to alter their style.",
-  "version": "1.0.11",
-  "author": {
-    "name": "Sayful Islam",
-    "email": "sayful.islam001@gmail.com",
-    "url": "https://sayfulislam.com"
-  },
+  "version": "1.0.0",
+  "contributors": [
+    {
+      "name": "Sayful Islam",
+      "email": "sayful.islam001@gmail.com",
+      "url": "https://sayfulislam.com"
+    }
+  ],
   "keywords": [
+    "shapla-css",
     "css-utility"
   ],
   "license": "MIT",

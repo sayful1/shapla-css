@@ -1,0 +1,158 @@
+@import "../utilities/colors";
+
+.shapla-button {
+  user-select: none;
+  appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.5em;
+  line-height: 1.5;
+  position: relative;
+  vertical-align: top;
+  cursor: pointer;
+  justify-content: center;
+  padding: calc(.5em - 1px) 1em;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #f1f1f1;
+  color: $text-primary;
+
+  &:active,
+  &:focus {
+    outline: none
+  }
+
+  strong {
+    color: inherit
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):active {
+    background-color: #dddddd;
+    border-color: transparent;
+    color: $text-primary;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  // Full width button
+  &.is-fullwidth {
+    display: flex;
+    width: 100%;
+  }
+
+  // Button sizes
+  &.is-small {
+    border-radius: 2px;
+    font-size: .75rem
+  }
+
+  &.is-normal {
+    font-size: 1rem
+  }
+
+  &.is-medium {
+    font-size: 1.25rem
+  }
+
+  &.is-large {
+    font-size: 1.5rem
+  }
+
+  // Rounded button
+  &.is-rounded {
+    border-radius: 290486px;
+    padding-left: calc(1em + .25em);
+    padding-right: calc(1em + .25em);
+  }
+
+  // FAB button
+  &.is-fab {
+    border-radius: 50%;
+    height: 2.5em;
+    min-width: 2.5em;
+    width: 2.5em;
+  }
+
+  &.is-outline {
+    background-color: transparent;
+    border-color: rgba(#000, .12);
+    color: $text-primary;
+
+    &:not(:disabled):hover {
+      background-color: transparent;
+      border-color: rgba(#000, .38);
+      color: $text-primary;
+    }
+  }
+
+  // Button colors
+  &.is-primary {
+    background-color: $primary;
+    border-color: transparent;
+    color: $on-primary;
+
+    &:not(:disabled):hover {
+      background-color: $primary-variant;
+      border-color: transparent;
+      color: $on-primary;
+    }
+
+    &.is-outline {
+      background-color: transparent;
+      border-color: $primary;
+      color: $primary;
+
+      &:not(:disabled):hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: $on-primary;
+      }
+    }
+  }
+
+  &.is-secondary {
+    background-color: $secondary;
+    border-color: transparent;
+    color: $on-secondary;
+
+    &:not(:disabled):hover {
+      background-color: $secondary-variant;
+      border-color: transparent;
+      color: $on-secondary;
+    }
+
+    &.is-outline {
+      background-color: transparent;
+      border-color: $secondary;
+      color: $secondary;
+
+      &:not(:disabled):hover {
+        background-color: $secondary;
+        border-color: $secondary;
+        color: $on-secondary;
+      }
+    }
+  }
+
+  // Button shadow
+  &.has-shadow {
+    box-shadow: 0 2px 2px 0 rgba(#000, .14), 0 3px 1px -2px rgba(#000, .2), 0 1px 5px 0 rgba(#000, .12);
+
+    &.is-fab {
+      box-shadow: 0 1px 1.5px 0 rgba(#000, .12), 0 1px 1px 0 rgba(#000, .24);
+    }
+  }
+}
