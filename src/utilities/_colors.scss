@@ -15,14 +15,17 @@ $color--secondary-alpha: rgba($color--secondary, .25) !default;
 
 $color--success: #48c774 !default;
 $color--on-success: findColorInvert($color--success) !default;
+$color--success-variant: darken($color--success, 5) !default;
 $color--success-alpha: rgba($color--success, .25) !default;
 
 $color--error: #f14668 !default;
 $color--on-error: findColorInvert($color--error) !default;
+$color--error-variant: darken($color--error, 5) !default;
 $color--error-alpha: rgba($color--error, .25) !default;
 
 $color--warning: #ffdd57 !default;
 $color--on-warning: findColorInvert($color--warning) !default;
+$color--warning-variant: darken($color--warning, 5) !default;
 $color--warning-alpha: rgba($color--warning, .25) !default;
 
 $color--surface: $color--white !default;
@@ -48,14 +51,17 @@ $on-secondary: var(--shapla-on-secondary, $color--on-secondary) !default;
 $secondary-alpha: var(--shapla-secondary-alpha, $color--secondary-alpha) !default;
 
 $success: var(--shapla-success, $color--success) !default;
+$success-variant: var(--shapla-success-variant, $color--success-variant) !default;
 $on-success: var(--shapla-on-success, $color--on-success) !default;
 $success-alpha: var(--shapla-success-alpha, $color--success-alpha) !default;
 
 $error: var(--shapla-error, $color--error) !default;
+$error-variant: var(--shapla-error-variant, $color--error-variant) !default;
 $on-error: var(--shapla-on-error, $color--on-error) !default;
 $error-alpha: var(--shapla-error-alpha, $color--error-alpha) !default;
 
 $warning: var(--shapla-warning, $color--warning) !default;
+$warning-variant: var(--shapla-warning-variant, $color--warning-variant) !default;
 $on-warning: var(--shapla-on-warning, $color--on-warning) !default;
 $warning-alpha: var(--shapla-warning-alpha, $color--warning-alpha) !default;
 

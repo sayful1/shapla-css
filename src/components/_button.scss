@@ -1,10 +1,16 @@
 @import "../utilities/colors";
+@import "../utilities/mixins";
 
 .shapla-button {
+  --shapla-button-color: #f1f1f1;
+  --shapla-button-color-dark: #dddddd;
+  --shapla-button-on-color: #{$text-primary};
+
   user-select: none;
   appearance: none;
   align-items: center;
-  border: 1px solid transparent;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
   box-shadow: none;
   display: inline-flex;
@@ -18,27 +24,14 @@
   padding: calc(.5em - 1px) 1em;
   text-align: center;
   white-space: nowrap;
-  background-color: #f1f1f1;
-  color: $text-primary;
 
   &:active,
   &:focus {
     outline: none
   }
 
-  strong {
-    color: inherit
-  }
-
-  svg {
+  strong, svg {
     fill: currentColor;
-  }
-
-  &:not(:disabled):hover,
-  &:not(:disabled):active {
-    background-color: #dddddd;
-    border-color: transparent;
-    color: $text-primary;
   }
 
   &[disabled],
@@ -86,73 +79,78 @@
     width: 2.5em;
   }
 
-  &.is-outline {
-    background-color: transparent;
-    border-color: rgba(#000, .12);
-    color: $text-primary;
-
-    &:not(:disabled):hover {
-      background-color: transparent;
-      border-color: rgba(#000, .38);
-      color: $text-primary;
-    }
-  }
-
-  // Button colors
   &.is-primary {
-    background-color: $primary;
-    border-color: transparent;
-    color: $on-primary;
-
-    &:not(:disabled):hover {
-      background-color: $primary-variant;
-      border-color: transparent;
-      color: $on-primary;
-    }
-
-    &.is-outline {
-      background-color: transparent;
-      border-color: $primary;
-      color: $primary;
-
-      &:not(:disabled):hover {
-        background-color: $primary;
-        border-color: $primary;
-        color: $on-primary;
-      }
-    }
+    --shapla-button-color: #{$primary};
+    --shapla-button-color-dark: #{$primary-variant};
+    --shapla-button-on-color: #{$on-primary};
   }
 
   &.is-secondary {
-    background-color: $secondary;
+    --shapla-button-color: #{$secondary};
+    --shapla-button-color-dark: #{$secondary-variant};
+    --shapla-button-on-color: #{$on-secondary};
+  }
+
+  &.is-success {
+    --shapla-button-color: #{$success};
+    --shapla-button-color-dark: #{$success-variant};
+    --shapla-button-on-color: #{$on-success};
+  }
+
+  &.is-warning {
+    --shapla-button-color: #{$warning};
+    --shapla-button-color-dark: #{$warning-variant};
+    --shapla-button-on-color: #{$on-warning};
+  }
+
+  &.is-error {
+    --shapla-button-color: #{$error};
+    --shapla-button-color-dark: #{$error-variant};
+    --shapla-button-on-color: #{$on-error};
+  }
+
+  // Button Color
+  background-color: var(--shapla-button-color);
+  border-color: transparent;
+  color: var(--shapla-button-on-color);
+
+  &:not(:disabled):hover,
+  &:not(:disabled):active {
+    background-color: var(--shapla-button-color-dark);
     border-color: transparent;
-    color: $on-secondary;
+    color: var(--shapla-button-on-color);
+  }
+
+  &.is-outline {
+    background-color: transparent;
+    border-color: var(--shapla-button-color);
+    color: var(--shapla-button-color);
 
     &:not(:disabled):hover {
-      background-color: $secondary-variant;
-      border-color: transparent;
-      color: $on-secondary;
+      background-color: var(--shapla-button-color);
+      border-color: var(--shapla-button-color);
+      color: var(--shapla-button-on-color);
     }
 
-    &.is-outline {
+    &:not(.is-primary):not(.is-secondary):not(.is-success):not(.is-error):not(.is-warning) {
       background-color: transparent;
-      border-color: $secondary;
-      color: $secondary;
+      border-color: var(--shapla-button-color);
+      color: var(--shapla-button-on-color);
 
       &:not(:disabled):hover {
-        background-color: $secondary;
-        border-color: $secondary;
-        color: $on-secondary;
+        background-color: transparent;
+        border-color: var(--shapla-button-color-dark);
+        color: var(--shapla-button-on-color);
       }
     }
   }
 
   // Button shadow
   &.has-shadow {
-    box-shadow: 0 2px 2px 0 rgba(#000, .14), 0 3px 1px -2px rgba(#000, .2), 0 1px 5px 0 rgba(#000, .12);
+    @include shadow-2dp();
 
     &.is-fab {
-      box-shadow: 0 1px 1.5px 0 rgba(#000, .12), 0 1px 1px 0 rgba(#000, .24);
+      @include shadow-1dp();
     }
   }
 }

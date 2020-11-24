@@ -89,14 +89,4 @@
     vertical-align: middle;
     padding: 0;
   }
-
-  .shapla-notification-transition-enter,
-  .shapla-notification-transition-leave-to {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .shapla-notification-transition-leave-active {
-    position: absolute;
-  }
 }
