@@ -149,8 +149,8 @@
   &.has-shadow {
     @include shadow-2dp();
 
-    &.is-fab {
-      @include shadow-1dp();
+    &:not(:disabled):hover {
+      @include shadow-4dp();
     }
   }
 }
