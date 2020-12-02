@@ -1,0 +1,188 @@
+@import "../utilities/colors";
+
+$header-height: var(--shapla-dashboard-header-height, 56px);
+$sidenav-width: var(--shapla-dashboard-sidenav-width, 300px);
+
+body.has-shapla-dashboard {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.shapla-dashboard {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: $background;
+  z-index: 100;
+
+  // WordPress hack
+  .admin-bar & {
+    height: calc(100vh - 32px);
+    top: 32px;
+
+    @media screen and (max-width: 782px) {
+      height: calc(100vh - 46px);
+      top: 46px;
+    }
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    border: none;
+    min-height: $header-height;
+    z-index: 3;
+    font-size: 20px;
+    align-self: stretch;
+    align-items: center;
+    margin: 0;
+    padding: 0 2rem;
+
+    &:not(.theme-default) {
+      box-shadow: 0 2px 2px 0 rgba(#000, .14), 0 3px 1px -2px rgba(#000, .2), 0 1px 5px 0 rgba(#000, .12);
+    }
+
+    &.theme-default {
+      border-bottom: 1px solid rgba(#000, 0.12);
+    }
+
+    &.theme-primary {
+      background: $primary;
+      color: $on-primary;
+    }
+
+    &.theme-secondary {
+      background: $secondary;
+      color: $on-secondary;
+    }
+
+    &__burger {
+      height: 1.5em;
+      margin-right: 1rem;
+      width: 1.5em;
+    }
+
+    &__title {
+    }
+
+    &__spacer {
+      flex-grow: 1;
+    }
+  }
+
+  &-content {
+    position: relative;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+    width: 100%;
+    height: calc(100% - #{$header-height});
+
+    &__inner {
+      flex-grow: 1;
+      padding: 2rem;
+    }
+  }
+
+  // Sidenav type
+  &.sidenav-type--off-canvas {
+    transition: width, margin-left 300ms ease-in-out;
+
+    &.is-sidenav-active {
+      .shapla-dashboard-header,
+      .shapla-dashboard-content {
+        width: calc(100% - #{$sidenav-width});
+        margin-left: $sidenav-width;
+      }
+    }
+  }
+}
+
+.shapla-dashboard-sidenav-profile {
+  align-items: center;
+  display: flex;
+  height: $header-height;
+  padding: 0 16px;
+
+  &.theme-default {
+    border-bottom: 1px solid rgba(#000, 0.12);
+  }
+
+  &.theme-primary {
+    background: $primary;
+    color: $on-primary;
+  }
+
+  &.theme-secondary {
+    background: $secondary;
+    color: $on-secondary;
+  }
+
+  &__avatar {
+    background: rgba(#000, 0.12);
+    border-radius: 16px;
+    height: 32px;
+    margin-right: 1rem;
+    width: 32px;
+    flex-shrink: 0;
+
+    img {
+      border-radius: 16px;
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.shapla-dashboard-sidenav-menu {
+  margin: 16px 0;
+  max-height: calc(100vh - (#{$header-height} + 32px));
+  overflow-y: auto;
+
+  .admin-bar & {
+    max-height: calc(100vh - (#{$header-height} + 32px + 32px));
+  }
+}
+
+.sidenav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    color: $text-primary;
+    padding: .75rem 1rem;
+    align-items: center;
+
+    &:hover {
+      background-color: rgba(#000, 0.04);
+      color: $text-primary;
+    }
+
+    &.is-active {
+      background: $primary;
+      color: $on-primary;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "shapla-css",
   "description": "Apply helper classes to almost any element, in order to alter their style.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "contributors": [
     {
       "name": "Sayful Islam",
@@ -21,6 +21,9 @@
   "bugs": {
     "url": "https://github.com/sayful1/shapla-css/issues"
   },
+  "main": "dist/shapla.css",
+  "unpkg": "dist/shapla.css",
+  "module": "src/shapla.scss",
   "files": [
     "dist/*",
     "example/*",
@@ -51,7 +54,7 @@
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",
     "url-loader": "^4.1.1",
-    "webpack": "^5.8.0",
+    "webpack": "^5.9.0",
     "webpack-clean": "^1.2.5",
     "webpack-cli": "^4.2.0"
   },
