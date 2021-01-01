@@ -1,0 +1,69 @@
+@import "variables";
+
+.shapla-modal,
+.shapla-modal-background {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.shapla-modal {
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: $modal-z;
+
+  &.is-active {
+    display: flex;
+  }
+
+  &-background {
+    background-color: $modal-background-background-color;
+
+    &.is-light {
+      background-color: rgba(#fff, 0.6);
+    }
+  }
+
+  .shapla-delete-icon.is-fixed {
+    position: fixed;
+    right: $modal-close-right;
+    top: $modal-close-top;
+  }
+
+  &-content {
+    margin: 0 $modal-content-margin-mobile;
+    max-height: calc(100vh - #{$modal-content-spacing-mobile});
+    overflow: auto;
+    position: relative;
+    width: calc(100% - #{$modal-content-margin-mobile * 2});
+
+    &.is-small {
+      width: $modal-content-width-small;
+    }
+
+    &.is-full {
+      height: calc(100vh - #{$modal-content-margin-mobile * 2});
+      width: calc(100vw - #{$modal-content-margin-mobile * 2});
+    }
+
+    @media screen and (min-width: 769px), print {
+      margin: 0 auto;
+      max-height: calc(100vh - #{$modal-content-spacing-tablet});
+      &:not(.is-small):not(.is-full):not(.is-large) {
+        width: $modal-content-width;
+      }
+    }
+
+    @media screen and (min-width: 1025px) {
+      &.is-large {
+        width: $modal-content-width-large;
+      }
+    }
+  }
+}
