@@ -53,8 +53,8 @@
     display: flex;
     justify-content: center;
 
-    button:not(:last-child) {
-      margin-right: 1rem;
+    > * + * {
+      margin-left: 0.5rem;
     }
   }
 }

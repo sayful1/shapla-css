@@ -25,7 +25,6 @@
   }
 
   &__title {
-    color: $modal-card-title-color;
     flex-grow: 1;
     flex-shrink: 0;
     font-size: $modal-card-title-size;
@@ -42,10 +41,8 @@
       justify-content: flex-end;
     }
 
-    .shapla-button {
-      &:not(:last-child) {
-        margin-right: 10px
-      }
+    > * + * {
+      margin-left: 0.5rem;
     }
   }
 

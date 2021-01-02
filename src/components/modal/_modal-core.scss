@@ -23,10 +23,10 @@
   }
 
   &-background {
-    background-color: $modal-background-background-color;
+    background-color: rgba(#000, 0.5);
 
     &.is-light {
-      background-color: rgba(#fff, 0.6);
+      background-color: rgba(#fff, 0.5);
     }
   }
 
@@ -56,7 +56,7 @@
       margin: 0 auto;
       max-height: calc(100vh - #{$modal-content-spacing-tablet});
       &:not(.is-small):not(.is-full):not(.is-large) {
-        width: $modal-content-width;
+        width: $modal-content-width-medium;
       }
     }
 
