@@ -1,0 +1,47 @@
+@import "variables";
+
+.shapla-data-table {
+  thead {
+    th, td {
+      &.is-sortable {
+        a {
+          color: $text-primary;
+          text-decoration: none;
+
+          &:hover {
+            color: $text-primary;
+          }
+        }
+
+        svg {
+          fill: currentColor;
+          height: $data-table-header-sort-icon-size;
+          margin-right: 5px;
+          vertical-align: sub;
+          width: $data-table-header-sort-icon-size;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          svg {
+            fill: $data-table-header-sorted-icon-hover-color;
+          }
+        }
+
+        &.is-sorted-ascending {
+          .icon-arrow-down {
+            display: none;
+          }
+        }
+
+        &.is-sorted-descending,
+        &:not(.is-sorted-descending):not(.is-sorted-ascending) {
+          .icon-arrow-up {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

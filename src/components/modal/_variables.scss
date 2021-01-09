@@ -16,7 +16,7 @@ $modal-close-top: 1.25rem !default;
 $modal-card-spacing: $modal-content-spacing-tablet !default;
 
 $modal-card-head-background-color: #ffffff !default;
-$modal-card-head-border-bottom: 1px solid #dbdbdb !default;
+$modal-card-head-border-bottom: 1px solid rgba(#000, 0.12) !default;
 $modal-card-head-padding: 1rem !default;
 $modal-card-head-radius: 4px !default;
 
@@ -24,7 +24,7 @@ $modal-card-title-line-height: 1 !default;
 $modal-card-title-size: 1.5rem !default;
 
 $modal-card-foot-radius: 4px !default;
-$modal-card-foot-border-top: 1px solid #dbdbdb !default;
+$modal-card-foot-border-top: 1px solid rgba(#000, 0.12) !default;
 
 $modal-card-body-background-color: #ffffff !default;
 $modal-card-body-padding: 1rem !default;

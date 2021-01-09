@@ -1,0 +1,96 @@
+@import "variables";
+
+.shapla-data-table--mobile {
+
+  // Hide all cell after primary cell
+  .column-primary {
+    ~ th, ~ td {
+      display: none;
+    }
+  }
+
+  // make actions always visible
+  .row-actions {
+    visibility: visible !important;
+  }
+
+  tr {
+    &.is-expanded {
+      td:not(.is-checkbox-cell),
+      th:not(.is-checkbox-cell) {
+        display: block !important;
+      }
+
+      .triangle-up {
+        display: block;
+      }
+
+      .triangle-down {
+        display: none;
+      }
+    }
+  }
+
+  tbody {
+    th, td {
+      display: block;
+      text-align: right;
+      position: relative;
+      padding-top: .5em;
+
+      &.is-checkbox-cell {
+        display: table-cell;
+        vertical-align: top;
+        padding-top: 14px;
+
+        &:after {
+          content: ' ';
+        }
+      }
+
+      &.column-primary {
+        padding-right: 52px;
+        text-align: left;
+      }
+
+      &:not(.is-checkbox-cell):not(.column-primary)::before {
+        content: attr(data-colname) ' : ';
+        font-weight: bold;
+        float: left;
+        color: $text-secondary;
+      }
+
+      &.has-no-item {
+        display: table-cell;
+        text-align: center;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &.is-expand-toggle-cell {
+        margin-left: auto;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &.is-expand-cell {
+        display: table-cell;
+        text-align: left;
+
+        &:before {
+          display: none;
+        }
+
+        .expand-cell-content {
+          overflow: hidden;
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+

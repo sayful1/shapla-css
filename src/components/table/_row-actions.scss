@@ -1,0 +1,40 @@
+@import "variables";
+
+.shapla-data-table {
+  tr {
+    .row-actions {
+      margin-top: 4px;
+      visibility: hidden;
+
+      a {
+        color: $primary;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary-variant;
+        }
+      }
+
+      > span {
+        &:not(:last-child) {
+          border-right: 1px solid $data-table-divider-color;
+          margin-right: 5px;
+          padding-right: 5px;
+        }
+
+        &.trash,
+        &.delete {
+          color: $error;
+
+          a {
+            color: currentColor;
+          }
+        }
+      }
+    }
+
+    &:hover .row-actions {
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+button {
+  .expand-triangle-up {
+    display: none;
+  }
+
+  &.is-active {
+    .expand-triangle-up {
+      display: block;
+    }
+  }
+}

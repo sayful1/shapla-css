@@ -1,7 +1,11 @@
 # Changelog
 
+### 1.2.0 (January 10, 2021)
+* Add data-table component style.
+* Fix text underline issue on the button for a tag.
+* Update modal style.
+
 ### 1.1.0 (December 02, 2020)
-* Add Dashboard layout component css.
 * Add Side Navigation component css.
 
 ### 1.0.1 (November 26, 2020)

@@ -1,0 +1,19 @@
+@import "../../utilities/colors";
+
+$data-table-font-size: 0.875rem !default;
+$data-table-header-sort-icon-size: 16px !default;
+
+$data-table-header-sorted-color: $text-primary !default;
+$data-table-header-sorted-icon-hover-color: $text-secondary !default;
+
+$data-table-divider-color: rgba(#000, 0.12) !default;
+$data-table-dividers: 1px solid $data-table-divider-color !default;
+
+$data-table-hover-color: rgba(#000, 0.04) !default;
+$data-table-selection-color: rgba(#000, 0.04) !default; // @todo replace this color with primary color
+
+$data-table-row-height: 52px !default;
+$data-table-header-height: 56px !default;
+
+$data-table-column-spacing: 36px !default;
+$data-table-column-padding: $data-table-column-spacing / 2;
