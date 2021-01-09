@@ -1,12 +1,14 @@
-@import "button";
-@import "checkbox";
+@import "button/button";
+@import "checkbox/checkbox";
+@import "columns/columns";
+@import "modal/modal";
+@import "table/table";
+
 @import "chip";
-@import "columns";
 @import "dashboard";
 @import "delete-icon";
 @import "icon-container";
 @import "image-container";
-@import "modal";
 @import "modal-confirm";
 @import "notification";
 @import "sidenav";

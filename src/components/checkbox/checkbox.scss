@@ -1,0 +1,142 @@
+@import "../../utilities/colors";
+
+$checkbox-label-font-size: 16px !default;
+$checkbox-label-height: 24px !default;
+$checkbox-button-size: 16px !default;
+$checkbox-inner-margin: 2px !default;
+$checkbox-padding: 8px !default;
+$checkbox-top-offset: ($checkbox-label-height - $checkbox-button-size - $checkbox-inner-margin) / 2;
+$checkbox-ripple-size: $checkbox-label-height * 1.5;
+
+$checkbox-color: $primary !default;
+$checkbox-off-color: $text-secondary !default;
+$checkbox-disabled-color: $text-disabled !default;
+$checkbox-focus-color: $primary-alpha !default;
+$checkbox-image-path: '/src/components/checkbox'; // absolute path
+
+.shapla-checkbox {
+  position: relative;
+
+  z-index: 1;
+
+  vertical-align: middle;
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: $checkbox-label-height;
+  margin: 0;
+  padding: 0 0 0 $checkbox-button-size + $checkbox-padding;
+}
+
+.shapla-checkbox__input {
+  opacity: 0;
+  line-height: $checkbox-label-height;
+
+  .shapla-checkbox & {
+    // Hide input element, while still making it respond to focus.
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    appearance: none;
+    border: none;
+  }
+}
+
+.shapla-checkbox__box-outline {
+  position: absolute;
+  top: $checkbox-top-offset;
+  left: 0;
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  width: $checkbox-button-size;
+  height: $checkbox-button-size;
+  margin: 0;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  border: 2px solid $checkbox-off-color;
+  border-radius: 2px;
+
+  z-index: 2;
+
+  .shapla-checkbox.is-checked & {
+    border: 2px solid $checkbox-color;
+  }
+
+  fieldset[disabled] .shapla-checkbox &,
+  .shapla-checkbox.is-disabled & {
+    border: 2px solid $checkbox-disabled-color;
+    cursor: auto;
+  }
+}
+
+.shapla-checkbox__focus-helper {
+  position: absolute;
+  top: $checkbox-top-offset;
+  left: 0;
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  width: $checkbox-button-size;
+  height: $checkbox-button-size;
+  border-radius: 50%;
+
+  background-color: transparent;
+
+  .shapla-checkbox.is-focused &,
+  .shapla-checkbox:not(.is-disabled).is-hovered & {
+    box-shadow: 0 0 0 ($checkbox-button-size / 2) rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .shapla-checkbox.is-focused.is-checked & {
+    box-shadow: 0 0 0 ($checkbox-button-size / 2) $checkbox-focus-color;
+    background-color: $checkbox-focus-color;
+  }
+}
+
+.shapla-checkbox__tick-outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  mask: url("#{$checkbox-image-path}/tick-mask.svg");
+
+  background: transparent;
+  transition-duration: 0.28s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background;
+
+  .shapla-checkbox.is-checked & {
+    background: $checkbox-color url("#{$checkbox-image-path}/tick.svg");
+  }
+
+  fieldset[disabled] .shapla-checkbox.is-checked &,
+  .shapla-checkbox.is-checked.is-disabled & {
+    background: $checkbox-disabled-color url("#{$checkbox-image-path}/tick.svg");
+  }
+}
+
+.shapla-checkbox__label {
+  position: relative;
+  cursor: pointer;
+  font-size: $checkbox-label-font-size;
+  line-height: $checkbox-label-height;
+  margin: 0;
+
+  fieldset[disabled] .shapla-checkbox &,
+  .shapla-checkbox.is-disabled & {
+    color: $checkbox-disabled-color;
+    cursor: auto;
+  }
+}
