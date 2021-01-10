@@ -1,0 +1,108 @@
+@import "../../utilities/colors";
+
+$progress-bar-background-color: hsl(0, 0%, 93%) !default;
+$progress-value-background-color: hsl(0, 0%, 29%) !default;
+$progress-border-radius: 290486px !default;
+$progress-indeterminate-duration: 1.5s !default;
+
+@keyframes moveIndeterminate {
+	from {
+		background-position: 200% 0;
+	}
+	to {
+		background-position: -200% 0;
+	}
+}
+
+@keyframes progressBarStripes {
+	from {
+		background-position: 40px 0;
+	}
+	to {
+		background-position: 0 0;
+	}
+}
+
+.shapla-progress {
+	display: flex;
+	height: 1rem;
+	overflow: hidden;
+	line-height: 0;
+	font-size: .75rem;
+	background-color: $progress-bar-background-color;
+	// border-radius: .25em;
+	width: 100%;
+
+	&-bar {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		overflow: hidden;
+		text-align: center;
+		white-space: nowrap;
+		transition: width .6s ease;
+		// Default theme
+		color: #fff;
+		background-color: $progress-value-background-color;
+
+		// Themes
+		&.is-primary {
+			background-color: $primary;
+			color: $on-primary;
+		}
+
+		&.is-secondary {
+			background-color: $secondary;
+			color: $on-secondary;
+		}
+
+		&.is-striped {
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%,
+				transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+				transparent 75%, transparent);
+			background-size: 40px 40px;
+		}
+
+		&.is-animated {
+			animation: progressBarStripes 2s linear infinite;
+		}
+	}
+
+	// sizes
+	&.is-tiny {
+		height: 0.5rem;
+	}
+
+	&.is-small {
+		height: 0.75rem;
+	}
+
+	&.is-medium {
+		height: 1.25rem;
+	}
+
+	&.is-large {
+		height: 1.5rem;
+	}
+
+	&.is-indeterminate {
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-name: moveIndeterminate;
+		animation-timing-function: linear;
+		background-position: top left;
+		background-repeat: no-repeat;
+		background-size: 150% 150%;
+
+		// Theme
+		background-image: linear-gradient(to right, $progress-value-background-color 30%, transparent 30%);
+
+		&.is-primary {
+			background-image: linear-gradient(to right, $primary 30%, transparent 30%);
+		}
+
+		&.is-secondary {
+			background-image: linear-gradient(to right, $secondary 30%, transparent 30%);
+		}
+	}
+}

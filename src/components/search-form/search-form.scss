@@ -1,0 +1,54 @@
+@import "../../utilities/colors";
+
+.shapla-search-form {
+  position: relative;
+  font-size: var(--base-font-size, 16px);
+
+  &__input {
+    border: 1px solid rgba(#000, .16);
+    border-radius: 4px;
+    font-size: inherit;
+    line-height: 1.2;
+    padding: .5em 2.5em .5em .5em !important;
+    height: calc(2.2em + 2px);
+    width: 100%;
+
+    &:focus {
+      border-color: rgba(#000, .38);
+      color: $text-primary;
+      outline: none;
+    }
+  }
+
+  &__submit {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: inherit;
+    justify-content: center;
+    margin: 0 !important;
+    position: absolute !important;
+    right: 3px;
+    top: 3px;
+    bottom: 3px;
+    height: calc(2.2em - 4px);
+    width: calc(2.2em - 4px);
+    color: $text-primary;
+    padding: 0;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: rgba(60, 64, 67, 0.08);
+    }
+
+    svg {
+      height: 1.5em;
+      width: 1.5em;
+      fill: currentColor;
+    }
+  }
+}

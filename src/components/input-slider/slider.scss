@@ -1,0 +1,104 @@
+@import "../../utilities/colors";
+
+.shapla-input-slider {
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+
+	.shapla-input-slider__range {
+		appearance: none;
+		background-color: rgba(#000, 0.12);
+		height: 5px;
+		padding: 0;
+		transition: background 0.3s;
+		width: 100%;
+
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+
+		&:hover {
+			background-color: rgba(#000, 0.26);
+		}
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			background-color: $primary;
+			border-radius: 50%;
+			height: 15px;
+			width: 15px;
+		}
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			width: 15px;
+			height: 15px;
+			border: none;
+			border-radius: 50%;
+			background-color: $primary;
+		}
+
+		&::-moz-range-thumb {
+			width: 15px;
+			height: 15px;
+			border: none;
+			border-radius: 50%;
+			background-color: $primary;
+		}
+
+		&::-ms-thumb {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			border: 0;
+			background-color: $primary;
+		}
+
+		&::-moz-range-track {
+			border: inherit;
+			background: transparent;
+		}
+
+		&::-ms-track {
+			border: inherit;
+			color: transparent;
+			background: transparent;
+		}
+
+		&::-ms-fill-lower,
+		&::-ms-fill-upper {
+			background: transparent;
+		}
+
+		&::-ms-tooltip {
+			display: none;
+		}
+	}
+
+	.shapla-input-slider__input-container {
+		padding: 0 10px;
+
+		.shapla-input-slider__input {
+			border: 1px solid $primary;
+			border-radius: 4px;
+			height: 36px;
+			width: 4em;
+		}
+	}
+
+	.shapla-input-slider__reset {
+		display: inline-flex;
+		float: left;
+
+		.shapla-button {
+			padding: 0;
+		}
+
+		&-icon {
+			height: 20px;
+			fill: currentColor;
+			width: 20px;
+		}
+	}
+}

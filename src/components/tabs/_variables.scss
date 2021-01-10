@@ -1,0 +1,29 @@
+@import "../../utilities/colors";
+
+$primary-color: $primary;
+$on-primary-color: $on-primary;
+
+$tabs-border-bottom-color: rgba(#000, .12) !default;
+$tabs-border-bottom-style: solid !default;
+$tabs-border-bottom-width: 1px !default;
+$tabs-link-color: $text-primary !default;
+$tabs-link-hover-border-bottom-color: $text-primary !default;
+$tabs-link-hover-color: $text-primary !default;
+$tabs-link-padding: 0.5em 1em !default;
+
+$tabs-boxed-link-radius: 4px !default;
+$tabs-boxed-link-hover-background-color: #F5F5F5 !default;
+$tabs-boxed-link-hover-border-bottom-color: rgba(#000, .12) !default;
+
+$tabs-boxed-link-active-background-color: #FFFFFF !default;
+$tabs-boxed-link-active-border-color: rgba(#000, .12) !default;
+$tabs-boxed-link-active-border-bottom-color: transparent !default;
+
+$tabs-toggle-link-border-color: rgba(#000, .12) !default;
+$tabs-toggle-link-border-style: solid !default;
+$tabs-toggle-link-border-width: 1px !default;
+$tabs-toggle-link-hover-background-color: #FFFFFF !default;
+$tabs-toggle-link-hover-border-color: rgba(#000, .2) !default;
+$tabs-toggle-link-radius: 4px !default;
+$tabs-toggle-link-active-color: #FFFFFF !default;
+$radius-rounded: 290486px !default;

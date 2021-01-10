@@ -1,0 +1,113 @@
+@import "../../utilities/colors";
+
+$dropdown-menu-min-width: 12em !default;
+
+$dropdown-content-background-color: $surface !default;
+$dropdown-content-offset: 4px !default;
+$dropdown-content-padding-bottom: 0.5em !default;
+$dropdown-content-padding-top: 0.5em !default;
+$dropdown-content-radius: 4px !default;
+$dropdown-content-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12) !default;
+$dropdown-content-z: 20 !default;
+
+$dropdown-item-color: $text-primary !default;
+$dropdown-item-hover-color: $text-primary !default;
+$dropdown-item-hover-background-color: rgba(#000, 0.04) !default;
+
+$dropdown-item-active-color: $on-primary !default;
+$dropdown-item-active-background-color: $primary !default;
+
+$dropdown-divider-background-color: rgba(#000, 0.12) !default;
+
+.shapla-dropdown-menu {
+  font-size: 16px;
+  left: 0;
+  min-width: $dropdown-menu-min-width;
+  padding-top: $dropdown-content-offset;
+  position: absolute;
+  top: 100%;
+  z-index: $dropdown-content-z;
+  visibility: hidden;
+
+  &.is-active {
+    visibility: visible;
+  }
+
+  &.is-right {
+    left: auto;
+    right: 0
+  }
+
+  &.is-up {
+    bottom: 100%;
+    padding-bottom: $dropdown-content-offset;
+    padding-top: 0;
+    top: auto
+  }
+
+  &__inner {
+    background-color: $dropdown-content-background-color;
+    border-radius: $dropdown-content-radius;
+    box-shadow: $dropdown-content-shadow;
+    padding-bottom: $dropdown-content-padding-bottom;
+    padding-top: $dropdown-content-padding-top;
+  }
+
+  &__content {
+  }
+
+  &.has-max-items {
+    .shapla-dropdown-menu__content {
+      max-height: calc(2em * var(--max-menu-items, 10));
+      overflow-y: auto;
+    }
+  }
+}
+
+.shapla-dropdown-item {
+  color: $dropdown-item-color;
+  display: block;
+  font-size: .875em;
+  line-height: 1.5;
+  padding: .375em 1em;
+  position: relative;
+
+  &.is-link {
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+
+    &:not(.is-active):not(:active):hover,
+    &:not(.is-active):not(:active).is-hover {
+      background-color: $dropdown-item-hover-background-color;
+      color: $dropdown-item-hover-color;
+    }
+
+    &:active,
+    &.is-active {
+      background-color: $dropdown-item-active-background-color;
+      color: $dropdown-item-active-color;
+    }
+  }
+}
+
+.shapla-dropdown-divider {
+  background-color: $dropdown-divider-background-color;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: .5em 0;
+}
+
+.shapla-dropdown {
+  display: inline-flex;
+  position: relative;
+  vertical-align: top;
+
+  &.is-hoverable:hover {
+    .shapla-dropdown-menu {
+      visibility: visible;
+    }
+  }
+}

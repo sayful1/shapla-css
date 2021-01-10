@@ -1,0 +1,90 @@
+.shapla-pagination {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 1rem;
+  justify-content: flex-end;
+
+  &.is-small {
+    font-size: 0.875rem;
+  }
+
+  &.is-medium {
+    font-size: 1.25rem;
+  }
+
+  &.is-large {
+    font-size: 1.5rem;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &-displaying-num {
+    margin-right: 0.5em;
+    font-size: 1em;
+  }
+
+  &-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &-link {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    height: 2em;
+    position: relative;
+    justify-content: center;
+    margin: 0 .25em;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    color: #363636;
+    width: 2em;
+
+    svg {
+      fill: currentColor;
+      height: 1em;
+      width: 1em;
+    }
+
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &-input-container {
+    align-items: center;
+    display: inline-flex;
+    margin: 0 .25em;
+  }
+
+  &-current-page {
+    border-radius: 4px;
+    margin: 0 2px 0 0;
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+    box-shadow: none;
+    background-color: #fff;
+    color: #32373c;
+    outline: none;
+    transition: 0.05s border-color ease-in-out;
+    padding: 3px 5px;
+    width: 4em;
+    height: 2em;
+    line-height: 1.5;
+  }
+
+  &-paging-text {
+    margin-left: 0.5em;
+    font-size: 1em;
+  }
+}
