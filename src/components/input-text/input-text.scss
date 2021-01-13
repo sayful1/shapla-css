@@ -81,7 +81,7 @@
     background-color: #fff;
     border-color: $primary;
     outline: 0;
-    box-shadow: 0 0 0 transparent, 0 .0625em .1875em rgba(0, 14, 16, .06);
+    box-shadow: 0 0 0 transparent, 0 .0625em .1875em rgba(#000e10, .06);
   }
 
   &.is-invalid {

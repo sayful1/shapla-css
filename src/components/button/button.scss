@@ -31,6 +31,10 @@
     outline: none
   }
 
+  &:focus {
+    box-shadow: 0 0 0 1px transparent, 0 0 0 3px var(--shapla-button-color-alpha, #{rgba(#000,0.25)});
+  }
+
   strong {
     color: currentColor;
   }
@@ -87,30 +91,35 @@
   &.is-primary {
     --shapla-button-color: #{$primary};
     --shapla-button-color-dark: #{$primary-variant};
+    --shapla-button-color-alpha: #{$primary-alpha};
     --shapla-button-on-color: #{$on-primary};
   }
 
   &.is-secondary {
     --shapla-button-color: #{$secondary};
     --shapla-button-color-dark: #{$secondary-variant};
+    --shapla-button-color-alpha: #{$secondary-alpha};
     --shapla-button-on-color: #{$on-secondary};
   }
 
   &.is-success {
     --shapla-button-color: #{$success};
     --shapla-button-color-dark: #{$success-variant};
+    --shapla-button-color-alpha: #{$success-alpha};
     --shapla-button-on-color: #{$on-success};
   }
 
   &.is-warning {
     --shapla-button-color: #{$warning};
     --shapla-button-color-dark: #{$warning-variant};
+    --shapla-button-color-alpha: #{$warning-alpha};
     --shapla-button-on-color: #{$on-warning};
   }
 
   &.is-error {
     --shapla-button-color: #{$error};
     --shapla-button-color-dark: #{$error-variant};
+    --shapla-button-color-alpha: #{$error-alpha};
     --shapla-button-on-color: #{$on-error};
   }
 
@@ -156,6 +165,10 @@
 
     &:not(:disabled):hover {
       @include shadow-4dp();
+    }
+
+    &:not(:disabled):focus {
+      @include shadow-6dp();
     }
   }
 }
