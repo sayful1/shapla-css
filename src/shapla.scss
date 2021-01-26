@@ -1,9 +1,4 @@
-@import "minireset/minireset";
-@import "accessibility/all";
-@import "colors/all";
-@import "flexbox/all";
-@import "layout/all";
-@import "sizing/all";
-@import "spacing/all";
-@import "svg/all";
-@import "components/all";
+@import "utilities/minireset";
+@import "utilities/screen-readers";
+@import "colors/color-theme";
+@import "components/components";

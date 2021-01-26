@@ -10,7 +10,7 @@ const WebpackCleanPlugin = require('webpack-clean');
 let plugins = [];
 let entryPoints = {
   shapla: "./src/shapla.scss",
-  components: "./src/components/_all.scss",
+  components: "./src/components/components.scss",
 };
 
 plugins.push(new MiniCssExtractPlugin({
