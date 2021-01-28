@@ -71,3 +71,25 @@ The button can be full width
 <button class="shapla-button is-warning is-rounded">Warning</button>
 <button class="shapla-button is-error is-rounded">Danger</button>
 ```
+
+&nbsp;6. FAB buttons
+
+```html
+<button class="shapla-button is-fab">+</button>
+<button class="shapla-button is-primary is-fab">+</button>
+<button class="shapla-button is-secondary is-fab">+</button>
+<button class="shapla-button is-success is-fab">+</button>
+<button class="shapla-button is-warning is-fab">+</button>
+<button class="shapla-button is-error is-fab">+</button>
+```
+
+&nbsp;6. Raised buttons (with shadow)
+
+```html
+<button class="shapla-button has-shadow">Default</button>
+<button class="shapla-button is-primary has-shadow">Primary</button>
+<button class="shapla-button is-secondary has-shadow">Secondary</button>
+<button class="shapla-button is-success has-shadow">Success</button>
+<button class="shapla-button is-warning has-shadow">Warning</button>
+<button class="shapla-button is-error has-shadow">Danger</button>
+```
