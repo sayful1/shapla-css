@@ -12,7 +12,7 @@ $checkbox-color: $primary !default;
 $checkbox-off-color: $text-secondary !default;
 $checkbox-disabled-color: $text-disabled !default;
 $checkbox-focus-color: $primary-alpha !default;
-$checkbox-image-path: '/src/components/input-checkbox'; // absolute path
+$checkbox-image-path: '/src/form/checkbox'; // absolute path
 
 .shapla-checkbox {
   position: relative;

@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.2.0 (February 01, 2021)
+* Add a lot of new components.
+* Change directory structures.
+
 ### 1.2.0 (January 10, 2021)
 * Add data-table component style.
 * Fix text underline issue on the button for a tag.

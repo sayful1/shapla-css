@@ -9,15 +9,21 @@ const WebpackCleanPlugin = require('webpack-clean');
 
 let plugins = [];
 let entryPoints = {
-  shapla: "./src/shapla.scss",
-  components: "./src/components/components.scss",
+  shapla: ["./src/shapla.scss"],
+  grid: ["./src/grid/columns.scss"],
+  components: [
+    "./src/grid/columns.scss",
+    "./src/form/form.scss",
+    "./src/elements/elements.scss",
+    "./src/components/components.scss",
+  ],
 };
 
 plugins.push(new MiniCssExtractPlugin({
   filename: "./[name].css"
 }));
 
-plugins.push(new WebpackCleanPlugin(['dist/components.js', 'dist/shapla.js']));
+plugins.push(new WebpackCleanPlugin(['dist/components.js', 'dist/shapla.js', 'dist/grid.js']));
 
 module.exports = (env, argv) => {
   let isDev = argv.mode !== 'production';
