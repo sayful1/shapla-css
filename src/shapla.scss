@@ -1,5 +1,7 @@
 @use "./index.scss" as shapla;
 
+// CSS Default variable
+@include shapla.css-var-colors;
 // Utility
 @include shapla.minireset;
 @include shapla.sr-only;

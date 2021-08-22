@@ -1,4 +1,5 @@
 @import "variables";
+@import "colors";
 
 @mixin media( $res ) {
   @if mobile == $res or sm == $res {
@@ -88,4 +89,37 @@
   box-shadow: 0 9px 46px 8px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
   0 11px 15px -7px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
   0 24px 38px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+}
+
+@mixin css-var-colors( $selector : ':root' ) {
+  #{$selector} {
+    --shapla-primary: #{$color--primary};
+    --shapla-on-primary: #{$color--on-primary};
+    --shapla-primary-variant: #{$color--primary-variant};
+    --shapla-primary-alpha: #{$color--primary-alpha};
+    --shapla-secondary: #{$color--secondary};
+    --shapla-on-secondary: #{$color--on-secondary};
+    --shapla-secondary-variant: #{$color--secondary-variant};
+    --shapla-secondary-alpha: #{$color--secondary-alpha};
+    --shapla-success: #{$color--success};
+    --shapla-on-success: #{$color--on-success};
+    --shapla-success-variant: #{$color--success-variant};
+    --shapla-success-alpha: #{$color--success-alpha};
+    --shapla-error: #{$color--error};
+    --shapla-on-error: #{$color--on-error};
+    --shapla-error-variant: #{$color--error-variant};
+    --shapla-error-alpha: #{$color--error-alpha};
+    --shapla-warning: #{$color--warning};
+    --shapla-on-warning: #{$color--on-warning};
+    --shapla-warning-variant: #{$color--warning-variant};
+    --shapla-warning-alpha: #{$color--warning-alpha};
+    --shapla-surface: #{$color--surface};
+    --shapla-on-surface: #{$color--on-surface};
+    --shapla-background: #{$color--background};
+    --shapla-text-primary: #{$color--text-primary};
+    --shapla-text-secondary: #{$color--text-secondary};
+    --shapla-text-hint: #{$color--text-hint};
+    --shapla-text-disabled: #{$color--text-disabled};
+    --shapla-text-icon: #{$color--text-icon};
+  }
 }
