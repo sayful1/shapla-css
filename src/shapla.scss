@@ -1,7 +1,40 @@
-@import "utilities/minireset";
-@import "utilities/screen-readers";
-@import "colors/color-theme";
-@import "grid/columns";
-@import "form/form";
-@import "elements/elements";
-@import "components/components";
+@use "./index.scss" as shapla;
+
+// Utility
+@include shapla.minireset;
+@include shapla.sr-only;
+// Colors
+@include shapla.bg-colors;
+@include shapla.bg-colors-alpha;
+@include shapla.bg-colors-opacity;
+@include shapla.text-colors;
+// Elements
+@include shapla.box-shadow;
+@include shapla.button;
+@include shapla.delete-icon;
+@include shapla.icon-container;
+@include shapla.image-container;
+// Grid System
+@include shapla.columns;
+// Components
+@include shapla.chip;
+@include shapla.dashboard;
+@include shapla.data-table;
+@include shapla.dropdown;
+@include shapla.file-uploader;
+@include shapla.modal;
+@include shapla.notification;
+@include shapla.progress;
+@include shapla.sidenav;
+@include shapla.spinner;
+@include shapla.tabs;
+@include shapla.toggles;
+// Form
+@include shapla.checkbox;
+@include shapla.radio;
+@include shapla.search-form;
+@include shapla.select;
+@include shapla.slider;
+@include shapla.star-rating;
+@include shapla.input-switch;
+@include shapla.text-field;

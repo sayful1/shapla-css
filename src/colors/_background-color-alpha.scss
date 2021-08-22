@@ -2,34 +2,36 @@
 
 $background-default-opacity: .25;
 
-.bg-white-alpha {
-  background-color: var(--bg-white-alpha, unquote("rgba(255,255,255, var(--bg-opacity, #{$background-default-opacity}))"));
-}
+@mixin bg-colors-alpha {
+  .bg-white-alpha {
+    background-color: var(--bg-white-alpha, unquote("rgba(255,255,255, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 
-.bg-black-alpha {
-  background-color: var(--bg-black-alpha, unquote("rgba(0,0,0, var(--bg-opacity, #{$background-default-opacity}))"));
-}
+  .bg-black-alpha {
+    background-color: var(--bg-black-alpha, unquote("rgba(0,0,0, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 
-.bg-light-alpha {
-  background-color: var(--bg-light-alpha, unquote("rgba(245, 245, 245, var(--bg-opacity, #{$background-default-opacity}))"));
-}
+  .bg-light-alpha {
+    background-color: var(--bg-light-alpha, unquote("rgba(245, 245, 245, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 
-.bg-dark-alpha {
-  background-color: var(--bg-dark-alpha, unquote("rgba(54, 54, 54, var(--bg-opacity, #{$background-default-opacity}))"));
-}
+  .bg-dark-alpha {
+    background-color: var(--bg-dark-alpha, unquote("rgba(54, 54, 54, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 
-.bg-primary-alpha {
-  background-color: var(--bg-primary-alpha, unquote("rgba(#{red($color--primary)},#{green($color--primary)},#{blue($color--primary)}, var(--bg-opacity, #{$background-default-opacity}))"));
-}
+  .bg-primary-alpha {
+    background-color: var(--bg-primary-alpha, unquote("rgba(#{red($color--primary)},#{green($color--primary)},#{blue($color--primary)}, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 
-.bg-secondary-alpha {
-  background-color: var(--bg-secondary-alpha, unquote("rgba(#{red($color--secondary)},#{green($color--secondary)},#{blue($color--secondary)}, var(--bg-opacity, #{$background-default-opacity}))"));
-}
+  .bg-secondary-alpha {
+    background-color: var(--bg-secondary-alpha, unquote("rgba(#{red($color--secondary)},#{green($color--secondary)},#{blue($color--secondary)}, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 
-.bg-success-alpha {
-  background-color: var(--bg-success-alpha, unquote("rgba(#{red($color--success)},#{green($color--success)},#{blue($color--success)}, var(--bg-opacity, #{$background-default-opacity}))"));
-}
+  .bg-success-alpha {
+    background-color: var(--bg-success-alpha, unquote("rgba(#{red($color--success)},#{green($color--success)},#{blue($color--success)}, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 
-.bg-error-alpha {
-  background-color: var(--bg-error-alpha, unquote("rgba(#{red($color--error)},#{green($color--error)},#{blue($color--error)}, var(--bg-opacity, #{$background-default-opacity}))"));
+  .bg-error-alpha {
+    background-color: var(--bg-error-alpha, unquote("rgba(#{red($color--error)},#{green($color--error)},#{blue($color--error)}, var(--bg-opacity, #{$background-default-opacity}))"));
+  }
 }

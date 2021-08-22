@@ -2,31 +2,32 @@ $icon-dimensions: 1.5em !default;
 $icon-dimensions-small: 1em !default;
 $icon-dimensions-medium: 2em !default;
 $icon-dimensions-large: 3em !default;
+@mixin icon-container {
+  .shapla-icon {
+    --shapla-icon-dimensions: #{$icon-dimensions};
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: var(--shapla-icon-dimensions, $icon-dimensions);
+    width: var(--shapla-icon-dimensions, $icon-dimensions);
 
-.shapla-icon {
-  --shapla-icon-dimensions: #{$icon-dimensions};
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  height: var(--shapla-icon-dimensions, $icon-dimensions);
-  width: var(--shapla-icon-dimensions, $icon-dimensions);
+    // Sizes
+    &.is-small {
+      --shapla-icon-dimensions: #{$icon-dimensions-small};
+    }
 
-  // Sizes
-  &.is-small {
-    --shapla-icon-dimensions: #{$icon-dimensions-small};
-  }
+    &.is-medium {
+      --shapla-icon-dimensions: #{$icon-dimensions-medium};
+    }
 
-  &.is-medium {
-    --shapla-icon-dimensions: #{$icon-dimensions-medium};
-  }
+    &.is-large {
+      --shapla-icon-dimensions: #{$icon-dimensions-large};
+    }
 
-  &.is-large {
-    --shapla-icon-dimensions: #{$icon-dimensions-large};
-  }
-
-  &.is-hoverable:hover {
-    background: rgba(#000, 0.12);
-    border-radius: 999px;
-    cursor: pointer;
+    &.is-hoverable:hover {
+      background: rgba(#000, 0.12);
+      border-radius: 999px;
+      cursor: pointer;
+    }
   }
 }

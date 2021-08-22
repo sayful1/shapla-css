@@ -1,42 +1,44 @@
 @import "../../mixins";
 
-.shadow-none,
-.shadow-0 {
-  box-shadow: none;
-}
+@mixin box-shadow {
+  .shadow-none,
+  .shadow-0 {
+    box-shadow: none;
+  }
 
-.shadow-inner {
-  box-shadow: inset 0 2px 4px 0 rgba(#000, 0.06);
-}
+  .shadow-inner {
+    box-shadow: inset 0 2px 4px 0 rgba(#000, 0.06);
+  }
 
-.shadow-1, .shadow-xs {
-  @include shadow-1dp()
-}
+  .shadow-1, .shadow-xs {
+    @include shadow-1dp()
+  }
 
-.shadow-2, .shadow-sm {
-  @include shadow-2dp()
-}
+  .shadow-2, .shadow-sm {
+    @include shadow-2dp()
+  }
 
-.shadow-3, .shadow {
-  @include shadow-3dp()
-}
+  .shadow-3, .shadow {
+    @include shadow-3dp()
+  }
 
-.shadow-4 {
-  @include shadow-4dp()
-}
+  .shadow-4 {
+    @include shadow-4dp()
+  }
 
-.shadow-5, .shadow-6, .shadow-7, .shadow-md {
-  @include shadow-6dp()
-}
+  .shadow-5, .shadow-6, .shadow-7, .shadow-md {
+    @include shadow-6dp()
+  }
 
-.shadow-8, .shadow-lg {
-  @include shadow-8dp()
-}
+  .shadow-8, .shadow-lg {
+    @include shadow-8dp()
+  }
 
-.shadow-16, .shadow-xl {
-  @include shadow-16dp()
-}
+  .shadow-16, .shadow-xl {
+    @include shadow-16dp()
+  }
 
-.shadow-24, .shadow-2xl {
-  @include shadow-24dp()
+  .shadow-24, .shadow-2xl {
+    @include shadow-24dp()
+  }
 }

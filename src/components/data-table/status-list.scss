@@ -1,104 +1,106 @@
 @import "../../colors";
 
-.shapla-status-list {
-  display: flex;
-  color: $text-primary;
-  font-size: 1rem;
-  float: left;
-  list-style: none;
-  margin: .5em 0;
-  padding: 0;
-
-  &__item {
-    cursor: pointer;
+@mixin data-table-status-list {
+  .shapla-status-list {
     display: flex;
-    width: 100%;
-    margin: 0;
+    color: $text-primary;
+    font-size: 1rem;
+    float: left;
+    list-style: none;
+    margin: .5em 0;
     padding: 0;
-    white-space: nowrap;
-    line-height: 1;
 
-    &-count {
-      background-color: rgba(#000, .1);
-      color: $text-primary;
-      font-size: 12px;
-      min-width: 1.5em;
-      height: 1.5em;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      border-radius: 3px;
+    &__item {
+      cursor: pointer;
       display: flex;
-      padding: 0 5px;
-    }
-
-    &-link {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
       width: 100%;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
       line-height: 1;
-      text-decoration: none;
 
-      &:hover, &:focus {
-        box-shadow: none;
-      }
-    }
-
-    &:last-child {
-      a {
-        border-right: none;
-        padding-right: 0;
-        margin-right: 0;
-      }
-    }
-
-    &-label {
-      color: $text-primary;
-    }
-
-    &.is-active {
-      .shapla-status-list__item-label {
-        color: $primary;
+      &-count {
+        background-color: rgba(#000, .1);
+        color: $text-primary;
+        font-size: 12px;
+        min-width: 1.5em;
+        height: 1.5em;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        display: flex;
+        padding: 0 5px;
       }
 
-      .shapla-status-list__item-count {
-        background-color: $primary;
-        color: $on-primary;
+      &-link {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        line-height: 1;
+        text-decoration: none;
 
+        &:hover, &:focus {
+          box-shadow: none;
+        }
+      }
+
+      &:last-child {
+        a {
+          border-right: none;
+          padding-right: 0;
+          margin-right: 0;
+        }
+      }
+
+      &-label {
+        color: $text-primary;
+      }
+
+      &.is-active {
+        .shapla-status-list__item-label {
+          color: $primary;
+        }
+
+        .shapla-status-list__item-count {
+          background-color: $primary;
+          color: $on-primary;
+
+        }
       }
     }
   }
-}
 
-.shapla-status-list--horizontal {
+  .shapla-status-list--horizontal {
 
-  .shapla-status-list__item-link {
-    border-right: 1px solid $text-secondary;
-    padding-right: 0.5em;
-    margin-right: 0.5em;
+    .shapla-status-list__item-link {
+      border-right: 1px solid $text-secondary;
+      padding-right: 0.5em;
+      margin-right: 0.5em;
+    }
+
+    .shapla-status-list__item-count {
+      margin-left: 15px;
+    }
   }
 
-  .shapla-status-list__item-count {
-    margin-left: 15px;
-  }
-}
+  .shapla-status-list--vertical {
+    flex-direction: column;
 
-.shapla-status-list--vertical {
-  flex-direction: column;
+    .shapla-status-list__item {
+      margin-bottom: 1rem;
+    }
 
-  .shapla-status-list__item {
-    margin-bottom: 1rem;
-  }
+    .shapla-status-list__item-label {
+      overflow: hidden;
+      white-space: nowrap;
+      width: calc(100% - 1.5em);
+      margin-right: 10px;
+    }
 
-  .shapla-status-list__item-label {
-    overflow: hidden;
-    white-space: nowrap;
-    width: calc(100% - 1.5em);
-    margin-right: 10px;
-  }
-
-  .shapla-status-list__item-count {
-    margin-left: 50px;
+    .shapla-status-list__item-count {
+      margin-left: 50px;
+    }
   }
 }

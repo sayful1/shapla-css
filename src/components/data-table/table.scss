@@ -4,3 +4,14 @@
 @import "toggle-button";
 @import "expand-row";
 @import "responsive";
+@import "pagination";
+@import "status-list";
+
+@mixin data-table {
+  @include data-table-core;
+  @include data-table-sortable;
+  @include data-table-row-actions;
+  @include data-table-toggle-button;
+  @include data-table-expand-row;
+  @include data-table-responsive;
+}

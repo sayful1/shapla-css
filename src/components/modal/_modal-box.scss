@@ -1,9 +1,11 @@
 @import "variables";
 @import "../../mixins";
 
-.shapla-modal-box {
-  background-color: $modal-card-body-background-color;
-  border-radius: 4px;
-  padding: $modal-card-body-padding;
-  @include shadow-24dp();
+@mixin modal-box {
+  .shapla-modal-box {
+    background-color: $modal-card-body-background-color;
+    border-radius: 4px;
+    padding: $modal-card-body-padding;
+    @include shadow-24dp();
+  }
 }

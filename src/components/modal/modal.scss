@@ -4,3 +4,10 @@
 @import "./modal-card";
 @import "./modal-box";
 @import "./modal-confirm";
+
+@mixin modal {
+  @include modal-core;
+  @include modal-card;
+  @include modal-box;
+  @include modal-confirm;
+}

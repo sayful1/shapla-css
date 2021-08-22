@@ -2,59 +2,61 @@
 @import "../../colors";
 @import "../../mixins";
 
-.shapla-modal-confirm {
-  background-color: $modal-card-body-background-color;
-  border-radius: 4px;
-  padding: $modal-card-body-padding;
-  @include shadow-24dp();
+@mixin modal-confirm {
+  .shapla-modal-confirm {
+    background-color: $modal-card-body-background-color;
+    border-radius: 4px;
+    padding: $modal-card-body-padding;
+    @include shadow-24dp();
 
-  &__content {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  &__icon {
-    display: flex;
-    justify-content: center;
-    width: 5em;
-    height: 5em;
-    margin: 1.25em auto 1.875em;
-    border-radius: 50%;
-    cursor: default;
-    user-select: none;
-    border: .25em solid $primary;
-    color: $primary;
-
-    &.is-success {
-      border-color: $success;
-      color: $success;
+    &__content {
+      padding: 1rem;
+      text-align: center;
     }
 
-    &.is-error {
-      border-color: $error;
-      color: $error;
-    }
-
-    &-content {
+    &__icon {
       display: flex;
-      align-items: center;
-      font-size: 3.75em;
+      justify-content: center;
+      width: 5em;
+      height: 5em;
+      margin: 1.25em auto 1.875em;
+      border-radius: 50%;
+      cursor: default;
+      user-select: none;
+      border: .25em solid $primary;
+      color: $primary;
+
+      &.is-success {
+        border-color: $success;
+        color: $success;
+      }
+
+      &.is-error {
+        border-color: $error;
+        color: $error;
+      }
+
+      &-content {
+        display: flex;
+        align-items: center;
+        font-size: 3.75em;
+      }
     }
-  }
 
-  &__title {
-    font-size: 1.875em;
-    text-align: center;
-    margin: 0 0 .4em;
-  }
+    &__title {
+      font-size: 1.875em;
+      text-align: center;
+      margin: 0 0 .4em;
+    }
 
-  &__actions {
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
+    &__actions {
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
 
-    > * + * {
-      margin-left: 0.5rem;
+      > * + * {
+        margin-left: 0.5rem;
+      }
     }
   }
 }

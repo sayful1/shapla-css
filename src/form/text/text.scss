@@ -1,207 +1,209 @@
 @import "../../colors";
 
-.shapla-text-field {
-  box-sizing: border-box;
-  color: $text-secondary;
-  font-size: 16px;
-  line-height: 1.5;
-  position: relative;
-  text-align: left;
+@mixin text-field {
+  .shapla-text-field {
+    box-sizing: border-box;
+    color: $text-secondary;
+    font-size: 16px;
+    line-height: 1.5;
+    position: relative;
+    text-align: left;
 
-  &[dir="rtl"] {
-    text-align: right;
-  }
+    &[dir="rtl"] {
+      text-align: right;
+    }
 
-  &.is-small {
-    font-size: 12px;
-  }
+    &.is-small {
+      font-size: 12px;
+    }
 
-  &.is-medium {
-    font-size: 20px;
-  }
+    &.is-medium {
+      font-size: 20px;
+    }
 
-  &.is-large {
-    font-size: 24px;
-  }
+    &.is-large {
+      font-size: 24px;
+    }
 
-  &__control {
-    .icon {
-      align-items: center;
-      display: inline-flex;
-      justify-content: center;
-      height: 1.5em;
-      width: 1.5em;
+    &__control {
+      .icon {
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        height: 1.5em;
+        width: 1.5em;
 
-      svg.icon-success {
-        fill: $success;
+        svg.icon-success {
+          fill: $success;
+        }
+
+        svg.icon-error {
+          fill: $error;
+        }
       }
 
-      svg.icon-error {
-        fill: $error;
+      &.has-icons-left .icon,
+      &.has-icons-right .icon {
+        color: #dbdbdb;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        height: 3em;
+        width: 2.5em;
+        z-index: 4;
+      }
+
+      &.has-icons-right .icon.is-right {
+        right: 0;
       }
     }
-
-    &.has-icons-left .icon,
-    &.has-icons-right .icon {
-      color: #dbdbdb;
-      pointer-events: none;
-      position: absolute;
-      top: 0;
-      height: 3em;
-      width: 2.5em;
-      z-index: 4;
-    }
-
-    &.has-icons-right .icon.is-right {
-      right: 0;
-    }
-  }
-}
-
-.shapla-text-field__input,
-.shapla-text-field__textarea {
-  text-transform: none;
-  display: block;
-  width: 100%;
-  height: 3em;
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5;
-  color: $text-primary;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: .0625rem solid rgba(0, 14, 16, 0.12);
-  border-radius: .25em;
-  box-shadow: 0 0 0 transparent;
-  transition: border-color .15s ease-out, color .15s ease-out, box-shadow .15s ease-out;
-  padding: 1em 1em 0 !important;
-
-  &:focus {
-    color: rgba(0, 14, 16, .68);
-    background-color: #fff;
-    border-color: $primary;
-    outline: 0;
-    box-shadow: 0 0 0 transparent, 0 .0625em .1875em rgba(#000e10, .06);
   }
 
-  &.is-invalid {
-    border-color: $error;
-    padding-right: 2.5em !important;
-  }
-
-  &.is-valid {
-    border-color: $success;
-    padding-right: 2.5em !important;
-  }
-
-  .has-icons-left &,
-  .has-icons-right & {
-    padding-right: 2.5em !important;
-  }
-}
-
-.shapla-text-field.has-no-label {
   .shapla-text-field__input,
   .shapla-text-field__textarea {
-    padding: .5em 1em .5em !important;
+    text-transform: none;
+    display: block;
+    width: 100%;
+    height: 3em;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $text-primary;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: .0625rem solid rgba(0, 14, 16, 0.12);
+    border-radius: .25em;
+    box-shadow: 0 0 0 transparent;
+    transition: border-color .15s ease-out, color .15s ease-out, box-shadow .15s ease-out;
+    padding: 1em 1em 0 !important;
 
-    &::placeholder {
-      color: $text-secondary;
-      opacity: 1;
-      transition: opacity 1000ms;
+    &:focus {
+      color: rgba(0, 14, 16, .68);
+      background-color: #fff;
+      border-color: $primary;
+      outline: 0;
+      box-shadow: 0 0 0 transparent, 0 .0625em .1875em rgba(#000e10, .06);
     }
 
-    &:focus::placeholder {
-      opacity: 0;
+    &.is-invalid {
+      border-color: $error;
+      padding-right: 2.5em !important;
+    }
+
+    &.is-valid {
+      border-color: $success;
+      padding-right: 2.5em !important;
+    }
+
+    .has-icons-left &,
+    .has-icons-right & {
+      padding-right: 2.5em !important;
     }
   }
-}
 
-.shapla-text-field__input[type="number"] {
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    display: inline-block;
+  .shapla-text-field.has-no-label {
+    .shapla-text-field__input,
+    .shapla-text-field__textarea {
+      padding: .5em 1em .5em !important;
+
+      &::placeholder {
+        color: $text-secondary;
+        opacity: 1;
+        transition: opacity 1000ms;
+      }
+
+      &:focus::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  .shapla-text-field__input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: inline-block;
+      position: absolute;
+      top: .75em;
+      right: .75em;
+      width: 1.25em;
+      height: 1.25em;
+    }
+  }
+
+  .shapla-text-field__input[type="datetime-local"],
+  .shapla-text-field__input[type="date"],
+  .shapla-text-field__input[type="time"] {
+    &::-webkit-calendar-picker-indicator {
+      display: inline-block;
+      position: absolute;
+      top: .75em;
+      right: .75em;
+      width: 1.25em;
+      height: 1.25em;
+    }
+  }
+
+  .shapla-text-field__textarea {
+    max-width: 100%;
+    min-width: 100%;
+    resize: vertical;
+
+    &[rows] {
+      height: auto;
+    }
+
+    &:not([rows]) {
+      max-height: 40em;
+      min-height: 8em;
+    }
+  }
+
+  .shapla-text-field__label {
+    cursor: text;
     position: absolute;
-    top: .75em;
-    right: .75em;
-    width: 1.25em;
-    height: 1.25em;
-  }
-}
+    top: .875em;
+    left: 1em;
+    font-size: 1em;
+    text-transform: none;
+    transition: all .1s ease-out;
+    margin: auto;
+    color: $text-secondary;
+    white-space: nowrap;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    line-height: 1.2;
 
-.shapla-text-field__input[type="datetime-local"],
-.shapla-text-field__input[type="date"],
-.shapla-text-field__input[type="time"] {
-  &::-webkit-calendar-picker-indicator {
-    display: inline-block;
-    position: absolute;
-    top: .75em;
-    right: .75em;
-    width: 1.25em;
-    height: 1.25em;
-  }
-}
-
-.shapla-text-field__textarea {
-  max-width: 100%;
-  min-width: 100%;
-  resize: vertical;
-
-  &[rows] {
-    height: auto;
+    [dir="rtl"] & {
+      right: 1em;
+    }
   }
 
-  &:not([rows]) {
-    max-height: 40em;
-    min-height: 8em;
+  .shapla-text-field__input[type=datetime-local]:not(:focus):not(.has-value),
+  .shapla-text-field__input[type=date]:not(:focus):not(.has-value),
+  .shapla-text-field__input[type=time]:not(:focus):not(.has-value) {
+    color: transparent;
   }
-}
 
-.shapla-text-field__label {
-  cursor: text;
-  position: absolute;
-  top: .875em;
-  left: 1em;
-  font-size: 1em;
-  text-transform: none;
-  transition: all .1s ease-out;
-  margin: auto;
-  color: $text-secondary;
-  white-space: nowrap;
-  pointer-events: none;
-  text-overflow: ellipsis;
-  line-height: 1.2;
-
-  [dir="rtl"] & {
-    right: 1em;
+  .shapla-text-field__input:-webkit-autofill + label,
+  .shapla-text-field__textarea:-webkit-autofill + label,
+  .shapla-text-field__input.has-value + label,
+  .shapla-text-field__input:focus + label,
+  .shapla-text-field__textarea.has-value + label,
+  .shapla-text-field__textarea:focus + label {
+    font-size: .75em;
+    top: .25em;
   }
-}
 
-.shapla-text-field__input[type=datetime-local]:not(:focus):not(.has-value),
-.shapla-text-field__input[type=date]:not(:focus):not(.has-value),
-.shapla-text-field__input[type=time]:not(:focus):not(.has-value) {
-  color: transparent;
-}
+  .shapla-text-field__help-text {
+    display: block;
+    width: 100%;
+    margin-top: .25em;
+    font-size: .875em;
+    line-height: 1.2;
+    color: $text-hint;
 
-.shapla-text-field__input:-webkit-autofill + label,
-.shapla-text-field__textarea:-webkit-autofill + label,
-.shapla-text-field__input.has-value + label,
-.shapla-text-field__input:focus + label,
-.shapla-text-field__textarea.has-value + label,
-.shapla-text-field__textarea:focus + label {
-  font-size: .75em;
-  top: .25em;
-}
-
-.shapla-text-field__help-text {
-  display: block;
-  width: 100%;
-  margin-top: .25em;
-  font-size: .875em;
-  line-height: 1.2;
-  color: $text-hint;
-
-  &.is-invalid {
-    color: $error;
+    &.is-invalid {
+      color: $error;
+    }
   }
 }

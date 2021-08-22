@@ -1,7 +1,7 @@
 {
   "name": "shapla-css",
   "description": "Apply helper classes to almost any element, in order to alter their style.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "contributors": [
     {
       "name": "Sayful Islam",
@@ -23,7 +23,7 @@
   },
   "main": "dist/shapla.css",
   "unpkg": "dist/shapla.css",
-  "module": "src/shapla.scss",
+  "module": "src/index.scss",
   "files": [
     "dist/*",
     "example/*",
@@ -35,7 +35,7 @@
     "dev": "webpack --mode=development --progress --watch",
     "dev-build": "webpack --mode=development",
     "build": "webpack --mode=production",
-    "build:lib": "webpack --mode=production"
+    "build:lib": "npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -43,13 +43,13 @@
     "autoprefixer": "^10.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
+    "css-minimizer-webpack-plugin": "^3.0.2",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^1.3.3",
     "mini-svg-data-uri": "^1.2.3",
-    "node-sass": "^5.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-combine-media-query": "^1.0.1",
     "postcss-loader": "^4.1.0",
+    "sass": "^1.38.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",

@@ -1,174 +1,176 @@
 @import "../../colors";
 @import "../../mixins";
 
-.shapla-button {
-  --shapla-button-color: #f1f1f1;
-  --shapla-button-color-dark: #dddddd;
-  --shapla-button-on-color: #{$text-primary};
+@mixin button {
+  .shapla-button {
+    --shapla-button-color: #f1f1f1;
+    --shapla-button-color-dark: #dddddd;
+    --shapla-button-on-color: #{$text-primary};
 
-  user-select: none;
-  appearance: none;
-  align-items: center;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 4px;
-  box-shadow: none;
-  display: inline-flex;
-  font-size: 1rem;
-  height: 2.5em;
-  line-height: 1.5;
-  position: relative;
-  vertical-align: top;
-  cursor: pointer;
-  justify-content: center;
-  padding: calc(.5em - 1px) 1em;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-
-  &:active,
-  &:focus {
-    outline: none
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 1px transparent, 0 0 0 3px var(--shapla-button-color-alpha, #{rgba(#000,0.25)});
-  }
-
-  strong {
-    color: currentColor;
-  }
-
-  svg {
-    fill: currentColor;
-  }
-
-  &[disabled],
-  fieldset[disabled] & {
-    cursor: not-allowed;
-    opacity: .5;
-  }
-
-  // Full width button
-  &.is-fullwidth {
-    display: flex;
-    width: 100%;
-  }
-
-  // Button sizes
-  &.is-small {
-    border-radius: 2px;
-    font-size: .75rem
-  }
-
-  &.is-normal {
-    font-size: 1rem
-  }
-
-  &.is-medium {
-    font-size: 1.25rem
-  }
-
-  &.is-large {
-    font-size: 1.5rem
-  }
-
-  // Rounded button
-  &.is-rounded {
-    border-radius: 290486px;
-    padding-left: calc(1em + .25em);
-    padding-right: calc(1em + .25em);
-  }
-
-  // FAB button
-  &.is-fab {
-    border-radius: 50%;
+    user-select: none;
+    appearance: none;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
     height: 2.5em;
-    min-width: 2.5em;
-    width: 2.5em;
-  }
+    line-height: 1.5;
+    position: relative;
+    vertical-align: top;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(.5em - 1px) 1em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
 
-  &.is-primary {
-    --shapla-button-color: #{$primary};
-    --shapla-button-color-dark: #{$primary-variant};
-    --shapla-button-color-alpha: #{$primary-alpha};
-    --shapla-button-on-color: #{$on-primary};
-  }
+    &:active,
+    &:focus {
+      outline: none
+    }
 
-  &.is-secondary {
-    --shapla-button-color: #{$secondary};
-    --shapla-button-color-dark: #{$secondary-variant};
-    --shapla-button-color-alpha: #{$secondary-alpha};
-    --shapla-button-on-color: #{$on-secondary};
-  }
+    &:focus {
+      box-shadow: 0 0 0 1px transparent, 0 0 0 3px var(--shapla-button-color-alpha, #{rgba(#000,0.25)});
+    }
 
-  &.is-success {
-    --shapla-button-color: #{$success};
-    --shapla-button-color-dark: #{$success-variant};
-    --shapla-button-color-alpha: #{$success-alpha};
-    --shapla-button-on-color: #{$on-success};
-  }
+    strong {
+      color: currentColor;
+    }
 
-  &.is-warning {
-    --shapla-button-color: #{$warning};
-    --shapla-button-color-dark: #{$warning-variant};
-    --shapla-button-color-alpha: #{$warning-alpha};
-    --shapla-button-on-color: #{$on-warning};
-  }
+    svg {
+      fill: currentColor;
+    }
 
-  &.is-error {
-    --shapla-button-color: #{$error};
-    --shapla-button-color-dark: #{$error-variant};
-    --shapla-button-color-alpha: #{$error-alpha};
-    --shapla-button-on-color: #{$on-error};
-  }
+    &[disabled],
+    fieldset[disabled] & {
+      cursor: not-allowed;
+      opacity: .5;
+    }
 
-  // Button Color
-  background-color: var(--shapla-button-color);
-  border-color: transparent;
-  color: var(--shapla-button-on-color);
+    // Full width button
+    &.is-fullwidth {
+      display: flex;
+      width: 100%;
+    }
 
-  &:not(:disabled):hover,
-  &:not(:disabled):active {
-    background-color: var(--shapla-button-color-dark);
+    // Button sizes
+    &.is-small {
+      border-radius: 2px;
+      font-size: .75rem
+    }
+
+    &.is-normal {
+      font-size: 1rem
+    }
+
+    &.is-medium {
+      font-size: 1.25rem
+    }
+
+    &.is-large {
+      font-size: 1.5rem
+    }
+
+    // Rounded button
+    &.is-rounded {
+      border-radius: 290486px;
+      padding-left: calc(1em + .25em);
+      padding-right: calc(1em + .25em);
+    }
+
+    // FAB button
+    &.is-fab {
+      border-radius: 50%;
+      height: 2.5em;
+      min-width: 2.5em;
+      width: 2.5em;
+    }
+
+    &.is-primary {
+      --shapla-button-color: #{$primary};
+      --shapla-button-color-dark: #{$primary-variant};
+      --shapla-button-color-alpha: #{$primary-alpha};
+      --shapla-button-on-color: #{$on-primary};
+    }
+
+    &.is-secondary {
+      --shapla-button-color: #{$secondary};
+      --shapla-button-color-dark: #{$secondary-variant};
+      --shapla-button-color-alpha: #{$secondary-alpha};
+      --shapla-button-on-color: #{$on-secondary};
+    }
+
+    &.is-success {
+      --shapla-button-color: #{$success};
+      --shapla-button-color-dark: #{$success-variant};
+      --shapla-button-color-alpha: #{$success-alpha};
+      --shapla-button-on-color: #{$on-success};
+    }
+
+    &.is-warning {
+      --shapla-button-color: #{$warning};
+      --shapla-button-color-dark: #{$warning-variant};
+      --shapla-button-color-alpha: #{$warning-alpha};
+      --shapla-button-on-color: #{$on-warning};
+    }
+
+    &.is-error {
+      --shapla-button-color: #{$error};
+      --shapla-button-color-dark: #{$error-variant};
+      --shapla-button-color-alpha: #{$error-alpha};
+      --shapla-button-on-color: #{$on-error};
+    }
+
+    // Button Color
+    background-color: var(--shapla-button-color);
     border-color: transparent;
     color: var(--shapla-button-on-color);
-  }
 
-  &.is-outline {
-    background-color: transparent;
-    border-color: var(--shapla-button-color);
-    color: var(--shapla-button-color);
-
-    &:not(:disabled):hover {
-      background-color: var(--shapla-button-color);
-      border-color: var(--shapla-button-color);
+    &:not(:disabled):hover,
+    &:not(:disabled):active {
+      background-color: var(--shapla-button-color-dark);
+      border-color: transparent;
       color: var(--shapla-button-on-color);
     }
 
-    &:not(.is-primary):not(.is-secondary):not(.is-success):not(.is-error):not(.is-warning) {
+    &.is-outline {
       background-color: transparent;
       border-color: var(--shapla-button-color);
-      color: var(--shapla-button-on-color);
+      color: var(--shapla-button-color);
 
       &:not(:disabled):hover {
-        background-color: transparent;
-        border-color: var(--shapla-button-color-dark);
+        background-color: var(--shapla-button-color);
+        border-color: var(--shapla-button-color);
         color: var(--shapla-button-on-color);
       }
+
+      &:not(.is-primary):not(.is-secondary):not(.is-success):not(.is-error):not(.is-warning) {
+        background-color: transparent;
+        border-color: var(--shapla-button-color);
+        color: var(--shapla-button-on-color);
+
+        &:not(:disabled):hover {
+          background-color: transparent;
+          border-color: var(--shapla-button-color-dark);
+          color: var(--shapla-button-on-color);
+        }
+      }
     }
-  }
 
-  // Button shadow
-  &.has-shadow {
-    @include shadow-2dp();
+    // Button shadow
+    &.has-shadow {
+      @include shadow-2dp();
 
-    &:not(:disabled):hover {
-      @include shadow-4dp();
-    }
+      &:not(:disabled):hover {
+        @include shadow-4dp();
+      }
 
-    &:not(:disabled):focus {
-      @include shadow-6dp();
+      &:not(:disabled):focus {
+        @include shadow-6dp();
+      }
     }
   }
 }

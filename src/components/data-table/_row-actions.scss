@@ -1,40 +1,42 @@
 @import "variables";
 
-.shapla-data-table {
-  tr {
-    .row-actions {
-      margin-top: 4px;
-      visibility: hidden;
+@mixin data-table-row-actions {
+  .shapla-data-table {
+    tr {
+      .row-actions {
+        margin-top: 4px;
+        visibility: hidden;
 
-      a {
-        color: $primary;
-        text-decoration: none;
+        a {
+          color: $primary;
+          text-decoration: none;
 
-        &:hover {
-          color: $primary-variant;
-        }
-      }
-
-      > span {
-        &:not(:last-child) {
-          border-right: 1px solid $data-table-divider-color;
-          margin-right: 5px;
-          padding-right: 5px;
+          &:hover {
+            color: $primary-variant;
+          }
         }
 
-        &.trash,
-        &.delete {
-          color: $error;
+        > span {
+          &:not(:last-child) {
+            border-right: 1px solid $data-table-divider-color;
+            margin-right: 5px;
+            padding-right: 5px;
+          }
 
-          a {
-            color: currentColor;
+          &.trash,
+          &.delete {
+            color: $error;
+
+            a {
+              color: currentColor;
+            }
           }
         }
       }
-    }
 
-    &:hover .row-actions {
-      visibility: visible;
+      &:hover .row-actions {
+        visibility: visible;
+      }
     }
   }
 }

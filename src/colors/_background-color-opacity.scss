@@ -1,7 +1,9 @@
 $sizes: ("0": 0, "25": 0.25, "50": 0.5, "75": 0.75, "100": 1);
 
-@each $index, $size in $sizes {
-  .bg-opacity-#{$index} {
-    --bg-opacity: #{$size};
+@mixin bg-colors-opacity {
+  @each $index, $size in $sizes {
+    .bg-opacity-#{$index} {
+      --bg-opacity: #{$size};
+    }
   }
 }

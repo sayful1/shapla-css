@@ -1,11 +1,13 @@
-button {
-  .expand-triangle-up {
-    display: none;
-  }
-
-  &.is-active {
+@mixin data-table-expand-row {
+  button {
     .expand-triangle-up {
-      display: block;
+      display: none;
+    }
+
+    &.is-active {
+      .expand-triangle-up {
+        display: block;
+      }
     }
   }
 }

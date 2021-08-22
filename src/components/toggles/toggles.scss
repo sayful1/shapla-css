@@ -1,114 +1,116 @@
 @import "../../colors";
 
-.shapla-toggle-panel {
-  background-color: $surface;
-  border: 1px none rgba(#000, .1);
-  border-bottom-style: solid;
-  box-shadow: none;
-  font-size: 1rem;
-
-  &:first-child {
-    border-top-style: solid;
-  }
-
-  &--no-divider {
-    border-bottom: none;
+@mixin toggles {
+  .shapla-toggle-panel {
+    background-color: $surface;
+    border: 1px none rgba(#000, .1);
+    border-bottom-style: solid;
+    box-shadow: none;
+    font-size: 1rem;
 
     &:first-child {
-      border-top-style: none;
-    }
-  }
-
-  &--boxed-mode {
-    border-style: solid;
-    margin-bottom: 1em;
-    margin-top: 1em;
-    cursor: pointer;
-  }
-
-  &__heading {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    padding: .75em 1.25em;
-    color: $text-primary;
-    position: relative;
-    line-height: 1.5;
-    font-size: 1.25em;
-    font-weight: 400;
-
-    &.has-icon-right {
-      justify-content: space-between;
+      border-top-style: solid;
     }
 
-    &.is-color-primary {
-      color: $primary;
+    &--no-divider {
+      border-bottom: none;
+
+      &:first-child {
+        border-top-style: none;
+      }
     }
 
-    &.is-color-secondary {
-      color: $secondary;
-    }
-  }
-
-  &__icon {
-    display: flex;
-
-    &.is-icon-left {
-      margin-right: 1rem;
-      order: -1;
+    &--boxed-mode {
+      border-style: solid;
+      margin-bottom: 1em;
+      margin-top: 1em;
+      cursor: pointer;
     }
 
-    &.is-icon-right {
-      margin-left: 1rem;
+    &__heading {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      padding: .75em 1.25em;
+      color: $text-primary;
+      position: relative;
+      line-height: 1.5;
+      font-size: 1.25em;
+      font-weight: 400;
+
+      &.has-icon-right {
+        justify-content: space-between;
+      }
+
+      &.is-color-primary {
+        color: $primary;
+      }
+
+      &.is-color-secondary {
+        color: $secondary;
+      }
     }
 
-    &, svg {
-      width: 1em;
-      height: 1em;
+    &__icon {
+      display: flex;
+
+      &.is-icon-left {
+        margin-right: 1rem;
+        order: -1;
+      }
+
+      &.is-icon-right {
+        margin-left: 1rem;
+      }
+
+      &, svg {
+        width: 1em;
+        height: 1em;
+        overflow: hidden;
+      }
+
+      svg {
+        fill: currentColor;
+      }
+    }
+
+    &__title {
+    }
+
+    &__title-text {
+      font-weight: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__title-subtext {
+      color: $text-secondary;
+      font-size: .75em;
+    }
+
+    &__body {
+      transition: max-height 300ms ease-out;
       overflow: hidden;
+
+      &.is-overflow-visible {
+        overflow: visible;
+      }
+
+      &:not(.is-active) {
+        max-height: 0;
+      }
     }
 
-    svg {
-      fill: currentColor;
-    }
-  }
+    &__content {
+      border: none;
+      padding: 10px 25px 15px;
+      position: relative;
 
-  &__title {
-  }
-
-  &__title-text {
-    font-weight: inherit;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__title-subtext {
-    color: $text-secondary;
-    font-size: .75em;
-  }
-
-  &__body {
-    transition: max-height 300ms ease-out;
-    overflow: hidden;
-
-    &.is-overflow-visible {
-      overflow: visible;
-    }
-
-    &:not(.is-active) {
-      max-height: 0;
-    }
-  }
-
-  &__content {
-    border: none;
-    padding: 10px 25px 15px;
-    position: relative;
-
-    &:after {
-      display: table;
-      content: "";
-      clear: both;
+      &:after {
+        display: table;
+        content: "";
+        clear: both;
+      }
     }
   }
 }

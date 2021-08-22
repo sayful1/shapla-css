@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const combineMediaQuery = require('postcss-combine-media-query');
@@ -11,12 +11,6 @@ let plugins = [];
 let entryPoints = {
   shapla: ["./src/shapla.scss"],
   grid: ["./src/grid/columns.scss"],
-  components: [
-    "./src/grid/columns.scss",
-    "./src/form/form.scss",
-    "./src/elements/elements.scss",
-    "./src/components/components.scss",
-  ],
 };
 
 plugins.push(new MiniCssExtractPlugin({
@@ -120,7 +114,7 @@ module.exports = (env, argv) => {
     optimization: {
       minimizer: [
         new TerserPlugin(),
-        new OptimizeCSSAssetsPlugin()
+        new CssMinimizerPlugin()
       ],
     },
     resolve: {

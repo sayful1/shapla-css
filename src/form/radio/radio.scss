@@ -13,119 +13,121 @@ $radio-off-color: $text-secondary !default;
 $radio-disabled-color: $text-disabled !default;
 $radio-focus-color: $primary-alpha !default;
 
-.shapla-radio {
-  position: relative;
+@mixin radio {
+  .shapla-radio {
+    position: relative;
 
-  font-size: $radio-label-font-size;
-  line-height: $radio-label-height;
+    font-size: $radio-label-font-size;
+    line-height: $radio-label-height;
 
-  display: inline-block;
+    display: inline-block;
 
-  vertical-align: middle;
+    vertical-align: middle;
 
-  box-sizing: border-box;
-  height: $radio-label-height;
-  margin: 0;
-  padding-left: $radio-button-size + $radio-padding;
-
-  &:not(:last-child) {
-    margin-right: 1rem;
-  }
-}
-
-.shapla-radio__button {
-  line-height: $radio-label-height;
-
-  .shapla-radio & {
-    // Hide input element, while still making it respond to focus.
-    position: absolute;
-    width: 0;
-    height: 0;
+    box-sizing: border-box;
+    height: $radio-label-height;
     margin: 0;
-    padding: 0;
-    opacity: 0;
-    appearance: none;
-    border: none;
-  }
-}
+    padding-left: $radio-button-size + $radio-padding;
 
-.shapla-radio__outer-circle {
-  position: absolute;
-  top: $radio-top-offset;
-  left: 0;
-
-  display: inline-block;
-
-  box-sizing: border-box;
-  width: $radio-button-size;
-  height: $radio-button-size;
-  margin: 0;
-
-  cursor: pointer;
-
-  border: 2px solid $radio-off-color;
-  border-radius: 50%;
-
-  z-index: 2;
-
-  .shapla-radio.is-checked & {
-    border: 2px solid $radio-color;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 
-  fieldset[disabled] .shapla-radio,
-  .shapla-radio.is-disabled & {
-    border: 2px solid $radio-disabled-color;
-    cursor: auto;
+  .shapla-radio__button {
+    line-height: $radio-label-height;
+
+    .shapla-radio & {
+      // Hide input element, while still making it respond to focus.
+      position: absolute;
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      appearance: none;
+      border: none;
+    }
   }
 
-  .shapla-radio.is-focused &,
-  .shapla-radio.is-hovered & {
-    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+  .shapla-radio__outer-circle {
+    position: absolute;
+    top: $radio-top-offset;
+    left: 0;
+
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: $radio-button-size;
+    height: $radio-button-size;
+    margin: 0;
+
+    cursor: pointer;
+
+    border: 2px solid $radio-off-color;
+    border-radius: 50%;
+
+    z-index: 2;
+
+    .shapla-radio.is-checked & {
+      border: 2px solid $radio-color;
+    }
+
+    fieldset[disabled] .shapla-radio,
+    .shapla-radio.is-disabled & {
+      border: 2px solid $radio-disabled-color;
+      cursor: auto;
+    }
+
+    .shapla-radio.is-focused &,
+    .shapla-radio.is-hovered & {
+      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .shapla-radio.is-checked.is-focused & {
+      box-shadow: 0 0 0 8px $radio-focus-color;
+    }
   }
 
-  .shapla-radio.is-checked.is-focused & {
-    box-shadow: 0 0 0 8px $radio-focus-color;
+  .shapla-radio__inner-circle {
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    top: $radio-top-offset + $radio-inner-margin;
+    left: $radio-inner-margin;
+
+    box-sizing: border-box;
+    width: $radio-button-size - ($radio-inner-margin * 2);
+    height: $radio-button-size - ($radio-inner-margin * 2);
+
+    cursor: pointer;
+
+    transition-duration: 0.28s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, background-color;
+    transform: scale(0, 0);
+
+    border-radius: 50%;
+    background: $radio-color;
+
+    .shapla-radio.is-checked & {
+      transform: scale(1, 1);
+    }
+
+    fieldset[disabled] .shapla-radio &,
+    .shapla-radio.is-disabled & {
+      background: $radio-disabled-color;
+      cursor: auto;
+    }
   }
-}
 
-.shapla-radio__inner-circle {
-  position: absolute;
-  z-index: 1;
-  margin: 0;
-  top: $radio-top-offset + $radio-inner-margin;
-  left: $radio-inner-margin;
+  .shapla-radio__label {
+    cursor: pointer;
 
-  box-sizing: border-box;
-  width: $radio-button-size - ($radio-inner-margin * 2);
-  height: $radio-button-size - ($radio-inner-margin * 2);
-
-  cursor: pointer;
-
-  transition-duration: 0.28s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: transform, background-color;
-  transform: scale(0, 0);
-
-  border-radius: 50%;
-  background: $radio-color;
-
-  .shapla-radio.is-checked & {
-    transform: scale(1, 1);
-  }
-
-  fieldset[disabled] .shapla-radio &,
-  .shapla-radio.is-disabled & {
-    background: $radio-disabled-color;
-    cursor: auto;
-  }
-}
-
-.shapla-radio__label {
-  cursor: pointer;
-
-  fieldset[disabled] .shapla-radio &,
-  .shapla-radio.is-disabled & {
-    color: $radio-disabled-color;
-    cursor: auto;
+    fieldset[disabled] .shapla-radio &,
+    .shapla-radio.is-disabled & {
+      color: $radio-disabled-color;
+      cursor: auto;
+    }
   }
 }

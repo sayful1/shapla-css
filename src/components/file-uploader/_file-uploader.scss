@@ -1,58 +1,80 @@
 @import "../../colors";
 
-.shapla-file-uploader {
-	width: 100%;
-	background-color: $background;
-	position: relative;
-	border: 3px dashed rgba(#000, .12);
+@mixin file-uploader-core {
+  .shapla-file-uploader {
+    width: 100%;
+    background-color: $background;
+    position: relative;
+    border: 3px dashed rgba(#000, .12);
 
-	&--dragged {
-		border-color: $text-primary;
-	}
+    &--dragged {
+      border-color: $text-primary;
+    }
 
-	&__input {
-		display: none !important;
-	}
-}
+    &__input {
+      display: none !important;
+    }
+  }
 
-.shapla-file-uploader-message {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 20px;
+  .shapla-file-uploader-message {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
 
-	&__icon {
-		color: $primary;
-		height: 32px;
-		width: 32px;
+    &__icon {
+      color: $primary;
+      height: 32px;
+      width: 32px;
 
-		svg.icon-plus {
-			fill: currentColor;
-		}
-	}
+      svg.icon-plus {
+        fill: currentColor;
+      }
+    }
 
-	&__drag {
-		color: $text-primary;
-		font-weight: bold;
-		margin-top: .5rem;
-	}
+    &__drag {
+      color: $text-primary;
+      font-weight: bold;
+      margin-top: .5rem;
+    }
 
-	&__select-files {
-		margin-bottom: 1rem;
-		margin-top: 1rem;
-		padding: calc(.5em - 1px) 1em;
-		background-color: $primary;
-		color: $on-primary;
-		border-radius: 4px;
-	}
+    &__select-files {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      padding: calc(.5em - 1px) 1em;
+      background-color: $primary;
+      color: $on-primary;
+      border-radius: 4px;
+    }
 
-	&__browse {
-		color: $text-secondary;
-	}
+    &__browse {
+      color: $text-secondary;
+    }
 
-	&__maxsize {
-		color: $text-hint;
-		font-size: 12px;
-	}
+    &__maxsize {
+      color: $text-hint;
+      font-size: 12px;
+    }
+  }
+
+  .shapla-file-uploader-status {
+    padding: 0 20px 20px;
+    text-align: center;
+
+    &__items {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__item {
+      margin: 0;
+      padding: 0 1rem;
+    }
+  }
 }

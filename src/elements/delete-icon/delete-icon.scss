@@ -3,66 +3,68 @@ $delete-icon-dimensions-small: 16px !default;
 $delete-icon-dimensions-medium: 24px !default;
 $delete-icon-dimensions-large: 32px !default;
 
-.shapla-delete-icon {
-  --shapla-delete-icon-dimensions: #{$delete-icon-dimensions};
-  user-select: none;
-  appearance: none;
-  background-color: rgba(#000, 0.2);
-  border: none;
-  border-radius: 290486px;
-  cursor: pointer;
-  pointer-events: auto;
-  display: inline-block;
-  flex-grow: 0;
-  flex-shrink: 0;
-  font-size: 0;
-  outline: none;
-  position: relative;
-  vertical-align: top;
-  height: var(--shapla-delete-icon-dimensions, $delete-icon-dimensions);
-  width: var(--shapla-delete-icon-dimensions, $delete-icon-dimensions);
+@mixin delete-icon {
+  .shapla-delete-icon {
+    --shapla-delete-icon-dimensions: #{$delete-icon-dimensions};
+    user-select: none;
+    appearance: none;
+    background-color: rgba(#000, 0.2);
+    border: none;
+    border-radius: 290486px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    outline: none;
+    position: relative;
+    vertical-align: top;
+    height: var(--shapla-delete-icon-dimensions, $delete-icon-dimensions);
+    width: var(--shapla-delete-icon-dimensions, $delete-icon-dimensions);
 
-  &:before,
-  &:after {
-    background-color: #fff;
-    content: "";
-    display: block;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    transform-origin: center center;
-  }
+    &:before,
+    &:after {
+      background-color: #fff;
+      content: "";
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transform-origin: center center;
+    }
 
-  &:before {
-    height: 2px;
-    width: 50%;
-  }
+    &:before {
+      height: 2px;
+      width: 50%;
+    }
 
-  &:after {
-    height: 50%;
-    width: 2px;
-  }
+    &:after {
+      height: 50%;
+      width: 2px;
+    }
 
-  &:hover,
-  &:focus {
-    background-color: rgba(#000, 0.3);
-  }
+    &:hover,
+    &:focus {
+      background-color: rgba(#000, 0.3);
+    }
 
-  &:active {
-    background-color: rgba(#000, 0.4);
-  }
+    &:active {
+      background-color: rgba(#000, 0.4);
+    }
 
-  // Sizes
-  &.is-small {
-    --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-small};
-  }
+    // Sizes
+    &.is-small {
+      --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-small};
+    }
 
-  &.is-medium {
-    --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-medium};
-  }
+    &.is-medium {
+      --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-medium};
+    }
 
-  &.is-large {
-    --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-large};
+    &.is-large {
+      --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-large};
+    }
   }
 }

@@ -4,54 +4,56 @@ $chip-bg-color: rgba(#000, 0.06) !default;
 $chip-bg-active-color: rgba(#000, 0.12) !default;
 $chip-height: var(--shapla-chip-height, 32px) !default;
 
-.shapla-chip {
-  align-items: center;
-  height: $chip-height;
-  padding: 0 12px;
-  border: 0;
-  border-radius: calc(#{$chip-height} / 2);
-  background-color: $chip-bg-color;
-  display: inline-flex;
-  color: $text-primary;
-  margin: 2px 0;
-  white-space: nowrap;
-
-  &:not(:last-child) {
-    margin-right: 2px;
-  }
-
-  &__text {
-    font-size: 12px;
-  }
-
-  &__action {
-    margin: 0 0 0 4px;
-  }
-
-  &__contact {
+@mixin chip {
+  .shapla-chip {
+    align-items: center;
     height: $chip-height;
-    width: $chip-height;
+    padding: 0 12px;
+    border: 0;
     border-radius: calc(#{$chip-height} / 2);
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 8px 0 0 !important;
-    overflow: hidden;
-  }
+    background-color: $chip-bg-color;
+    display: inline-flex;
+    color: $text-primary;
+    margin: 2px 0;
+    white-space: nowrap;
 
-  &:focus {
-    outline: 0;
-    box-shadow: 0 2px 2px 0 rgba(#000, 0.14), 0 3px 1px -2px rgba(#000, 0.2), 0 1px 5px 0 rgba(#000, 0.12);
-  }
+    &:not(:last-child) {
+      margin-right: 2px;
+    }
 
-  &:active {
-    background-color: $chip-bg-active-color;
-  }
+    &__text {
+      font-size: 12px;
+    }
 
-  &--deletable {
-    padding-right: 4px;
-  }
+    &__action {
+      margin: 0 0 0 4px;
+    }
 
-  &--contact {
-    padding-left: 0;
+    &__contact {
+      height: $chip-height;
+      width: $chip-height;
+      border-radius: calc(#{$chip-height} / 2);
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 8px 0 0 !important;
+      overflow: hidden;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 2px 2px 0 rgba(#000, 0.14), 0 3px 1px -2px rgba(#000, 0.2), 0 1px 5px 0 rgba(#000, 0.12);
+    }
+
+    &:active {
+      background-color: $chip-bg-active-color;
+    }
+
+    &--deletable {
+      padding-right: 4px;
+    }
+
+    &--contact {
+      padding-left: 0;
+    }
   }
 }

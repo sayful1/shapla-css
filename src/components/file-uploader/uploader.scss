@@ -1,3 +1,7 @@
 @import "file-upload-status";
 @import "file-uploader";
-@import "upload-status";
+
+@mixin file-uploader {
+  @include file-upload-status;
+  @include file-uploader-core;
+}

@@ -1,56 +1,58 @@
 @import "variables";
 
 // Card style
-.shapla-modal-card {
-  display: flex;
-  flex-direction: column;
-  max-height: calc(100vh - #{$modal-card-spacing});
-  overflow: hidden;
-
-  &__header,
-  &__footer {
-    align-items: center;
-    background-color: $modal-card-head-background-color;
+@mixin modal-card {
+  .shapla-modal-card {
     display: flex;
-    flex-shrink: 0;
-    justify-content: flex-start;
-    padding: $modal-card-head-padding;
-    position: relative;
-  }
+    flex-direction: column;
+    max-height: calc(100vh - #{$modal-card-spacing});
+    overflow: hidden;
 
-  &__header {
-    border-bottom: $modal-card-head-border-bottom;
-    border-top-left-radius: $modal-card-head-radius;
-    border-top-right-radius: $modal-card-head-radius;
-  }
-
-  &__title {
-    flex-grow: 1;
-    flex-shrink: 0;
-    font-size: $modal-card-title-size;
-    line-height: $modal-card-title-line-height;
-    margin: 0;
-  }
-
-  &__footer {
-    border-bottom-left-radius: $modal-card-foot-radius;
-    border-bottom-right-radius: $modal-card-foot-radius;
-    border-top: $modal-card-foot-border-top;
-
-    &.is-pulled-right {
-      justify-content: flex-end;
+    &__header,
+    &__footer {
+      align-items: center;
+      background-color: $modal-card-head-background-color;
+      display: flex;
+      flex-shrink: 0;
+      justify-content: flex-start;
+      padding: $modal-card-head-padding;
+      position: relative;
     }
 
-    > * + * {
-      margin-left: 0.5rem;
+    &__header {
+      border-bottom: $modal-card-head-border-bottom;
+      border-top-left-radius: $modal-card-head-radius;
+      border-top-right-radius: $modal-card-head-radius;
     }
-  }
 
-  &__body {
-    background-color: $modal-card-body-background-color;
-    flex-grow: 1;
-    flex-shrink: 1;
-    overflow: auto;
-    padding: $modal-card-body-padding;
+    &__title {
+      flex-grow: 1;
+      flex-shrink: 0;
+      font-size: $modal-card-title-size;
+      line-height: $modal-card-title-line-height;
+      margin: 0;
+    }
+
+    &__footer {
+      border-bottom-left-radius: $modal-card-foot-radius;
+      border-bottom-right-radius: $modal-card-foot-radius;
+      border-top: $modal-card-foot-border-top;
+
+      &.is-pulled-right {
+        justify-content: flex-end;
+      }
+
+      > * + * {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &__body {
+      background-color: $modal-card-body-background-color;
+      flex-grow: 1;
+      flex-shrink: 1;
+      overflow: auto;
+      padding: $modal-card-body-padding;
+    }
   }
 }

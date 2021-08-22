@@ -1,69 +1,71 @@
 @import "../colors";
 
-.color-transparent {
-  color: transparent;
-}
+@mixin text-colors {
+  .color-transparent {
+    color: transparent;
+  }
 
-.color-current {
-  color: currentColor;
-}
+  .color-current {
+    color: currentColor;
+  }
 
-.color-white {
-  color: #ffffff
-}
+  .color-white {
+    color: #ffffff
+  }
 
-.color-light {
-  color: #f5f5f5
-}
+  .color-light {
+    color: #f5f5f5
+  }
 
-.color-black {
-  color: #0a0a0a
-}
+  .color-black {
+    color: #0a0a0a
+  }
 
-.color-dark {
-  color: #363636
-}
+  .color-dark {
+    color: #363636
+  }
 
-.color-primary {
-  color: $primary
-}
+  .color-primary {
+    color: $primary
+  }
 
-.color-on-primary {
-  color: $on-primary
-}
+  .color-on-primary {
+    color: $on-primary
+  }
 
-.color-secondary {
-  color: $secondary
-}
+  .color-secondary {
+    color: $secondary
+  }
 
-.color-on-secondary {
-  color: $on-secondary
-}
+  .color-on-secondary {
+    color: $on-secondary
+  }
 
-.color-on-success {
-  color: $on-success
-}
+  .color-on-success {
+    color: $on-success
+  }
 
-.color-on-error {
-  color: $on-error
-}
+  .color-on-error {
+    color: $on-error
+  }
 
-.color-text-primary {
-  color: $text-primary !important;
-}
+  .color-text-primary {
+    color: $text-primary !important;
+  }
 
-.color-text-secondary {
-  color: $text-secondary !important;
-}
+  .color-text-secondary {
+    color: $text-secondary !important;
+  }
 
-.color-text-hint {
-  color: $text-hint !important;
-}
+  .color-text-hint {
+    color: $text-hint !important;
+  }
 
-.color-text-disabled {
-  color: $text-disabled !important;
-}
+  .color-text-disabled {
+    color: $text-disabled !important;
+  }
 
-.color-text-icon {
-  color: $text-icon !important;
+  .color-text-icon {
+    color: $text-icon !important;
+  }
 }
