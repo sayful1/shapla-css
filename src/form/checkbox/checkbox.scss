@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../../colors";
 
 $checkbox-label-font-size: 16px !default;
@@ -5,8 +7,9 @@ $checkbox-label-height: 24px !default;
 $checkbox-button-size: 16px !default;
 $checkbox-inner-margin: 2px !default;
 $checkbox-padding: 8px !default;
-$checkbox-top-offset: ($checkbox-label-height - $checkbox-button-size - $checkbox-inner-margin) / 2;
+$checkbox-top-offset: math.div(($checkbox-label-height - $checkbox-button-size - $checkbox-inner-margin), 2);
 $checkbox-ripple-size: $checkbox-label-height * 1.5;
+$checkbox-shadow-size: math.div($checkbox-button-size, 2) !default;
 
 $checkbox-color: $primary !default;
 $checkbox-off-color: $text-secondary !default;
@@ -95,12 +98,12 @@ $checkbox-image-path: '/src/form/checkbox' !default; // absolute path
 
     .shapla-checkbox.is-focused &,
     .shapla-checkbox:not(.is-disabled).is-hovered & {
-      box-shadow: 0 0 0 ($checkbox-button-size / 2) rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 $checkbox-shadow-size rgba(0, 0, 0, 0.1);
       background-color: rgba(0, 0, 0, 0.1);
     }
 
     .shapla-checkbox.is-focused.is-checked & {
-      box-shadow: 0 0 0 ($checkbox-button-size / 2) $checkbox-focus-color;
+      box-shadow: 0 0 0 $checkbox-shadow-size $checkbox-focus-color;
       background-color: $checkbox-focus-color;
     }
   }

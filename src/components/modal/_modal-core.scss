@@ -1,4 +1,5 @@
 @import "variables";
+@import "../../mixins";
 
 @mixin modal-core {
   .shapla-modal,
@@ -53,7 +54,7 @@
         width: calc(100vw - #{$modal-content-margin-mobile * 2});
       }
 
-      @media screen and (min-width: 769px), print {
+      @include media('tablet') {
         margin: 0 auto;
         max-height: calc(100vh - #{$modal-content-spacing-tablet});
         &:not(.is-small):not(.is-full):not(.is-large) {
@@ -61,7 +62,7 @@
         }
       }
 
-      @media screen and (min-width: 1025px) {
+      @include media('desktop') {
         &.is-large {
           width: $modal-content-width-large;
         }

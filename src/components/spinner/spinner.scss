@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "../../colors";
 
 /**
@@ -7,7 +8,7 @@
  * https://getmdl.io/
  */
 @function strip-units($number) {
-  @return $number / ($number * 0 + 1);
+  @return math.div($number, $number * 0 + 1);
 }
 
 $animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
@@ -26,7 +27,7 @@ $spinner-arc-time: 1333ms !default;
 // How much the start location of the arc should rotate each time.
 $spinner-arc-start-rot: 216deg !default;
 
-$spinner-duration: 360 * $spinner-arc-time / ( strip-units($spinner-arc-start-rot + (360deg - $spinner-arc-size)));
+$spinner-duration: 360 * math.div($spinner-arc-time, ( strip-units($spinner-arc-start-rot + (360deg - $spinner-arc-size))));
 
 @mixin spinner {
   .shapla-spinner {

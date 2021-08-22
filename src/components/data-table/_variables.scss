@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "../../colors";
 
 $data-table-font-size: 0.875rem !default;
@@ -16,4 +17,4 @@ $data-table-row-height: 52px !default;
 $data-table-header-height: 56px !default;
 
 $data-table-column-spacing: 36px !default;
-$data-table-column-padding: $data-table-column-spacing / 2;
+$data-table-column-padding: math.div($data-table-column-spacing, 2);

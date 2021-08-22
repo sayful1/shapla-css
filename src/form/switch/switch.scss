@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "../../colors";
 
 $switch-label-font-size: 16px !default;
@@ -5,8 +6,8 @@ $switch-label-height: 24px !default;
 $switch-track-height: 14px !default;
 $switch-track-length: 36px !default;
 $switch-thumb-size: 20px !default;
-$switch-track-top: ($switch-label-height - $switch-track-height) / 2 !default;
-$switch-thumb-top: ($switch-label-height - $switch-thumb-size) / 2 !default;
+$switch-track-top: math.div(($switch-label-height - $switch-track-height), 2) !default;
+$switch-thumb-top: math.div(($switch-label-height - $switch-thumb-size), 2) !default;
 $switch-ripple-size: $switch-label-height * 2 !default;
 $switch-helper-size: 8px !default;
 
@@ -102,7 +103,7 @@ $switch-disabled-track-color: $text-disabled !default;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-$switch-helper-size / 2, -$switch-helper-size / 2);
+    transform: translate(- math.div($switch-helper-size, 2), - math.div($switch-helper-size, 2));
     display: inline-block;
     box-sizing: border-box;
     width: $switch-helper-size;
@@ -111,12 +112,12 @@ $switch-disabled-track-color: $text-disabled !default;
     background-color: transparent;
 
     .shapla-switch.is-focused & {
-      box-shadow: 0 0 0 (($switch-ripple-size - $switch-helper-size) / 2) rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 math.div(($switch-ripple-size - $switch-helper-size), 2) rgba(0, 0, 0, 0.1);
       background-color: rgba(0, 0, 0, 0.1);
     }
 
     .shapla-switch.is-focused.is-checked & {
-      box-shadow: 0 0 0 (($switch-ripple-size - $switch-helper-size) / 2) $switch-faded-color;
+      box-shadow: 0 0 0 math.div(($switch-ripple-size - $switch-helper-size), 2) $switch-faded-color;
       background-color: $switch-faded-color;
     }
   }
