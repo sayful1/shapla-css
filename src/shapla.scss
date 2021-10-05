@@ -26,11 +26,13 @@
 @include shapla.file-uploader;
 @include shapla.modal;
 @include shapla.notification;
+@include shapla.popover;
 @include shapla.progress;
 @include shapla.sidenav;
 @include shapla.spinner;
 @include shapla.tabs;
 @include shapla.toggles;
+@include shapla.tooltip;
 // Form
 @include shapla.checkbox;
 @include shapla.radio;

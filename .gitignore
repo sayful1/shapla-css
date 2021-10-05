@@ -1,7 +1,10 @@
 .DS_Store
 node_modules
 dist
+.sass-cache
 package-lock.json
+*.map
+*.css
 
 # local env files
 .env.local
