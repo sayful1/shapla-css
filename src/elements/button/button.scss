@@ -2,6 +2,14 @@
 @import "../../mixins";
 
 @mixin button {
+  @keyframes shaplaButtonSpinAround {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
   .shapla-button {
     --shapla-button-color: #f1f1f1;
     --shapla-button-color-dark: #dddddd;
@@ -87,6 +95,31 @@
       height: 2.5em;
       min-width: 2.5em;
       width: 2.5em;
+    }
+
+    // Loading status
+    &.is-loading {
+      color: transparent !important;
+      pointer-events: none;
+
+      &.is-outline:after {
+        border-color: var(--shapla-button-color);
+      }
+
+      &:after {
+        left: calc(50% - (1em * .5));
+        top: calc(50% - (1em * .5));
+        height: 1em;
+        width: 1em;
+        position: absolute !important;
+        animation: shaplaButtonSpinAround .5s infinite linear;
+        border: 2px solid var(--shapla-button-on-color, #dbdbdb);
+        border-radius: 9999px;
+        border-right-color: transparent !important;
+        border-top-color: transparent !important;
+        content: "";
+        display: block;
+      }
     }
 
     &.is-primary {
