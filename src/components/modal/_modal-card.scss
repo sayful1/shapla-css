@@ -17,6 +17,10 @@
       justify-content: flex-start;
       padding: $modal-card-head-padding;
       position: relative;
+
+      > * + * {
+        margin-left: 0.5rem;
+      }
     }
 
     &__header {
@@ -29,6 +33,7 @@
       flex-grow: 1;
       flex-shrink: 0;
       font-size: $modal-card-title-size;
+      font-weight: normal;
       line-height: $modal-card-title-line-height;
       margin: 0;
     }
@@ -42,8 +47,9 @@
         justify-content: flex-end;
       }
 
-      > * + * {
-        margin-left: 0.5rem;
+      &.no-content {
+        border-top: none;
+        padding: 2px;
       }
     }
 
