@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.4.0 (Nov 8, 2021)
+
+* Add css class to hide modal card footer.
+
 ### 2.3.0 (October 29, 2021)
 
 * Add loading state on button element

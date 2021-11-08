@@ -2,42 +2,48 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const combineMediaQuery = require('postcss-combine-media-query');
 const svgToMiniDataURI = require('mini-svg-data-uri');
 const WebpackCleanPlugin = require('webpack-clean');
 
-let plugins = [];
 let entryPoints = {
   style: ["./src/shapla.scss"],
   shapla: ["./src/shapla.scss"],
   grid: ["./src/grid.scss"],
 };
 
-plugins.push(new MiniCssExtractPlugin({
-  filename: "./[name].css"
-}));
-
-plugins.push(new WebpackCleanPlugin(['dist/style.js', 'dist/shapla.js', 'dist/grid.js']));
-
 module.exports = (env, argv) => {
   let isDev = argv.mode !== 'production';
 
+  let plugins = [];
+
+  plugins.push(new MiniCssExtractPlugin({
+    filename: "../css/[name].css"
+  }));
+
+  plugins.push(new WebpackCleanPlugin(['dist/style.js', 'dist/shapla.js', 'dist/grid.js']));
+
   return {
-    "entry": entryPoints,
-    "output": {
-      "path": path.resolve(__dirname, 'dist'),
-      "filename": '[name].js'
+    entry: entryPoints,
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: '[name].js'
     },
-    "devtool": isDev ? 'eval-source-map' : false,
-    "module": {
-      "rules": [
+    devtool: isDev ? 'eval-source-map' : false,
+    module: {
+      rules: [
         {
-          "test": /\.js$/i,
-          "use": {
-            "loader": "babel-loader",
-            "options": {
-              presets: ['@babel/preset-env']
+          test: /\.(js|jsx)$/i,
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                '@babel/preset-env',
+              ],
+              plugins: [
+                ['@babel/plugin-proposal-class-properties'],
+                ['@babel/plugin-proposal-private-methods'],
+                ['@babel/plugin-proposal-object-rest-spread'],
+              ]
             }
           }
         },
@@ -45,7 +51,8 @@ module.exports = (env, argv) => {
           test: /\.(sass|scss|css)$/i,
           use: [
             {
-              loader: isDev ? "style-loader" : MiniCssExtractPlugin.loader
+              loader: MiniCssExtractPlugin.loader,
+              options: {publicPath: ''}
             },
             {
               loader: "css-loader",
@@ -60,8 +67,7 @@ module.exports = (env, argv) => {
                 sourceMap: isDev,
                 postcssOptions: {
                   plugins: [
-                    autoprefixer(),
-                    combineMediaQuery()
+                    ['postcss-preset-env'],
                   ],
                 },
               },
@@ -76,39 +82,25 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                outputPath: '../fonts',
-              },
-            },
-          ],
+          type: 'asset/resource',
+          generator: {
+            filename: '../fonts/[hash][ext]'
+          }
         },
         {
           test: /\.(png|je?pg|gif)$/i,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 8192, // 8KB
-                outputPath: '../images',
-              },
-            },
-          ],
+          type: 'asset',
+          generator: {
+            filename: '../images/[hash][ext]'
+          }
         },
         {
           test: /\.svg$/i,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 10240, // 10KB
-                outputPath: '../images',
-                generator: (content) => svgToMiniDataURI(content.toString()),
-              },
-            },
-          ],
+          type: 'asset',
+          generator: {
+            filename: '../images/[hash][ext]',
+            dataUrl: content => svgToMiniDataURI(content.toString())
+          },
         }
       ]
     },
@@ -121,10 +113,9 @@ module.exports = (env, argv) => {
     resolve: {
       modules: [
         path.resolve('./node_modules'),
-        path.resolve('./src'),
       ],
-      extensions: ['*', '.js', '.json']
+      extensions: ['*', '.js', '.scss', '.json']
     },
-    "plugins": plugins
+    plugins: plugins,
   }
 };
