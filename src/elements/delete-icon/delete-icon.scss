@@ -1,14 +1,19 @@
+@import "../../colors";
+@import "../../mixins";
+
 $delete-icon-dimensions: 20px !default;
 $delete-icon-dimensions-small: 16px !default;
 $delete-icon-dimensions-medium: 24px !default;
 $delete-icon-dimensions-large: 32px !default;
+$delete-icon-background-color: rgba(#0a0a0a, 0.2) !default;
+$delete-icon-background-color-darker: rgba(#0a0a0a, 0.3) !default;
+$delete-icon-color: #ffffff !default;
 
 @mixin delete-icon {
   .shapla-delete-icon {
-    --shapla-delete-icon-dimensions: #{$delete-icon-dimensions};
     user-select: none;
     appearance: none;
-    background-color: rgba(#000, 0.2);
+    background-color: var(--delete-icon-background, $delete-icon-background-color);
     border: none;
     border-radius: 290486px;
     cursor: pointer;
@@ -20,12 +25,12 @@ $delete-icon-dimensions-large: 32px !default;
     outline: none;
     position: relative;
     vertical-align: top;
-    height: var(--shapla-delete-icon-dimensions, $delete-icon-dimensions);
-    width: var(--shapla-delete-icon-dimensions, $delete-icon-dimensions);
+    height: var(--delete-icon-size, $delete-icon-dimensions);
+    width: var(--delete-icon-size, $delete-icon-dimensions);
 
     &:before,
     &:after {
-      background-color: #fff;
+      background-color: var(--delete-icon-color, $delete-icon-color);
       content: "";
       display: block;
       left: 50%;
@@ -45,26 +50,31 @@ $delete-icon-dimensions-large: 32px !default;
       width: 2px;
     }
 
-    &:hover,
-    &:focus {
-      background-color: rgba(#000, 0.3);
+    &:hover, &:focus {
+      background-color: var(--delete-icon-background-dark, #{$delete-icon-background-color-darker});
     }
 
     &:active {
-      background-color: rgba(#000, 0.4);
+      @include shadow-3dp()
     }
 
     // Sizes
     &.is-small {
-      --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-small};
+      --delete-icon-size: #{$delete-icon-dimensions-small};
     }
 
     &.is-medium {
-      --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-medium};
+      --delete-icon-size: #{$delete-icon-dimensions-medium};
     }
 
     &.is-large {
-      --shapla-delete-icon-dimensions: #{$delete-icon-dimensions-large};
+      --delete-icon-size: #{$delete-icon-dimensions-large};
+    }
+
+    &.is-error {
+      --delete-icon-background: #{$error};
+      --delete-icon-background-dark: #{$error-variant};
+      --delete-icon-color: #{$on-error};
     }
   }
 }

@@ -19,3 +19,12 @@ $container-xxl: 1320px !default;
 $shadow-key-umbra-opacity: 0.2 !default;
 $shadow-key-penumbra-opacity: 0.14 !default;
 $shadow-ambient-shadow-opacity: 0.12 !default;
+
+//== Control
+$control-radius: 4px !default;
+$control-radius-small: 2px !default;
+$control-border-width: 1px !default;
+$control-height: 2.5em !default;
+$control-line-height: 1.5 !default;
+$control-padding-vertical: calc(0.5em - #{$control-border-width}) !default;
+$control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default;

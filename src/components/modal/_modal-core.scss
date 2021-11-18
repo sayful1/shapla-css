@@ -57,6 +57,7 @@
       @include media('tablet') {
         margin: 0 auto;
         max-height: calc(100vh - #{$modal-content-spacing-tablet});
+
         &:not(.is-small):not(.is-full):not(.is-large) {
           width: $modal-content-width-medium;
         }
