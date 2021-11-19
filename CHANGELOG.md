@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.5.0 (Nov 19, 2021)
+
+* Add pagination component
+
 ### 2.4.0 (Nov 8, 2021)
 
 * Add css class to hide modal card footer.
