@@ -2,6 +2,7 @@
 
 // CSS Default variable
 @include shapla.css-var-colors;
+@include shapla.css-var-colors('[data-color-theme=dark]', true);
 // Utility
 @include shapla.minireset;
 @include shapla.sr-only;

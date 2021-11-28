@@ -91,7 +91,7 @@
   0 24px 38px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
 }
 
-@mixin css-var-colors( $selector : ':root' ) {
+@mixin css-var-colors( $selector : ':root', $dark-theme: false ) {
   #{$selector} {
     --shapla-primary: #{$color--primary};
     --shapla-on-primary: #{$color--on-primary};
@@ -113,14 +113,24 @@
     --shapla-on-warning: #{$color--on-warning};
     --shapla-warning-variant: #{$color--warning-variant};
     --shapla-warning-alpha: #{$color--warning-alpha};
-    --shapla-surface: #{$color--surface};
-    --shapla-on-surface: #{$color--on-surface};
-    --shapla-background: #{$color--background};
-    --shapla-text-primary: #{$color--text-primary};
-    --shapla-text-secondary: #{$color--text-secondary};
-    --shapla-text-hint: #{$color--text-hint};
-    --shapla-text-disabled: #{$color--text-disabled};
-    --shapla-text-icon: #{$color--text-icon};
+    @if $dark-theme {
+      --shapla-background: #{$color--background-dark};
+      --shapla-surface: #{$color--surface-on-dark};
+      --shapla-text-primary: #{$color--text-primary-on-dark};
+      --shapla-text-secondary: #{$color--text-secondary-on-dark};
+      --shapla-text-hint: #{$color--text-hint-on-dark};
+      --shapla-text-disabled: #{$color--text-disabled-on-dark};
+      --shapla-text-icon: #{$color--text-icon-on-dark};
+    } @else {
+      --shapla-background: #{$color--background};
+      --shapla-surface: #{$color--surface};
+      --shapla-on-surface: #{$color--on-surface};
+      --shapla-text-primary: #{$color--text-primary};
+      --shapla-text-secondary: #{$color--text-secondary};
+      --shapla-text-hint: #{$color--text-hint};
+      --shapla-text-disabled: #{$color--text-disabled};
+      --shapla-text-icon: #{$color--text-icon};
+    }
   }
 }
 
