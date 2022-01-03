@@ -2,7 +2,7 @@
 
 Apply helper classes to almost any element, in order to alter their style.
 
-> This document is incomplete. Fell free to improve this document.
+> This document is incomplete. Feel free to improve this document.
 
 ## Why?
 We need some prebuild components that are easy to customize and easy to manage.
@@ -43,6 +43,8 @@ npm install --save shapla-css
 @include shapla.data-table;
 // include other components as your requirement 
 ```
+
+Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 
 # List of Components
 
