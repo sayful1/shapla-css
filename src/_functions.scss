@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:color";
 
 @function powerNumber($number, $exp) {
   $value: 1;
@@ -37,4 +38,8 @@
   } @else {
     @return #fff;
   }
+}
+
+@function to-rgb($value) {
+  @return color.red($value), color.green($value), color.blue($value);
 }

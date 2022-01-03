@@ -1,3 +1,4 @@
+@use "sass:color";
 @import "functions";
 
 $color--white: #ffffff !default;
@@ -18,7 +19,7 @@ $color--red: #dc3545 !default;
 
 $color--primary: $color--blue !default;
 $color--on-primary: findColorInvert($color--primary) !default;
-$color--primary-variant: darken($color--primary, 5) !default;
+$color--primary-variant: color.scale($color--primary, $lightness: -10%) !default; // #0262ef;
 $color--primary-alpha: rgba($color--primary, .25) !default;
 
 $color--secondary: $color--gray-600 !default;
@@ -61,26 +62,31 @@ $color--text-icon-on-dark: rgba($color--white, .5) !default;
 
 // Reassign color to change with CSS variable
 $primary: var(--shapla-primary, $color--primary) !default;
+$primary-rgb: var(--shapla-primary-rgb, to-rgb($color--primary)) !default;
 $on-primary: var(--shapla-on-primary, $color--on-primary) !default;
 $primary-variant: var(--shapla-primary-variant, $color--primary-variant) !default;
 $primary-alpha: var(--shapla-primary-alpha, $color--primary-alpha) !default;
 
 $secondary: var(--shapla-secondary, $color--secondary) !default;
+$secondary-rgb: var(--shapla-secondary-rgb, to-rgb($color--secondary)) !default;
 $secondary-variant: var(--shapla-secondary-variant, $color--secondary-variant) !default;
 $on-secondary: var(--shapla-on-secondary, $color--on-secondary) !default;
 $secondary-alpha: var(--shapla-secondary-alpha, $color--secondary-alpha) !default;
 
 $success: var(--shapla-success, $color--success) !default;
+$success-rgb: var(--shapla-success-rgb, to-rgb($color--success)) !default;
 $success-variant: var(--shapla-success-variant, $color--success-variant) !default;
 $on-success: var(--shapla-on-success, $color--on-success) !default;
 $success-alpha: var(--shapla-success-alpha, $color--success-alpha) !default;
 
 $error: var(--shapla-error, $color--error) !default;
+$error-rgb: var(--shapla-error-rgb, to-rgb($color--error)) !default;
 $error-variant: var(--shapla-error-variant, $color--error-variant) !default;
 $on-error: var(--shapla-on-error, $color--on-error) !default;
 $error-alpha: var(--shapla-error-alpha, $color--error-alpha) !default;
 
 $warning: var(--shapla-warning, $color--warning) !default;
+$warning-rgb: var(--shapla-warning-rgb, to-rgb($color--warning)) !default;
 $warning-variant: var(--shapla-warning-variant, $color--warning-variant) !default;
 $on-warning: var(--shapla-on-warning, $color--on-warning) !default;
 $warning-alpha: var(--shapla-warning-alpha, $color--warning-alpha) !default;

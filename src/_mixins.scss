@@ -1,5 +1,6 @@
 @import "variables";
 @import "colors";
+@import "functions";
 
 @mixin media( $res ) {
   @if mobile == $res or sm == $res {
@@ -94,22 +95,27 @@
 @mixin css-var-colors( $selector : ':root', $dark-theme: false ) {
   #{$selector} {
     --shapla-primary: #{$color--primary};
+    --shapla-primary-rgb: #{to-rgb($color--primary)};
     --shapla-on-primary: #{$color--on-primary};
     --shapla-primary-variant: #{$color--primary-variant};
     --shapla-primary-alpha: #{$color--primary-alpha};
     --shapla-secondary: #{$color--secondary};
+    --shapla-secondary-rgb: #{to-rgb($color--secondary)};
     --shapla-on-secondary: #{$color--on-secondary};
     --shapla-secondary-variant: #{$color--secondary-variant};
     --shapla-secondary-alpha: #{$color--secondary-alpha};
     --shapla-success: #{$color--success};
+    --shapla-success-rgb: #{to-rgb($color--success)};
     --shapla-on-success: #{$color--on-success};
     --shapla-success-variant: #{$color--success-variant};
     --shapla-success-alpha: #{$color--success-alpha};
     --shapla-error: #{$color--error};
+    --shapla-error-rgb: #{to-rgb($color--error)};
     --shapla-on-error: #{$color--on-error};
     --shapla-error-variant: #{$color--error-variant};
     --shapla-error-alpha: #{$color--error-alpha};
     --shapla-warning: #{$color--warning};
+    --shapla-warning-rgb: #{to-rgb($color--warning)};
     --shapla-on-warning: #{$color--on-warning};
     --shapla-warning-variant: #{$color--warning-variant};
     --shapla-warning-alpha: #{$color--warning-alpha};
