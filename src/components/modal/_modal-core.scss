@@ -18,54 +18,60 @@
     justify-content: center;
     overflow: hidden;
     position: fixed;
-    z-index: $modal-z;
+    z-index: var(--modal-z, #{$modal-z});
 
     &.is-active {
       display: flex;
     }
 
     &-background {
-      background-color: rgba(#000, 0.5);
+      background-color: var(--modal-backdrop-dark, rgba(0, 0, 0, 0.5));
 
       &.is-light {
-        background-color: rgba(#fff, 0.5);
+        background-color: var(--modal-backdrop-light, rgba(255, 255, 255, 0.5));
       }
     }
 
-    .shapla-delete-icon.is-fixed {
+    .shapla-delete-icon.is-fixed,
+    .shapla-modal-close.is-fixed {
       position: fixed;
-      right: $modal-close-right;
-      top: $modal-close-top;
+      right: var(--modal-close-right, #{$modal-close-right});
+      top: var(--modal-close-top, #{$modal-close-top});
     }
 
     &-content {
-      margin: 0 $modal-content-margin-mobile;
-      max-height: calc(100vh - #{$modal-content-spacing-mobile});
+      --modal-content-margin: #{$modal-content-margin-mobile};
+      --modal-content-width: calc(100% - var(--modal-content-margin) * 2);
+      --modal-content-width-small: #{$modal-content-width-small};
+      --modal-content-width-medium: #{$modal-content-width-medium};
+      --modal-content-width-large: #{$modal-content-width-large};
+      margin: 0 var(--modal-content-margin);
+      max-height: calc(100vh - var(--modal-content-spacing, #{$modal-content-spacing-mobile}));
       overflow: auto;
       position: relative;
-      width: calc(100% - #{$modal-content-margin-mobile * 2});
+      width: var(--modal-content-width);
 
       &.is-small {
-        width: $modal-content-width-small;
+        --modal-content-width: var(--modal-content-width-small);
       }
 
       &.is-full {
-        height: calc(100vh - #{$modal-content-margin-mobile * 2});
-        width: calc(100vw - #{$modal-content-margin-mobile * 2});
+        height: calc(100vh - (var(--modal-content-margin) * 2));
+        width: calc(100vw - (var(--modal-content-margin) * 2));
       }
 
       @include media('tablet') {
         margin: 0 auto;
-        max-height: calc(100vh - #{$modal-content-spacing-tablet});
+        --modal-content-spacing: #{$modal-content-spacing-tablet};
 
         &:not(.is-small):not(.is-full):not(.is-large) {
-          width: $modal-content-width-medium;
+          --modal-content-width: var(--modal-content-width-medium);
         }
       }
 
       @include media('desktop') {
         &.is-large {
-          width: $modal-content-width-large;
+          --modal-content-width: var(--modal-content-width-large);
         }
       }
     }

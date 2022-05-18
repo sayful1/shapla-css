@@ -9,6 +9,7 @@ let entryPoints = {
   style: ["./src/shapla.scss"],
   shapla: ["./src/shapla.scss"],
   grid: ["./src/grid.scss"],
+  modal: ["./src/modal.scss"],
 };
 
 module.exports = (env, argv) => {
@@ -17,10 +18,15 @@ module.exports = (env, argv) => {
   let plugins = [];
 
   plugins.push(new MiniCssExtractPlugin({
-    filename: "../css/[name].css"
+    filename: "../dist/[name].css"
   }));
 
-  plugins.push(new WebpackCleanPlugin(['dist/style.js', 'dist/shapla.js', 'dist/grid.js']));
+  plugins.push(new WebpackCleanPlugin([
+    'dist/style.js',
+    'dist/shapla.js',
+    'dist/grid.js',
+    'dist/modal.js',
+  ]));
 
   return {
     entry: entryPoints,
