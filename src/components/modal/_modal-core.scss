@@ -12,13 +12,19 @@
   }
 
   .shapla-modal {
+    --modal-content-margin: #{$modal-content-margin-mobile};
+    --modal-content-width: calc(100% - var(--modal-content-margin) * 2);
+    --modal-content-width-small: #{$modal-content-width-small};
+    --modal-content-width-medium: #{$modal-content-width-medium};
+    --modal-content-width-large: #{$modal-content-width-large};
+    --modal-z-index: #{$modal-z};
     align-items: center;
     display: none;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     position: fixed;
-    z-index: var(--modal-z, #{$modal-z});
+    z-index: var(--modal-z-index);
 
     &.is-active {
       display: flex;
@@ -40,11 +46,6 @@
     }
 
     &-content {
-      --modal-content-margin: #{$modal-content-margin-mobile};
-      --modal-content-width: calc(100% - var(--modal-content-margin) * 2);
-      --modal-content-width-small: #{$modal-content-width-small};
-      --modal-content-width-medium: #{$modal-content-width-medium};
-      --modal-content-width-large: #{$modal-content-width-large};
       margin: 0 var(--modal-content-margin);
       max-height: calc(100vh - var(--modal-content-spacing, #{$modal-content-spacing-mobile}));
       overflow: auto;
