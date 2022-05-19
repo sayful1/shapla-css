@@ -9,9 +9,9 @@ let entryPoints = {
   style: ["./src/shapla.scss"],
   shapla: ["./src/shapla.scss"],
   grid: ["./src/grid.scss"],
-  modal: [
-    "./src/modal.scss",
-    "./js/main.js",
+  modal: ["./src/modal.scss"],
+  wc: [
+    "./web-components/main.js",
   ],
 };
 
@@ -28,6 +28,7 @@ module.exports = (env, argv) => {
     'dist/style.js',
     'dist/shapla.js',
     'dist/grid.js',
+    'dist/modal.js',
   ]));
 
   return {
