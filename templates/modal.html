@@ -1,0 +1,23 @@
+<template id="template--shapla-modal-core">
+  <div class="shapla-modal">
+    <div class="shapla-modal-background"></div>
+    <shapla-cross class="shapla-modal-close is-fixed" size="large"></shapla-cross>
+    <div class="shapla-modal-content">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+<template id="template--shapla-modal-card">
+  <header class="shapla-modal-card__header">
+    <div class="shapla-modal-card__title">
+      <slot name="heading"></slot>
+    </div>
+    <shapla-cross size="medium" class="shapla-modal-close"></shapla-cross>
+  </header>
+  <section class="shapla-modal-card__body">
+    <slot></slot>
+  </section>
+  <footer class="shapla-modal-card__footer is-pulled-right">
+    <slot name="footer"></slot>
+  </footer>
+</template>

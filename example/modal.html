@@ -15,7 +15,21 @@
   <button class="shapla-button js-modal-trigger" data-target='#modal-21'>Show Card Modal 2</button>
   <button class="shapla-button js-modal-trigger" data-target='#modal-3'>Show Box Modal</button>
   <button class="shapla-button js-modal-trigger" data-target='#modal-4'>Show Confirm Modal</button>
+  <button class="shapla-button js-modal-trigger" data-target='#modal-4'>Show Confirm Modal</button>
+  <button class="shapla-button" data-target-custom-el data-target='#custom-element'>Custom element</button>
+  <button class="shapla-button" data-target-custom-el data-target='#custom-element2'>Custom (Card)</button>
 </div>
+
+<shapla-dialog id="custom-element" type="box" content-size="small" disabled-backdrop-click>
+  Add some content here.
+</shapla-dialog>
+
+<shapla-dialog id="custom-element2" type="card" heading="Example card">
+  Add some content here.
+  <div slot="footer">
+    <button class="button">Cancel</button>
+  </div>
+</shapla-dialog>
 
 <div class="shapla-modal" id="modal-1">
   <div class="shapla-modal-background"></div>
@@ -268,6 +282,260 @@
   </div>
 </div>
 
+<template id="template--shapla-cross">
+  <style>
+    .shapla-delete-icon {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: rgba(10, 10, 10, 0.2);
+      background-color: var(--delete-icon-background, rgba(10, 10, 10, 0.2));
+      border: none;
+      border-radius: 290486px;
+      cursor: pointer;
+      pointer-events: auto;
+      display: inline-block;
+      flex-grow: 0;
+      flex-shrink: 0;
+      font-size: 0;
+      outline: none;
+      position: relative;
+      vertical-align: top;
+      height: 20px;
+      height: var(--delete-icon-size, 20px);
+      width: 20px;
+      width: var(--delete-icon-size, 20px);
+    }
+
+    .shapla-delete-icon:before, .shapla-delete-icon:after {
+      background-color: #ffffff;
+      background-color: var(--delete-icon-color, #ffffff);
+      content: "";
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      transform-origin: center center;
+    }
+
+    .shapla-delete-icon:before {
+      height: 2px;
+      width: 50%;
+    }
+
+    .shapla-delete-icon:after {
+      height: 50%;
+      width: 2px;
+    }
+
+    .shapla-delete-icon:hover, .shapla-delete-icon:focus {
+      background-color: rgba(10, 10, 10, 0.3);
+      background-color: var(--delete-icon-background-dark, rgba(10, 10, 10, 0.3));
+    }
+
+    .shapla-delete-icon:active {
+      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .shapla-delete-icon.is-small {
+      --delete-icon-size: 16px;
+    }
+
+    .shapla-delete-icon.is-medium {
+      --delete-icon-size: 24px;
+    }
+
+    .shapla-delete-icon.is-large {
+      --delete-icon-size: 32px;
+    }
+
+    .shapla-delete-icon.is-error {
+      --delete-icon-background: var(--shapla-error, #dc3545);
+      --delete-icon-background-dark: var(--shapla-error-variant, #d32535);
+      --delete-icon-color: var(--shapla-on-error, #fff);
+    }
+  </style>
+  <button class="shapla-delete-icon"></button>
+</template>
+<template id="template--shapla-modal-card">
+  <style>
+    .shapla-modal-card__header, .shapla-modal-card__footer {
+      align-items: center;
+      background-color: #ffffff;
+      display: flex;
+      flex-shrink: 0;
+      justify-content: flex-start;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .shapla-modal-card__header > * + *, .shapla-modal-card__footer > * + * {
+      margin-left: 0.5rem;
+    }
+
+    .shapla-modal-card__header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    .shapla-modal-card__title {
+      flex-grow: 1;
+      flex-shrink: 0;
+      font-size: 1.5rem;
+      font-weight: normal;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .shapla-modal-card__footer {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .shapla-modal-card__footer.is-pulled-right {
+      justify-content: flex-end;
+    }
+
+    .shapla-modal-card__footer.no-content {
+      border-top: none;
+      padding: 2px;
+    }
+
+    .shapla-modal-card__body {
+      background-color: #ffffff;
+      flex-grow: 1;
+      flex-shrink: 1;
+      overflow: auto;
+      padding: 1rem;
+    }
+  </style>
+  <header class="shapla-modal-card__header">
+    <div class="shapla-modal-card__title">
+      <slot name="heading"></slot>
+    </div>
+    <shapla-cross size="medium" class="shapla-modal-close"></shapla-cross>
+  </header>
+  <section class="shapla-modal-card__body">
+    <slot></slot>
+  </section>
+  <footer class="shapla-modal-card__footer is-pulled-right">
+    <slot name="footer"></slot>
+  </footer>
+</template>
+<template id="template--shapla-modal-core">
+  <style>
+    .shapla-modal,
+    .shapla-modal-background {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .shapla-modal {
+      align-items: center;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      position: fixed;
+      z-index: 100000;
+      z-index: var(--modal-z-index, 100000);
+    }
+
+    .shapla-modal.is-active {
+      display: flex;
+    }
+
+    .shapla-modal-background {
+      background-color: rgba(0, 0, 0, 0.5);
+      background-color: var(--modal-backdrop-color, rgba(0, 0, 0, 0.5));
+    }
+
+    .shapla-modal-background.is-light {
+      --modal-backdrop-color: var(--modal-backdrop-color-light, rgba(255, 255, 255, 0.5));
+    }
+
+    .shapla-modal .shapla-delete-icon.is-fixed,
+    .shapla-modal .shapla-modal-close.is-fixed {
+      position: fixed;
+      right: 1.25rem;
+      right: var(--modal-close-right, 1.25rem);
+      top: 1.25rem;
+      top: var(--modal-close-top, 1.25rem);
+    }
+
+    .shapla-modal-content {
+      margin: 0 20px;
+      margin: 0 var(--modal-content-margin, 20px);
+      max-height: calc(100vh - 160px);
+      max-height: calc(100vh - var(--modal-content-spacing, 160px));
+      overflow: auto;
+      position: relative;
+      width: calc(100% - 20px * 2);
+      width: var(--modal-content-width, calc(100% - var(--modal-content-margin, 20px) * 2));
+    }
+
+    .shapla-modal-content.is-small {
+      --modal-content-width: var(--modal-content-width-small, 320px);
+    }
+
+    .shapla-modal-content.is-full {
+      height: calc(100vh - 20px * 2);
+      height: calc(100vh - var(--modal-content-margin, 20px) * 2);
+      width: calc(100vw - 20px * 2);
+      width: calc(100vw - var(--modal-content-margin, 20px) * 2);
+    }
+
+    @media print, screen and (min-width: 768px) {
+      .shapla-modal-content {
+        margin: 0 auto;
+        --modal-content-spacing: 40px;
+      }
+
+      .shapla-modal-content:not(.is-small):not(.is-full):not(.is-large) {
+        --modal-content-width: var(--modal-content-width-medium, 640px);
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      .shapla-modal-content.is-large {
+        --modal-content-width: var(--modal-content-width-large, 960px);
+      }
+    }
+
+    .shapla-modal-card {
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 40px);
+      overflow: hidden;
+    }
+
+    .shapla-modal-box,
+    .shapla-modal-confirm {
+      background-color: #ffffff;
+      border-radius: 4px;
+      padding: 1rem;
+      box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <div class="shapla-modal">
+    <div class="shapla-modal-background"></div>
+    <shapla-cross class="shapla-modal-close is-fixed" size="large"></shapla-cross>
+    <div class="shapla-modal-content">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
@@ -314,6 +582,20 @@
     });
   });
 </script>
-
+<script src="../dist/modal.js"></script>
+<script>
+  let buttons = document.querySelectorAll("[data-target-custom-el]");
+  let modals = document.querySelectorAll('shapla-dialog');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelector(button.getAttribute('data-target')).toggleAttribute('open');
+    })
+  })
+  modals.forEach(modal => {
+    modal.addEventListener('close', () => {
+      modal.removeAttribute('open');
+    })
+  })
+</script>
 </body>
 </html>

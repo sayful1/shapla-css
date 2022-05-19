@@ -12,29 +12,23 @@
   }
 
   .shapla-modal {
-    --modal-content-margin: #{$modal-content-margin-mobile};
-    --modal-content-width: calc(100% - var(--modal-content-margin) * 2);
-    --modal-content-width-small: #{$modal-content-width-small};
-    --modal-content-width-medium: #{$modal-content-width-medium};
-    --modal-content-width-large: #{$modal-content-width-large};
-    --modal-z-index: #{$modal-z};
     align-items: center;
     display: none;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
     position: fixed;
-    z-index: var(--modal-z-index);
+    z-index: var(--modal-z-index, #{$modal-z});
 
     &.is-active {
       display: flex;
     }
 
     &-background {
-      background-color: var(--modal-backdrop-dark, rgba(0, 0, 0, 0.5));
+      background-color: var(--modal-backdrop-color, rgba(0, 0, 0, 0.5));
 
       &.is-light {
-        background-color: var(--modal-backdrop-light, rgba(255, 255, 255, 0.5));
+        --modal-backdrop-color: var(--modal-backdrop-color-light, rgba(255, 255, 255, 0.5));
       }
     }
 
@@ -46,19 +40,19 @@
     }
 
     &-content {
-      margin: 0 var(--modal-content-margin);
+      margin: 0 var(--modal-content-margin, #{$modal-content-margin-mobile});
       max-height: calc(100vh - var(--modal-content-spacing, #{$modal-content-spacing-mobile}));
       overflow: auto;
       position: relative;
-      width: var(--modal-content-width);
+      width: var(--modal-content-width, #{calc(100% - var(--modal-content-margin, #{$modal-content-margin-mobile}) * 2)});
 
       &.is-small {
-        --modal-content-width: var(--modal-content-width-small);
+        --modal-content-width: var(--modal-content-width-small, #{$modal-content-width-small});
       }
 
       &.is-full {
-        height: calc(100vh - (var(--modal-content-margin) * 2));
-        width: calc(100vw - (var(--modal-content-margin) * 2));
+        height: calc(100vh - (var(--modal-content-margin, #{$modal-content-margin-mobile}) * 2));
+        width: calc(100vw - (var(--modal-content-margin, #{$modal-content-margin-mobile}) * 2));
       }
 
       @include media('tablet') {
@@ -66,13 +60,13 @@
         --modal-content-spacing: #{$modal-content-spacing-tablet};
 
         &:not(.is-small):not(.is-full):not(.is-large) {
-          --modal-content-width: var(--modal-content-width-medium);
+          --modal-content-width: var(--modal-content-width-medium, #{$modal-content-width-medium});
         }
       }
 
       @include media('desktop') {
         &.is-large {
-          --modal-content-width: var(--modal-content-width-large);
+          --modal-content-width: var(--modal-content-width-large, #{$modal-content-width-large});
         }
       }
     }
