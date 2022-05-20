@@ -1,2 +1,3 @@
-import './components/cross.js';
-import './components/dialog.js';
+import './components/ShaplaAspectRatio.js';
+import './components/ShaplaCross.js';
+import './components/ShaplaDialog.js';

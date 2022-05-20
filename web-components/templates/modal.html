@@ -21,3 +21,19 @@
     <slot name="footer"></slot>
   </footer>
 </template>
+
+<template id="template--shapla-modal-confirm">
+  <div class="shapla-modal-confirm__content">
+    <div class="shapla-modal-confirm__icon">
+      <div class="shapla-modal-confirm__icon-content">!</div>
+    </div>
+    <h3 class="shapla-modal-confirm__title"></h3>
+    <div class="shapla-modal-confirm__message"></div>
+  </div>
+  <div class="shapla-modal-confirm__actions">
+    <slot name="actions">
+      <button class="shapla-button button--cancel"></button>
+      <button class="shapla-button is-primary button--confirm"></button>
+    </slot>
+  </div>
+</template>
