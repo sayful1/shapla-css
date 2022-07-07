@@ -17,8 +17,9 @@
 @include shapla.delete-icon;
 @include shapla.icon-container;
 @include shapla.image-container;
-// Grid System
+// Layout
 @include shapla.columns;
+@include shapla.container;
 // Components
 @include shapla.chip;
 @include shapla.dashboard;

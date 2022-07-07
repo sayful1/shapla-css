@@ -2,8 +2,8 @@
 
 $screen-xxl-enabled: true;
 
-@import "../variables";
-@import "../mixins";
+@import "../../variables";
+@import "../../mixins";
 
 @mixin columns {
   .shapla-column {

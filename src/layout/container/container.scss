@@ -1,0 +1,51 @@
+@import "../../variables";
+@import "../../mixins";
+
+@mixin container {
+  .shapla-container,
+  .shapla-container-md,
+  .shapla-container-lg,
+  .shapla-container-xl,
+  .shapla-container-xxl,
+  .shapla-container-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding-x, 1rem);
+    padding-right: var(--container-padding-x, 1rem);
+    width: 100%;
+  }
+
+  @media screen and (min-width: 576px) {
+    .shapla-container {
+      max-width: 540px
+    }
+  }
+
+  @include media('tablet') {
+    .shapla-container,
+    .shapla-container-md {
+      max-width: $container-md;
+    }
+  }
+
+  @include media('desktop') {
+    .shapla-container,
+    .shapla-container-lg {
+      max-width: $container-lg;
+    }
+  }
+
+  @include media('wide') {
+    .shapla-container,
+    .shapla-container-xl {
+      max-width: $container-xl;
+    }
+  }
+
+  @include media('fullhd') {
+    .shapla-container.is-xxl-enabled,
+    .shapla-container-xxl {
+      max-width: $container-xxl;
+    }
+  }
+}
