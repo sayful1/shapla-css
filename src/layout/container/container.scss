@@ -10,8 +10,8 @@
   .shapla-container-fluid {
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--container-padding-x, 1rem);
-    padding-right: var(--container-padding-x, 1rem);
+    padding-left: var(--container-px, 1rem);
+    padding-right: var(--container-px, 1rem);
     width: 100%;
   }
 
@@ -30,6 +30,7 @@
 
   @include media('desktop') {
     .shapla-container,
+    .shapla-container-md,
     .shapla-container-lg {
       max-width: $container-lg;
     }
@@ -37,6 +38,8 @@
 
   @include media('wide') {
     .shapla-container,
+    .shapla-container-md,
+    .shapla-container-lg,
     .shapla-container-xl {
       max-width: $container-xl;
     }
@@ -44,6 +47,9 @@
 
   @include media('fullhd') {
     .shapla-container.is-xxl-enabled,
+    .shapla-container-md.is-xxl-enabled,
+    .shapla-container-lg.is-xxl-enabled,
+    .shapla-container-xl.is-xxl-enabled,
     .shapla-container-xxl {
       max-width: $container-xxl;
     }
