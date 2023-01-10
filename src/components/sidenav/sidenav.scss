@@ -1,32 +1,30 @@
+@import "../../colors";
+
 @mixin sidenav {
   .shapla-sidenav {
-    --shapla-side-navigation-width: 300px;
+    --shapla-sidenav-width: 300px;
 
-    &__background {
-      background: rgba(#000, .5);
-      display: none;
+    &__background,
+    &__body {
       height: 100%;
       left: 0;
       position: absolute;
       top: 0;
+    }
+
+    &__background {
+      background: rgba(#000, .5);
+      display: none;
       width: 100%;
       z-index: 4;
     }
 
     &__body {
-      background-color: #fff;
+      background-color: $surface;
       border: none;
-      height: 100%;
-      left: 0;
-      position: absolute;
       overflow: hidden;
-      top: 0;
-      transition: 0.5s;
+      transition: transform 200ms cubic-bezier(.4, 0, .2, 1);
       z-index: 5;
-      transform-style: preserve-3d;
-      will-change: transform;
-      transition-duration: 200ms;
-      transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     }
 
     &__content {
@@ -48,13 +46,13 @@
 
     &--left:not(.is-active) {
       .shapla-sidenav__body {
-        transform: translateX(calc(-1 * var(--shapla-side-navigation-width, 300px)));
+        transform: translateX(-100%);
       }
     }
 
     &--right:not(.is-active) {
       .shapla-sidenav__body {
-        transform: translateX(var(--shapla-side-navigation-width, 300px));
+        transform: translateX(100%);
       }
     }
 
@@ -67,23 +65,31 @@
 
     &--bottom:not(.is-active) {
       .shapla-sidenav__body {
-        transform: translateY(var(--shapla-side-navigation-width, 300px));
+        transform: translateY(100%);
         height: 0;
+      }
+    }
+
+
+    &--bottom,
+    &--top {
+      .shapla-sidenav__body {
+        position: fixed;
+        width: 100%;
+        height: inherit;
       }
     }
 
     &--bottom {
       .shapla-sidenav__body {
         bottom: 0;
-        position: fixed;
         top: auto;
-        width: 100%;
       }
     }
 
     &--top:not(.is-active) {
       .shapla-sidenav__body {
-        transform: translateY(calc(-1 * var(--shapla-side-navigation-width, 300px)));
+        transform: translateY(-100%);
         height: 0;
       }
     }
@@ -91,9 +97,7 @@
     &--top {
       .shapla-sidenav__body {
         bottom: auto;
-        position: fixed;
         top: 0;
-        width: 100%;
       }
     }
   }

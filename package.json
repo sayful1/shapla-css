@@ -1,7 +1,7 @@
 {
   "name": "shapla-css",
   "description": "Apply helper classes to almost any element, in order to alter their style.",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "contributors": [
     {
       "name": "Sayful Islam",
@@ -38,24 +38,24 @@
     "build:lib": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.12",
-    "@babel/preset-env": "^7.17.12",
-    "autoprefixer": "^10.4.7",
-    "babel-loader": "^8.2.5",
-    "css-loader": "^6.7.1",
-    "css-minimizer-webpack-plugin": "^4.0.0",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "file-loader": "^6.2.0",
-    "mini-css-extract-plugin": "^2.6.0",
+    "mini-css-extract-plugin": "^2.7.2",
     "mini-svg-data-uri": "^1.4.4",
-    "postcss-loader": "^7.0.0",
-    "postcss-preset-env": "^7.6.0",
-    "sass": "^1.51.0",
-    "sass-loader": "^13.0.0",
-    "terser-webpack-plugin": "^5.3.1",
+    "postcss-loader": "^7.0.2",
+    "postcss-preset-env": "^7.8.3",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "terser-webpack-plugin": "^5.3.6",
     "url-loader": "^4.1.1",
-    "webpack": "^5.72.1",
+    "webpack": "^5.75.0",
     "webpack-clean": "^1.2.5",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^5.0.1"
   },
   "browserslist": [
     "last 2 years",

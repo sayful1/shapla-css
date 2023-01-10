@@ -103,7 +103,7 @@
   </div>
   <!-- Dashboard Content Wrapper End -->
 
-  <div class="shapla-sidenav shapla-sidenav--left">
+  <div id="shapla-sidenav" class="shapla-sidenav shapla-sidenav--top">
     <div class="shapla-sidenav__background"></div>
     <div class="shapla-sidenav__body">
       <div class="shapla-sidenav__content">
@@ -130,5 +130,18 @@
 
 </div>
 
+<script type="text/javascript">
+  const burger = document.querySelector('.shapla-dashboard-header__burger');
+  const sidenav = document.querySelector('.shapla-sidenav')
+  const bg = document.querySelector('.shapla-sidenav__background')
+
+  burger.addEventListener('click', () => {
+    sidenav.classList.toggle('is-active');
+  });
+
+  bg.addEventListener('click', () => {
+    sidenav.classList.remove('is-active');
+  });
+</script>
 </body>
 </html>

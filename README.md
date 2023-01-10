@@ -49,6 +49,7 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 # List of Components
 
 **Elements**: do not have nested element. Mostly one css class with modifier css class.
+* Badge
 * Box Shadow
 * [Button](/src/elements/button/README.md)
 * Cross/Delete Icon
@@ -73,7 +74,7 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 * Tooltip
 
 **Grid System**
-* [Columns](/src/grid/README.md)
+* [Columns](/src/layout/grid/README.md)
 
 **Form Elements**
 * [Checkbox](/src/form/checkbox/README.md)

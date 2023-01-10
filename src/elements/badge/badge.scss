@@ -1,0 +1,68 @@
+@import "../../colors";
+
+$badge-color: $on-primary !default;
+$badge-color-inverse: $primary !default;
+$badge-background: $primary !default;
+$badge-background-inverse: $on-primary !default;
+
+@mixin badge {
+  .shapla-badge {
+    --badge-size: 22px;
+    --badge-padding: 2px;
+    --badge-overlap: 12px;
+
+    position: relative;
+    white-space: nowrap;
+    margin-right: calc(var(--badge-size) + var(--badge-padding));
+
+    &:not([data-badge]) {
+      margin-right: auto;
+    }
+
+    &[data-badge]:after {
+      content: attr(data-badge);
+
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      position: absolute;
+      top: calc(-1 * var(--badge-size) / 2);
+      right: calc(-1 * (var(--badge-size) + var(--badge-padding)));
+
+      .shapla-button & {
+        top: -10px;
+        right: -5px;
+      }
+
+      font-weight: 600;
+      font-size: var(--badge-font-size, .75rem);
+      width: var(--badge-size);
+      height: var(--badge-size);
+      border-radius: 50%;
+
+      background: $badge-background;
+      color: $badge-color;
+    }
+
+    &.has-no-background {
+      &[data-badge]:after {
+        color: $badge-color-inverse;
+        background: $badge-background-inverse;
+
+        box-shadow: 0 0 1px gray;
+      }
+    }
+
+    &.has-overlap {
+      margin-right: calc(var(--badge-size) - var(--badge-overlap));
+
+      &:after {
+        right: calc(-1 * (var(--badge-size) - var(--badge-overlap)));
+      }
+    }
+  }
+}
