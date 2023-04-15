@@ -1,5 +1,7 @@
 @import "file-upload-status";
 @import "file-uploader";
+@import "media-modal";
+@import "featured-image";
 
 @mixin file-uploader {
   @include file-upload-status;

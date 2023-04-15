@@ -1,0 +1,37 @@
+@import "../../colors";
+
+@mixin media-modal {
+  .shapla-media-modal {
+    &__inside {
+      min-height: 250px;
+    }
+
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -8px;
+    }
+
+    &__item {
+      padding: 8px;
+
+      &.is-selected {
+        .shapla-media-modal__image {
+          border-color: $primary;
+          padding: 3px;
+          border-width: 3px;
+        }
+      }
+    }
+
+    &__image {
+      padding: 5px;
+      border: 1px solid rgba(#000, 0.12);
+    }
+
+    .no-item-found {
+      text-align: center;
+    }
+  }
+}
