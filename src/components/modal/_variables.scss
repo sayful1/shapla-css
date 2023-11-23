@@ -1,3 +1,6 @@
+@import "../../colors";
+@import "../../dark-theme";
+
 $modal-z: 100000 !default;
 
 $modal-content-width-small: 320px !default;
@@ -15,7 +18,7 @@ $modal-close-top: 1.25rem !default;
 // Modal Card
 $modal-card-spacing: $modal-content-spacing-tablet !default;
 
-$modal-card-head-background-color: #ffffff !default;
+$modal-card-head-background-color: $surface !default;
 $modal-card-head-border-bottom: 1px solid rgba(#000, 0.12) !default;
 $modal-card-head-padding: 1rem !default;
 $modal-card-head-radius: 4px !default;

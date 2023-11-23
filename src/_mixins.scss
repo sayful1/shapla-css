@@ -92,6 +92,16 @@
   0 24px 38px 3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
 }
 
+@mixin dark-theme-css-var( $selector : ':root:not(.light)' ) {
+  #{$selector} {
+    --shapla-background: #{$color--background-dark};
+    --shapla-surface: #{$color--surface-on-dark};
+    --shapla-text-primary: #{$color--text-primary-on-dark};
+    --shapla-text-secondary: #{$color--text-secondary-on-dark};
+    --shapla-text-tertiary: #{$color--text-tertiary-on-dark};
+  }
+}
+
 @mixin css-var-colors( $selector : ':root', $dark-theme: false ) {
   #{$selector} {
     --shapla-primary: #{$color--primary};

@@ -8,6 +8,7 @@
 @mixin modal {
   @include modal-core;
   @include modal-card;
+  @include modal-card-dark;
   @include modal-box;
   @include modal-confirm;
 }

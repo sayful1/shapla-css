@@ -62,3 +62,14 @@
     }
   }
 }
+
+@mixin modal-card-dark {
+  @media (prefers-color-scheme: dark) {
+    .shapla-modal-card__header,
+    .shapla-modal-card__footer,
+    .shapla-modal-card__body {
+      background-color: $dark-theme--surface;
+      color: $dark-theme--text-primary;
+    }
+  }
+}

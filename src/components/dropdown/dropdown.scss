@@ -29,6 +29,8 @@ $dropdown-divider-background-color: rgba(#000, 0.12) !default;
     top: 100%;
     z-index: $dropdown-content-z;
     visibility: hidden;
+    //background-color: $surface;
+    //color: $text-primary;
 
     &.is-active {
       visibility: visible;
@@ -48,6 +50,7 @@ $dropdown-divider-background-color: rgba(#000, 0.12) !default;
 
     &__inner {
       background-color: $dropdown-content-background-color;
+      color: $text-primary;
       border-radius: $dropdown-content-radius;
       box-shadow: $dropdown-content-shadow;
       padding-bottom: $dropdown-content-padding-bottom;
@@ -72,6 +75,7 @@ $dropdown-divider-background-color: rgba(#000, 0.12) !default;
     line-height: 1.5;
     padding: .375em 1em;
     position: relative;
+    box-sizing: border-box;
 
     &.is-link {
       cursor: pointer;

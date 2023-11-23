@@ -10,7 +10,7 @@ $color--gray-500: #9E9E9E !default;
 $color--gray-600: #757575 !default;
 $color--gray-700: #616161 !default;
 $color--gray-800: #424242 !default;
-$color--gray-900: #212121 !default;
+$color--gray-900: #121212 !default;
 $color--black: #000000 !default;
 $color--blue: #0d6efd !default;
 $color--green: #198754 !default;
@@ -48,14 +48,16 @@ $color--on-surface: findColorInvert($color--surface) !default;
 
 $color--text-primary: rgba($color--black, .87) !default;
 $color--text-secondary: rgba($color--black, .54) !default;
+$color--text-tertiary: rgba($color--black, .38) !default;
 $color--text-hint: rgba($color--black, .38) !default;
 $color--text-disabled: rgba($color--black, .38) !default;
 $color--text-icon: rgba($color--black, .38) !default;
 
 $color--background-dark: $color--gray-900 !default;
-$color--surface-on-dark: $color--gray-900 !default;
+$color--surface-on-dark: $color--gray-800 !default;
 $color--text-primary-on-dark: $color--white !default;
 $color--text-secondary-on-dark: rgba($color--white, .7) !default;
+$color--text-tertiary-on-dark: rgba($color--white, .5) !default;
 $color--text-hint-on-dark: rgba($color--white, .5) !default;
 $color--text-disabled-on-dark: rgba($color--white, .5) !default;
 $color--text-icon-on-dark: rgba($color--white, .5) !default;
@@ -97,6 +99,7 @@ $on-surface: var(--shapla-on-surface, $color--on-surface) !default;
 
 $text-primary: var(--shapla-text-primary, $color--text-primary) !default;
 $text-secondary: var(--shapla-text-secondary, $color--text-secondary) !default;
+$text-tertiary: var(--shapla-text-tertiary, $color--text-tertiary) !default;
 $text-hint: var(--shapla-text-hint, $color--text-hint) !default;
-$text-disabled: var(--shapla-text-disabled, $color--text-disabled) !default;
-$text-icon: var(--shapla-text-icon, $color--text-icon) !default;
+$text-disabled: var(--shapla-text-disabled, $color--text-disabled) !default; // @depreciated
+$text-icon: var(--shapla-text-icon, $color--text-icon) !default; // @depreciated

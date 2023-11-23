@@ -11,7 +11,7 @@ $radio-ripple-size: 42px !default;
 
 $radio-color: $primary !default;
 $radio-off-color: $text-secondary !default;
-$radio-disabled-color: $text-disabled !default;
+$radio-disabled-color: $text-tertiary !default;
 $radio-focus-color: $primary-alpha !default;
 
 @mixin radio {

@@ -20,7 +20,7 @@ $switch-off-thumb-color: $color--white !default;
 $switch-off-track-color: rgba($color--black, 0.26) !default;
 
 $switch-disabled-thumb-color: #bdbdbd !default;
-$switch-disabled-track-color: $text-disabled !default;
+$switch-disabled-track-color: $text-tertiary !default;
 
 @mixin input-switch {
   .shapla-switch {
