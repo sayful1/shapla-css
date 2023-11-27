@@ -77,4 +77,14 @@ $delete-icon-color: #ffffff !default;
       --delete-icon-color: #{$on-error};
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) {
+      .shapla-delete-icon:not(.is-error) {
+        --delete-icon-background: rgba(255, 255, 255, .12);
+        --delete-icon-background-dark: rgba(255, 255, 255, .18);
+        --delete-icon-color: #{$delete-icon-color};
+      }
+    }
+  }
 }
