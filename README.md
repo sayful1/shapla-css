@@ -46,7 +46,7 @@ npm install --save shapla-css
 
 Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 
-# List of Components
+## List of Components
 
 **Elements**: do not have nested element. Mostly one css class with modifier css class.
 * Badge
@@ -89,3 +89,9 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 **Utilities**
 * Screen Reader Only
 * Mini reset
+
+## List of Components support dark mode
+
+* Cross/Delete Icon
+* Spinner
+* Modal

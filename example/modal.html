@@ -1,174 +1,227 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>Modal</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="../dist/shapla.css">
+    <meta charset="UTF-8">
+    <title>Modal</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/shapla.css">
+    <style>
+        :root {
+            color-scheme: dark light;
+        }
+    </style>
 </head>
 <body>
 
 <shapla-theme-switcher-menu></shapla-theme-switcher-menu>
 
 <div class="p-8 space-x-2">
-  <button class="shapla-button" data-target-custom-el data-target='#custom-element'>Custom (Box)</button>
-  <button class="shapla-button" data-target-custom-el data-target='#custom-element2'>Custom (Card)</button>
-  <button class="shapla-button" data-target-custom-el data-target='#custom-element5'>Card (Large content)</button>
-  <button class="shapla-button" data-target-custom-el data-target='#custom-element3'>Custom (Confirm)</button>
-  <button class="shapla-button" data-target-custom-el data-target='#custom-element4'>Custom (Image)</button>
+    <button class="shapla-button" data-target-custom-el data-target='#custom-element'>Custom (Box)</button>
+    <button class="shapla-button" data-target-custom-el data-target='#custom-element2'>Custom (Card)</button>
+    <button class="shapla-button" data-target-custom-el data-target='#custom-element5'>Card (Large content)</button>
+    <button class="shapla-button" data-target-custom-el data-target='#custom-element3'>Custom (Confirm)</button>
+    <button class="shapla-button" data-target-custom-el data-target='#custom-element4'>Custom (Image)</button>
 </div>
 
-<shapla-dialog id="custom-element" type="box" content-size="small" disabled-backdrop-click>
-  Add some content here.<br>
-  Backdrop click is disabled.
-</shapla-dialog>
+<!--Box Modal-->
+<div class="shapla-modal">
+    <div class="shapla-modal-background"></div>
+    <span class="shapla-delete-icon is-large shapla-modal-close is-fixed" size="large"></span>
+    <div class="shapla-modal-content shapla-modal-box is-small">
+        Add some content here.<br>
+        Backdrop click is disabled.
+    </div>
+</div>
+
+<!--Confirm Modal-->
+<div class="shapla-modal">
+    <div class="shapla-modal-background"></div>
+    <div class="shapla-modal-content shapla-modal-confirm is-small">
+        <div class="shapla-modal-confirm__content">
+            <div class="shapla-modal-confirm__icon is-primary">
+                <div class="shapla-modal-confirm__icon-content">!</div>
+            </div>
+            <h3 class="shapla-modal-confirm__title">Example card</h3>
+            <div class="shapla-modal-confirm__message">Are you sure?</div>
+        </div>
+        <div class="shapla-modal-confirm__actions">
+            <button class="shapla-button button--cancel">Cancel</button>
+            <button class="shapla-button is-primary button--confirm">Ok</button>
+        </div>
+    </div>
+</div>
+
+<!--Card Modal-->
+<div class="shapla-modal">
+    <div class="shapla-modal-background"></div>
+    <div class="shapla-modal-content shapla-modal-card">
+        <header class="shapla-modal-card__header">
+            <div class="shapla-modal-card__title">Example card</div>
+            <span class="shapla-delete-icon is-medium"></span>
+        </header>
+        <section class="shapla-modal-card__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet aperiam assumenda atque
+            aut beatae consequuntur doloribus ea id illo, minus necessitatibus, porro praesentium quaerat, quis
+            recusandae sunt totam.
+        </section>
+        <footer class="shapla-modal-card__footer is-pulled-right">
+            <button class="shapla-button">Cancel</button>
+            <button class="shapla-button is-primary">Confirm</button>
+        </footer>
+    </div>
+</div>
+
 <shapla-dialog id="custom-element2" type="card" heading="Example card">
-  Add some content here.
-  <div slot="footer">
-    <button class="button">Cancel</button>
-  </div>
+    Add some content here.
+    <div slot="footer">
+        <button class="button">Cancel</button>
+    </div>
 </shapla-dialog>
 <shapla-dialog id="custom-element3" type="confirm" heading="Example card">
 </shapla-dialog>
 
 <shapla-dialog id="custom-element4" content-size="large">
-  <shapla-aspect-ratio width-ratio="1280" height-ratio="960">
-    <img src="https://via.placeholder.com/1280x960.png?text=1280x960" alt="Placeholder image (1280x960)">
-  </shapla-aspect-ratio>
+    <shapla-aspect-ratio width-ratio="1280" height-ratio="960">
+        <img src="https://via.placeholder.com/1280x960.png?text=1280x960" alt="Placeholder image (1280x960)">
+    </shapla-aspect-ratio>
 </shapla-dialog>
 
 <shapla-dialog id="custom-element5" heading="Modal title" type="card">
-  <div class="content">
-    <h1>Hello World</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida,
-      nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
-      sollicitudin vel erat vel, interdum mattis neque.</p>
-    <h2>Second level</h2>
-    <p>Curabitur accumsan turpis pharetra <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi,
-      sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis
-      sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.</p>
-    <ul>
-      <li>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</li>
-      <li>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</li>
-      <li>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</li>
-      <li>Ut non enim metus.</li>
-    </ul>
-    <h3>Third level</h3>
-    <p>Quisque ante lacus, malesuada ac auctor vitae, congue <a href="#">non ante</a>. Phasellus lacus ex, semper ac
-      tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.</p>
-    <ol>
-      <li>Donec blandit a lorem id convallis.</li>
-      <li>Cras gravida arcu at diam gravida gravida.</li>
-      <li>Integer in volutpat libero.</li>
-      <li>Donec a diam tellus.</li>
-      <li>Aenean nec tortor orci.</li>
-      <li>Quisque aliquam cursus urna, non bibendum massa viverra eget.</li>
-      <li>Vivamus maximus ultricies pulvinar.</li>
-    </ol>
-    <blockquote>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est
-      tellus sit amet turpis.
-    </blockquote>
-    <p>Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et <em>justo sodales</em> elementum. Maecenas
-      ultrices lacus quis neque consectetur, et lobortis nisi molestie.</p>
-    <p>Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas
-      vestibulum interdum commodo.</p>
-    <p>Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis
-      malesuada nulla. Nulla facilisi. Nullam ac erat ante.</p>
-    <h4>Fourth level</h4>
-    <p>Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet,
-      at elementum ex efficitur.</p>
-    <p>Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut
-      vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.</p>
-    <p>Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in
-      felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper. Etiam
-      tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere est.
-      Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar.
-      Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam
-      pharetra varius metus non pellentesque.</p>
-    <h5>Fifth level</h5>
-    <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit.
-      Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a
-      eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
-    <h6>Sixth level</h6>
-    <p>Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend
-      eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae,
-      malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum
-      commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.</p>
+    <div class="content">
+        <h1>Hello World</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida,
+            nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
+            sollicitudin vel erat vel, interdum mattis neque.</p>
+        <h2>Second level</h2>
+        <p>Curabitur accumsan turpis pharetra <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi,
+            sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis
+            sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.</p>
+        <ul>
+            <li>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</li>
+            <li>Morbi eu nulla lobortis, lobortis est in, fringilla felis.</li>
+            <li>Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.</li>
+            <li>Ut non enim metus.</li>
+        </ul>
+        <h3>Third level</h3>
+        <p>Quisque ante lacus, malesuada ac auctor vitae, congue <a href="#">non ante</a>. Phasellus lacus ex, semper ac
+            tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.</p>
+        <ol>
+            <li>Donec blandit a lorem id convallis.</li>
+            <li>Cras gravida arcu at diam gravida gravida.</li>
+            <li>Integer in volutpat libero.</li>
+            <li>Donec a diam tellus.</li>
+            <li>Aenean nec tortor orci.</li>
+            <li>Quisque aliquam cursus urna, non bibendum massa viverra eget.</li>
+            <li>Vivamus maximus ultricies pulvinar.</li>
+        </ol>
+        <blockquote>Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est
+            tellus sit amet turpis.
+        </blockquote>
+        <p>Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et <em>justo sodales</em> elementum. Maecenas
+            ultrices lacus quis neque consectetur, et lobortis nisi molestie.</p>
+        <p>Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas
+            vestibulum interdum commodo.</p>
+        <p>Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis
+            malesuada nulla. Nulla facilisi. Nullam ac erat ante.</p>
+        <h4>Fourth level</h4>
+        <p>Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet,
+            at elementum ex efficitur.</p>
+        <p>Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut
+            vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.</p>
+        <p>Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in
+            felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper.
+            Etiam
+            tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere
+            est.
+            Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar.
+            Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam
+            pharetra varius metus non pellentesque.</p>
+        <h5>Fifth level</h5>
+        <p>Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit.
+            Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a
+            eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.</p>
+        <h6>Sixth level</h6>
+        <p>Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend
+            eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim
+            vitae,
+            malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel
+            rutrum
+            commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.</p>
 
-  </div>
-  <div slot="footer">
-    <button class="button">Cancel</button>
-    <button class="button is-success">Save changes</button>
-  </div>
+    </div>
+    <div slot="footer">
+        <button class="button">Cancel</button>
+        <button class="button is-success">Save changes</button>
+    </div>
 </shapla-dialog>
 
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', () => {
-    // Functions to open and close a modal
-    /**
-     * @param {HTMLElement} $el
-     */
-    function openModal($el) {
-      $el.setAttribute('open', '')
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+        // Functions to open and close a modal
+        /**
+         * @param {HTMLElement} $el
+         */
+        function openModal($el) {
+            $el.setAttribute('open', '')
+        }
 
-    /**
-     * @param {HTMLElement} $el
-     */
-    function closeModal($el) {
-      $el.removeAttribute('open')
-    }
+        /**
+         * @param {HTMLElement} $el
+         */
+        function closeModal($el) {
+            $el.removeAttribute('open')
+        }
 
-    function closeAllModals() {
-      (document.querySelectorAll('shapla-dialog') || []).forEach(($modal) => {
-        closeModal($modal);
-      });
-    }
+        function closeAllModals() {
+            (document.querySelectorAll('shapla-dialog') || []).forEach(($modal) => {
+                closeModal($modal);
+            });
+        }
 
-    // Add a click event on buttons to open a specific modal
-    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-      const modal = $trigger.dataset.target;
-      const $target = document.querySelector(modal);
+        // Add a click event on buttons to open a specific modal
+        (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+            const modal = $trigger.dataset.target;
+            const $target = document.querySelector(modal);
 
-      $trigger.addEventListener('click', () => {
-        openModal($target);
-      });
+            $trigger.addEventListener('click', () => {
+                openModal($target);
+            });
+        });
+
+        // Add a click event on various child elements to close the parent modal
+        (document.querySelectorAll('.shapla-modal-background, .shapla-modal-close') || []).forEach(($close) => {
+            const $target = $close.closest('.shapla-modal');
+
+            $close.addEventListener('click', () => {
+                closeModal($target);
+            });
+        });
+
+        // Add a keyboard event to close all modals
+        document.addEventListener('keydown', (event) => {
+            const e = event || window.event;
+
+            if (e.keyCode === 27) { // Escape key
+                closeAllModals();
+            }
+        });
     });
-
-    // Add a click event on various child elements to close the parent modal
-    (document.querySelectorAll('.shapla-modal-background, .shapla-modal-close') || []).forEach(($close) => {
-      const $target = $close.closest('.shapla-modal');
-
-      $close.addEventListener('click', () => {
-        closeModal($target);
-      });
-    });
-
-    // Add a keyboard event to close all modals
-    document.addEventListener('keydown', (event) => {
-      const e = event || window.event;
-
-      if (e.keyCode === 27) { // Escape key
-        closeAllModals();
-      }
-    });
-  });
 </script>
 <script src="../dist/wc.js"></script>
 <script>
-  let buttons = document.querySelectorAll("[data-target-custom-el]");
-  let modals = document.querySelectorAll('shapla-dialog');
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      document.querySelector(button.getAttribute('data-target')).toggleAttribute('open');
+    let buttons = document.querySelectorAll("[data-target-custom-el]");
+    let modals = document.querySelectorAll('shapla-dialog');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector(button.getAttribute('data-target')).toggleAttribute('open');
+        })
     })
-  })
-  modals.forEach(modal => {
-    modal.addEventListener('close', () => {
-      modal.removeAttribute('open');
+    modals.forEach(modal => {
+        modal.addEventListener('close', () => {
+            modal.removeAttribute('open');
+        })
     })
-  })
 </script>
 </body>
 </html>

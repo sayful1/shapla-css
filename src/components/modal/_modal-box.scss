@@ -3,7 +3,7 @@
 
 @mixin modal-box {
   .shapla-modal-box {
-    background-color: $modal-card-body-background-color;
+    background-color: $surface;
     border-radius: 4px;
     padding: $modal-card-body-padding;
     @include shadow-24dp();

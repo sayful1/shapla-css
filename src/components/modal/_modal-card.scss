@@ -11,7 +11,7 @@
     &__header,
     &__footer {
       align-items: center;
-      background-color: $modal-card-head-background-color;
+      background-color: $surface;
       display: flex;
       flex-shrink: 0;
       justify-content: flex-start;
@@ -54,22 +54,11 @@
     }
 
     &__body {
-      background-color: $modal-card-body-background-color;
+      background-color: $surface;
       flex-grow: 1;
       flex-shrink: 1;
       overflow: auto;
       padding: $modal-card-body-padding;
-    }
-  }
-}
-
-@mixin modal-card-dark {
-  @media (prefers-color-scheme: dark) {
-    .shapla-modal-card__header,
-    .shapla-modal-card__footer,
-    .shapla-modal-card__body {
-      background-color: $dark-theme--surface;
-      color: $dark-theme--text-primary;
     }
   }
 }

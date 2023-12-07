@@ -4,7 +4,7 @@
 
 @mixin modal-confirm {
   .shapla-modal-confirm {
-    background-color: $modal-card-body-background-color;
+    background-color: $surface;
     border-radius: 4px;
     padding: $modal-card-body-padding;
     @include shadow-24dp();
