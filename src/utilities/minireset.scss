@@ -1,3 +1,5 @@
+@import "../colors";
+
 @mixin minireset {
   // Blocks
   html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset,
@@ -51,5 +53,12 @@
   td, th {
     padding: 0;
     text-align: left;
+  }
+
+  html, body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: $background;
+    color: $text-primary;
   }
 }

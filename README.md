@@ -5,8 +5,9 @@ Apply helper classes to almost any element, in order to alter their style.
 > This document is incomplete. Feel free to improve this document.
 
 ## Why?
+
 We need some prebuild components that are easy to customize and easy to manage.
-Most of the components are modified version from [Bulma](https://bulma.io) and [Material Design Lite](https://getmdl.io) 
+Most of the components are modified version from [Bulma](https://bulma.io) and [Material Design Lite](https://getmdl.io)
 components. We use these css class to build React, Vue and Web components.
 
 ## Features
@@ -28,15 +29,18 @@ npm install --save shapla-css
 ### Usage
 
 #### Color Theme Customization
+
 ```scss
 // file style.scss
 @use "shapla-css/src/index.scss" as shapla with (
   $color--primary: #00d1b2;
-  $color--secondary: #9c27b0;
-  $color--success: #48c774;
-  $color--error: #f14668;
-  $color--warning: #ffdd57;
-);
+
+$color--secondary: #9c27b0;
+$color--success: #48c774;
+$color--error: #f14668;
+$color--warning: #ffdd57;
+)
+;
 
 @include shapla.button;
 @include shapla.checkbox;
@@ -49,6 +53,7 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 ## List of Components
 
 **Elements**: do not have nested element. Mostly one css class with modifier css class.
+
 * Badge
 * Box Shadow
 * [Button](/src/elements/button/README.md)
@@ -57,6 +62,7 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 * Image Container
 
 **Components** have multiple nested element.
+
 * [Chip](/src/components/chip/README.md)
 * [Dashboard](/src/components/dashboard/README.md)
 * [Data Table](/src/components/data-table/README.md)
@@ -74,9 +80,11 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 * Tooltip
 
 **Grid System**
+
 * [Columns](/src/layout/grid/README.md)
 
 **Form Elements**
+
 * [Checkbox](/src/form/checkbox/README.md)
 * Radio
 * Search
@@ -87,6 +95,7 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 * Text Field
 
 **Utilities**
+
 * Screen Reader Only
 * Mini reset
 
@@ -95,3 +104,10 @@ Check all available SCSS mixins from [shapla.scss](/src/shapla.scss) file.
 * Cross/Delete Icon
 * Spinner
 * Modal
+
+| Component         | Dark Theme | Comment                    |
+|-------------------|------------|----------------------------|
+| Columns           | -          | Not related to color theme |
+| Cross/Delete Icon | ✅          |                            |
+| Spinner           | ✅          |                            |
+| Modal             | ✅          |                            |

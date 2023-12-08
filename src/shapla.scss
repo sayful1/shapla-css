@@ -2,9 +2,8 @@
 
 // CSS Default variable
 @include shapla.css-var-colors;
-@media (prefers-color-scheme: dark) {
-  @include shapla.dark-theme-css-var();
-}
+@include shapla.light-theme-css-var();
+@include shapla.dark-theme-css-var();
 
 // Utility
 @include shapla.minireset;

@@ -3,18 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>color system demo</title>
-    <link rel="stylesheet" href="../dist/color-theme.css">
+    <link rel="stylesheet" href="../dist/shapla.css">
     <style type="text/css">
-        html {
-            box-sizing: border-box;
-        }
-
-        html * {
-            box-sizing: border-box;
+        :root {
+            color-scheme: dark light;
         }
 
         .shapla-color-system {
-            background: #f1f1f1;
             display: flex;
             flex-wrap: wrap;
         }
@@ -35,56 +30,78 @@
             align-items: center;
             flex-direction: column;
         }
+
+        .box-surface {
+            background-color: var(--shapla-surface);
+            color: var(--shapla-text-primary, #fff);
+        }
+
+        .box-surface-secondary {
+            background-color: var(--shapla-surface-secondary);
+            color: var(--shapla-text-primary, #fff);
+        }
+
+        .color-on-tertiary.bg-tertiary {
+            background-color: var(--shapla-tertiary);
+            color: var(--shapla-on-tertiary, #fff);
+        }
     </style>
 </head>
 <body>
-<div id="app">
+<div id="app" style="max-width: 99vw;">
+    <div style="display: flex;align-items: flex-end;justify-content: flex-end">
+        <shapla-theme-switcher-menu></shapla-theme-switcher-menu>
+    </div>
     <div class="shapla-color-system">
         <div class="column">
-            <div class="box shapla-color--on-primary shapla-color--primary-bg">
-                background primary<br>
-                color on-primary
+            <div class="box color-on-primary bg-primary">
+                Primary
             </div>
         </div>
         <div class="column">
-            <div class="box shapla-color--on-secondary shapla-color--secondary-bg">
-                background secondary<br>
-                color on-secondary
+            <div class="box color-on-secondary bg-secondary">
+                Secondary
             </div>
         </div>
         <div class="column">
-            <div class="box shapla-color--success-bg shapla-color--on-success">
-                background success<br>
-                color on-success
+            <div class="box color-on-tertiary bg-tertiary">
+                Tertiary
             </div>
         </div>
         <div class="column">
-            <div class="box shapla-color--error-bg shapla-color--on-error">
-                background error<br>
-                color on-error
+            <div class="box bg-success color-on-success">
+                Success
             </div>
         </div>
         <div class="column">
-            <div class="box shapla-color--surface shapla-color--on-surface">
-                background surface<br>
-                color on-surface
+            <div class="box bg-error color-on-error">
+                Error
+            </div>
+        </div>
+        <div class="column">
+            <div class="box box-surface">
+                Surface
+            </div>
+        </div>
+        <div class="column">
+            <div class="box box-surface-secondary">
+                Secondary Surface
             </div>
         </div>
 
         <div class="column">
-            <div class="box shapla-color--background">
-                <div>background color</div>
-                <div class="shapla-color--primary">color primary</div>
-                <div class="shapla-color--secondary">color secondary</div>
-                <div class="shapla-color--success">color success</div>
-                <div class="shapla-color--error">color error</div>
-                <div class="shapla-color--text-primary">Text primary</div>
-                <div class="shapla-color--text-secondary">Text secondary</div>
-                <div class="shapla-color--text-hint">Text hint</div>
-                <div class="shapla-color--text-disabled">Text disabled</div>
+            <div class="box box-surface">
+                <div class="color-primary">color primary</div>
+                <div class="color-secondary">color secondary</div>
+                <div class="color-success">color success</div>
+                <div class="color-error">color error</div>
+                <div class="color-text-primary">Text primary</div>
+                <div class="color-text-secondary">Text secondary</div>
+                <div class="color-text-tertiary">Text hint, disabled, icon</div>
             </div>
         </div>
     </div>
 </div>
+<script src="../dist/wc.js"></script>
 </body>
 </html>

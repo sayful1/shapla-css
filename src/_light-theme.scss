@@ -1,0 +1,70 @@
+@use "sass:color";
+@import "functions";
+@import "colors";
+
+$light-theme--primary: #6200ee !default;
+$light-theme--on-primary: #fff !default;
+$light-theme--secondary: #03dac6 !default;
+$light-theme--on-secondary: #000 !default;
+$light-theme--tertiary: #3700b3 !default;
+$light-theme--on-tertiary: #fff !default;
+$light-theme--error: #b00020 !default;
+$light-theme--on-error: #fff !default;
+
+$light-theme--success: #388E3C !default;
+$light-theme--on-success: #000 !default;
+$light-theme--warning: #F57F17 !default;
+$light-theme--on-warning: #000 !default;
+
+// Background and surface color
+$light-theme--background: #fff !default;
+$light-theme--surface: #fff !default;
+$light-theme--surface-secondary: $color--gray-100 !default;
+
+// Light text on dark backgrounds
+$light-theme--text-primary: rgba($color--black, .87) !default;
+$light-theme--text-secondary: rgba($color--black, .54) !default;
+$light-theme--text-tertiary: rgba($color--black, .38) !default;
+
+
+@mixin light-theme-css-var( $selector : ':root' ) {
+  #{$selector} {
+    // Primary color
+    --shapla-primary: #{$light-theme--primary};
+    --shapla-primary-variant: #{darken($light-theme--primary,5)};
+    --shapla-primary-rgb: #{to-rgb($light-theme--primary)};
+    --shapla-on-primary: #{$light-theme--on-primary};
+    // Secondary color
+    --shapla-secondary: #{$light-theme--secondary};
+    --shapla-secondary-variant: #{darken($light-theme--secondary,5)};
+    --shapla-secondary-rgb: #{to-rgb($light-theme--secondary)};
+    --shapla-on-secondary: #{$light-theme--on-secondary};
+    // Tertiary color
+    --shapla-tertiary: #{$light-theme--tertiary};
+    --shapla-tertiary-variant: #{darken($light-theme--tertiary,5)};
+    --shapla-tertiary-rgb: #{to-rgb($light-theme--tertiary)};
+    --shapla-on-tertiary: #{$light-theme--on-tertiary};
+    // Error color
+    --shapla-error: #{$light-theme--error};
+    --shapla-error-variant: #{darken($light-theme--error,5)};
+    --shapla-error-rgb: #{to-rgb($light-theme--error)};
+    --shapla-on-error: #{$light-theme--on-error};
+    // Success color
+    --shapla-success: #{$light-theme--success};
+    --shapla-success-variant: #{darken($light-theme--success,5)};
+    --shapla-success-rgb: #{to-rgb($light-theme--success)};
+    --shapla-on-success: #{$light-theme--on-success};
+    // Warning color
+    --shapla-warning: #{$light-theme--warning};
+    --shapla-warning-variant: #{darken($light-theme--warning,5)};
+    --shapla-warning-rgb: #{to-rgb($light-theme--warning)};
+    --shapla-on-warning: #{$light-theme--on-warning};
+    // background and surface
+    --shapla-background: #{$light-theme--background};
+    --shapla-surface: #{$light-theme--surface};
+    --shapla-surface-secondary: #{$light-theme--surface-secondary};
+    --shapla-text-primary: #{$light-theme--text-primary};
+    --shapla-text-secondary: #{$light-theme--text-secondary};
+    --shapla-text-tertiary: #{$light-theme--text-tertiary};
+  }
+}

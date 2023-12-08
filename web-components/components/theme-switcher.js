@@ -138,16 +138,17 @@ class ThemeSwitcher extends HTMLElement {
     }
 
     static getStyle() {
-        return '.dropdown { display: inline-flex; position: relative; vertical-align: top;}' +
-            '.trigger {display: flex;align-items: center;}' +
-            '.trigger-icon{display: flex;align-items: center;justify-content:center}' +
-            'svg {width: 1.25em;height: 1.25em;display: inline-flex;fill: currentColor;margin-right: .25rem;}' +
-            '.item {display: flex;align-items: center;font-size: .875em;line-height: 1.5;padding: 0.375em 1em;cursor: pointer;}' +
-            '.menu { font-size: 16px; left: 0; min-width: 12em; padding-top: 4px; position: absolute; top: 100%; visibility: hidden; z-index: 20;}' +
-            '.menu.is-active {visibility: visible;}' +
-            '.inner { background-color: var(--shapla-surface,#fff); border-radius: 4px;' +
-            'box-shadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;' +
-            'color: var(--shapla-text-primary,#000000de); padding-bottom: 0.5em; padding-top: 0.5em;}';
+        return `
+.dropdown { display: inline-flex; position: relative; vertical-align: top;}
+.trigger {display: flex;align-items: center; color: var(--shapla-text-primary,#000000de); font-size:1rem;cursor:pointer;}
+.trigger-icon{display: flex;align-items: center;justify-content:center}
+svg {width: 1.25em;height: 1.25em;display: inline-flex;fill: currentColor;margin-right: .25rem;}
+.item {display: flex;align-items: center;font-size: .875em;line-height: 1.5;padding: 0.375em 1em;cursor: pointer;}
+.menu { font-size: 16px; right: 0; min-width: 12em; padding-top: 4px; position: absolute; top: 100%; visibility: hidden; z-index: 20;}
+.menu.is-active {visibility: visible;}
+.inner { background-color: var(--shapla-surface,#fff); border-radius: 4px;
+box-shadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
+color: var(--shapla-text-primary,#000000de); padding-bottom: 0.5em; padding-top: 0.5em;}`;
     }
 
     /**

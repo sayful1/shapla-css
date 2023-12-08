@@ -41,8 +41,16 @@
     color: $on-secondary
   }
 
+  .color-success {
+    color: $success
+  }
+
   .color-on-success {
     color: $on-success
+  }
+
+  .color-error {
+    color: $error
   }
 
   .color-on-error {
@@ -57,15 +65,7 @@
     color: $text-secondary !important;
   }
 
-  .color-text-hint {
-    color: $text-tertiary !important;
-  }
-
-  .color-text-disabled {
-    color: $text-tertiary !important;
-  }
-
-  .color-text-icon {
+  .color-text-tertiary {
     color: $text-tertiary !important;
   }
 }

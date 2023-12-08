@@ -95,11 +95,12 @@ $warning-alpha: var(--shapla-warning-alpha, $color--warning-alpha) !default;
 
 $background: var(--shapla-background, $color--background) !default;
 $surface: var(--shapla-surface, $color--surface) !default;
+$surface-secondary: var(--shapla-surface-secondary, $color--gray-100) !default;
 $on-surface: var(--shapla-on-surface, $color--on-surface) !default;
 
 $text-primary: var(--shapla-text-primary, $color--text-primary) !default;
 $text-secondary: var(--shapla-text-secondary, $color--text-secondary) !default;
 $text-tertiary: var(--shapla-text-tertiary, $color--text-tertiary) !default;
-$text-hint: var(--shapla-text-hint, $color--text-hint) !default;
+$text-hint: var(--shapla-text-hint, $color--text-hint) !default; // @depreciated
 $text-disabled: var(--shapla-text-disabled, $color--text-disabled) !default; // @depreciated
 $text-icon: var(--shapla-text-icon, $color--text-icon) !default; // @depreciated
