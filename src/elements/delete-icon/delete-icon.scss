@@ -5,9 +5,9 @@ $delete-icon-dimensions: 20px !default;
 $delete-icon-dimensions-small: 16px !default;
 $delete-icon-dimensions-medium: 24px !default;
 $delete-icon-dimensions-large: 32px !default;
-$delete-icon-background-color: rgba(#0a0a0a, 0.2) !default;
-$delete-icon-background-color-darker: rgba(#0a0a0a, 0.3) !default;
-$delete-icon-color: #ffffff !default;
+$delete-icon-background-color: rgba($text-rgb, 0.2) !default;
+$delete-icon-background-color-darker: rgba($text-rgb, 0.3) !default;
+$delete-icon-color: rgba($text-rgb, 0.87) !default;
 
 @mixin delete-icon {
   .shapla-delete-icon {
@@ -75,16 +75,6 @@ $delete-icon-color: #ffffff !default;
       --delete-icon-background: #{$error};
       --delete-icon-background-dark: #{$error-variant};
       --delete-icon-color: #{$on-error};
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not(.light) {
-      .shapla-delete-icon:not(.is-error) {
-        --delete-icon-background: rgba(255, 255, 255, .12);
-        --delete-icon-background-dark: rgba(255, 255, 255, .18);
-        --delete-icon-color: #{$delete-icon-color};
-      }
     }
   }
 }

@@ -62,6 +62,8 @@ $color--text-hint-on-dark: rgba($color--white, .5) !default;
 $color--text-disabled-on-dark: rgba($color--white, .5) !default;
 $color--text-icon-on-dark: rgba($color--white, .5) !default;
 
+$black-rgb: var(--shapla-black-rgb, to-rgb($color--black)) !default;
+$white-rgb: var(--shapla-white-rgb, to-rgb($color--white)) !default;
 // Reassign color to change with CSS variable
 $primary: var(--shapla-primary, $color--primary) !default;
 $primary-rgb: var(--shapla-primary-rgb, to-rgb($color--primary)) !default;
@@ -98,9 +100,12 @@ $surface: var(--shapla-surface, $color--surface) !default;
 $surface-secondary: var(--shapla-surface-secondary, $color--gray-100) !default;
 $on-surface: var(--shapla-on-surface, $color--on-surface) !default;
 
+$text-rgb: var(--shapla-text-rgb, $black-rgb) !default;
 $text-primary: var(--shapla-text-primary, $color--text-primary) !default;
 $text-secondary: var(--shapla-text-secondary, $color--text-secondary) !default;
 $text-tertiary: var(--shapla-text-tertiary, $color--text-tertiary) !default;
+$border-color: var(--shapla-border-color, rgba(var(--shapla-text-rgb), 0.12)) !default;
+$border-color-dark: var(--shapla-border-color-dark, rgba(var(--shapla-text-rgb), 0.30)) !default;
 $text-hint: var(--shapla-text-hint, $color--text-hint) !default; // @depreciated
 $text-disabled: var(--shapla-text-disabled, $color--text-disabled) !default; // @depreciated
 $text-icon: var(--shapla-text-icon, $color--text-icon) !default; // @depreciated

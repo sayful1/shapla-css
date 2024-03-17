@@ -58,6 +58,13 @@ $dark-theme--text-tertiary: rgba($color--white, .38) !default;
       --shapla-warning-variant: #{darken($dark-theme--warning,5)};
       --shapla-warning-rgb: #{to-rgb($dark-theme--warning)};
       --shapla-on-warning: #{$dark-theme--on-warning};
+      // General Color
+      --shapla-black-rgb: 0, 0, 0;
+      --shapla-white-rgb: 255, 255, 255;
+      --shapla-text-rgb: var(--shapla-white-rgb);
+      // border color
+      --shapla-border-color: rgba(var(--shapla-white-rgb), 0.12);
+      --shapla-border-color-dark: rgba(var(--shapla-white-rgb), 0.38);
       // background and surface
       --shapla-background: #{$dark-theme--background};
       --shapla-surface: #{$dark-theme--surface};
