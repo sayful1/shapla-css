@@ -93,6 +93,7 @@ $sidenav-width: var(--shapla-dashboard-sidenav-width, 300px);
       &__inner {
         overflow-x: hidden;
         padding: 1rem;
+        width: 100%;
       }
     }
 
