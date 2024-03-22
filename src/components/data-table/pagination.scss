@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin data-table-pagination {
   .shapla-pagination {
     align-items: center;
@@ -44,9 +46,9 @@
       position: relative;
       justify-content: center;
       margin: 0 .25em;
-      border: 1px solid #ddd;
-      background: #ffffff;
-      color: #363636;
+      border: 1px solid $border-color;
+      background: $background;
+      color: $text-primary;
       width: 2em;
 
       svg {
@@ -67,26 +69,28 @@
       margin: 0 .25em;
     }
 
-    &-current-page {
+    &-paging-text {
+      margin-left: 0.5em;
+      font-size: 1em;
+    }
+  }
+
+  input[type='text'] {
+    &.shapla-pagination-current-page {
       border-radius: 4px;
       margin: 0 2px 0 0;
       font-size: 1em;
       text-align: center;
-      border: 1px solid #dbdbdb;
       box-shadow: none;
-      background-color: #fff;
-      color: #32373c;
+      background-color: $background;
+      color: $text-primary;
+      border: 1px solid $border-color;
       outline: none;
       transition: 0.05s border-color ease-in-out;
       padding: 3px 5px;
       width: 4em;
       height: 2em;
       line-height: 1.5;
-    }
-
-    &-paging-text {
-      margin-left: 0.5em;
-      font-size: 1em;
     }
   }
 }
